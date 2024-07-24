@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#poscardsskills:generates_jasper",
+  "features": "poscardsskills:ore_jasper",
+  "step": "underground_ores"
+}

@@ -1,0 +1,106 @@
+{
+  "icon": "filled_map",
+  "background": "block/dark_oak_planks",
+  "attribute": "poscardsskills:player.chest_luck",
+  "amount": 1,
+  "rewards": [
+    {
+      "at": [49],
+      "itemStack": {
+        "item": "elytra",
+        "count": 1
+      }
+    },
+    {
+      "from": 20,
+      "to": 29,
+      "itemStack": {
+        "item": "firework_rocket",
+        "count": 4,
+        "nbt": {
+          "Fireworks": {
+            "Flight": 3
+          }
+        }
+      }
+    },
+    {
+      "from": 30,
+      "to": 39,
+      "itemStack": {
+        "item": "firework_rocket",
+        "count": 12,
+        "nbt": {
+          "Fireworks": {
+            "Flight": 3
+          }
+        }
+      }
+    },
+    {
+      "from": 40,
+      "to": 69,
+      "itemStack": {
+        "item": "firework_rocket",
+        "count": 32,
+        "nbt": {
+          "Fireworks": {
+            "Flight": 3
+          }
+        }
+      }
+    },
+    {
+      "from": 70,
+      "to": 200,
+      "itemStack": {
+        "item": "firework_rocket",
+        "count": 64,
+        "nbt": {
+          "Fireworks": {
+            "Flight": 3
+          }
+        }
+      }
+    }
+  ],
+  "recipes": [
+    {
+      "at": 45,
+      "input1": {
+        "item": "poscardsskills:brilliant_shard",
+        "count": 14
+      },
+      "output": {
+        "item": "poscardsskills:brilliant_leggings",
+        "count": 1
+      }
+    },
+    {
+      "at": 45,
+      "input1": {
+        "item": "poscardsskills:brilliant_shard",
+        "count": 8
+      },
+      "output": {
+        "item": "poscardsskills:brilliant_boots",
+        "count": 1
+      }
+    },
+    {
+      "at": 50,
+      "input1": {
+        "item": "poscardsskills:brilliant_shard",
+        "count": 7
+      },
+      "input2": {
+        "item": "minecraft:gold_ingot",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:brilliant_key",
+        "count": 1
+      }
+    }
+  ]
+}

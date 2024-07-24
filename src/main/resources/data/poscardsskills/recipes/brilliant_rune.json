@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "key": {
+    "X": {
+      "item": "poscardsskills:brilliant_shard"
+    },
+    "#": {
+      "item": "minecraft:amethyst_shard"
+    }
+  },
+  "result": {
+    "item": "poscardsskills:brilliant_rune"
+  }
+}

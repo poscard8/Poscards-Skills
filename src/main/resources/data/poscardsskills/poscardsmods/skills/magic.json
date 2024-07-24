@@ -1,0 +1,152 @@
+{
+  "icon": "blaze_powder",
+  "background": "block/warped_wart_block",
+  "attribute": "generic.max_health",
+  "amount": 0.04,
+  "rewards": [
+    {
+      "from": 2,
+      "to": 9,
+      "xp": 50
+    },
+    {
+      "from": 10,
+      "to": 14,
+      "itemStack":
+      {
+        "item": "minecraft:lapis_lazuli",
+        "count": 8
+      }
+    },
+    {
+      "from": 15,
+      "to": 19,
+      "xp": 100
+    },
+    {
+      "from": 20,
+      "to": 24,
+      "itemStack":
+      {
+        "item": "minecraft:lapis_lazuli",
+        "count": 16
+      }
+    },
+    {
+      "from": 25,
+      "to": 29,
+      "xp": 200
+    },
+    {
+      "from": 30,
+      "to": 34,
+      "itemStack":
+      {
+        "item": "minecraft:lapis_lazuli",
+        "count": 32
+      }
+    },
+    {
+      "from": 35,
+      "to": 39,
+      "xp": 300
+    },
+    {
+      "from": 40,
+      "to": 44,
+      "itemStack":
+      {
+        "item": "minecraft:lapis_lazuli",
+        "count": 64
+      }
+    },
+    {
+      "from": 45,
+      "to": 49,
+      "xp": 400
+    },
+    {
+      "from": 50,
+      "to": 69,
+      "xp": 500
+    },
+    {
+      "from": 70,
+      "to": 200,
+      "xp": 1000
+    }
+  ],
+  "recipes": [
+    {
+      "at": 20,
+      "input1": {
+        "item": "poscardsskills:rough_jade",
+        "count": 1
+      },
+      "input2": {
+        "item": "minecraft:amethyst_shard",
+        "count": 8
+      },
+      "output": {
+        "item": "poscardsskills:elegant_rune",
+        "count": 1
+      }
+    },
+    {
+      "at": 30,
+      "input1": {
+        "item": "poscardsskills:rough_jasper",
+        "count": 1
+      },
+      "input2": {
+        "item": "minecraft:amethyst_shard",
+        "count": 8
+      },
+      "output": {
+        "item": "poscardsskills:ethereal_rune",
+        "count": 1
+      }
+    },
+    {
+      "at": 40,
+      "input1": {
+        "item": "poscardsskills:rough_marble",
+        "count": 1
+      },
+      "input2": {
+        "item": "minecraft:amethyst_shard",
+        "count": 8
+      },
+      "output": {
+        "item": "poscardsskills:classical_rune",
+        "count": 1
+      }
+    },
+    {
+      "at": 45,
+      "input1": {
+        "item": "poscardsskills:brilliant_shard",
+        "count": 16
+      },
+      "output": {
+        "item": "poscardsskills:brilliant_chestplate",
+        "count": 1
+      }
+    },
+    {
+      "at": 50,
+      "input1": {
+        "item": "poscardsskills:brilliant_shard",
+        "count": 8
+      },
+      "input2": {
+        "item": "minecraft:book",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:brilliant_book",
+        "count": 1
+      }
+    }
+  ]
+}

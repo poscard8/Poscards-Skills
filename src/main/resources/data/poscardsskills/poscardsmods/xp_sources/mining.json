@@ -1,0 +1,164 @@
+{
+  "values": [
+    {
+      "type": "poscardsskills:break_block",
+      "tag": "minecraft:base_stone_overworld",
+      "xp": 3
+    },
+    {
+      "type": "poscardsskills:break_block",
+      "tag": "minecraft:terracotta",
+      "xp": 3
+    },
+    {
+      "type": "poscardsskills:break_block",
+      "tag": "minecraft:coal_ores",
+      "xp": 15
+    },
+    {
+      "type": "poscardsskills:break_block",
+      "tag": "minecraft:copper_ores",
+      "xp": 20
+    },
+    {
+      "type": "poscardsskills:break_block",
+      "tag": "minecraft:iron_ores",
+      "xp": 35
+    },
+    {
+      "type": "poscardsskills:break_block",
+      "tag": "minecraft:redstone_ores",
+      "xp": 60
+    },
+    {
+      "type": "poscardsskills:break_block",
+      "tag": "minecraft:gold_ores",
+      "xp": 100
+    },
+    {
+      "type": "poscardsskills:break_block",
+      "tag": "minecraft:emerald_ores",
+      "xp": 100
+    },
+    {
+      "type": "poscardsskills:break_block",
+      "tag": "minecraft:lapis_ores",
+      "xp": 100
+    },
+    {
+      "type": "poscardsskills:break_block",
+      "tag": "minecraft:diamond_ores",
+      "xp": 250
+    },
+    {
+      "type": "poscardsskills:break_block",
+      "tag": "minecraft:base_stone_nether",
+      "xp": 6
+    },
+    {
+      "type": "poscardsskills:break_block",
+      "tag": "minecraft:nylium",
+      "xp": 6
+    },
+    {
+      "type": "poscardsskills:break_block",
+      "tag": "poscardsskills:rough_stones",
+      "xp": 20
+    },
+    {
+      "type": "poscardsskills:break_block",
+      "block": "minecraft:gravel",
+      "xp": 3
+    },
+    {
+      "type": "poscardsskills:break_block",
+      "block": "minecraft:clay",
+      "xp": 3
+    },
+    {
+      "type": "poscardsskills:break_block",
+      "block": "minecraft:ice",
+      "xp": 7
+    },
+    {
+      "type": "poscardsskills:break_block",
+      "block": "minecraft:packed_ice",
+      "xp": 20
+    },
+    {
+      "type": "poscardsskills:break_block",
+      "block": "minecraft:blue_ice",
+      "xp": 60
+    },
+    {
+      "type": "poscardsskills:break_block",
+      "block": "minecraft:calcite",
+      "xp": 10
+    },
+    {
+      "type": "poscardsskills:break_block",
+      "block": "minecraft:smooth_basalt",
+      "xp": 10
+    },
+    {
+      "type": "poscardsskills:break_block",
+      "block": "minecraft:amethyst_block",
+      "xp": 10
+    },
+    {
+      "type": "poscardsskills:break_block",
+      "block": "minecraft:amethyst_cluster",
+      "xp": 100
+    },
+    {
+      "type": "poscardsskills:break_block",
+      "block": "minecraft:raw_copper_block",
+      "xp": 180
+    },
+    {
+      "type": "poscardsskills:break_block",
+      "block": "minecraft:raw_iron_block",
+      "xp": 315
+    },
+    {
+      "type": "poscardsskills:break_block",
+      "block": "minecraft:sculk",
+      "xp": 3
+    },
+    {
+      "type": "poscardsskills:break_block",
+      "block": "minecraft:soul_sand",
+      "xp": 4
+    },
+    {
+      "type": "poscardsskills:break_block",
+      "block": "minecraft:soul_soil",
+      "xp": 4
+    },
+    {
+      "type": "poscardsskills:break_block",
+      "block": "minecraft:nether_quartz_ore",
+      "xp": 60
+    },
+    {
+      "type": "poscardsskills:break_block",
+      "block": "minecraft:ancient_debris",
+      "xp": 1500
+    },
+    {
+      "type": "poscardsskills:break_block",
+      "block": "minecraft:end_stone",
+      "xp": 20
+    },
+    {
+      "type": "poscardsskills:unlock_advancement",
+      "advancement": "minecraft:story/smelt_iron",
+      "xp": 300
+    },
+    {
+      "type": "poscardsskills:unlock_advancement",
+      "advancement": "minecraft:story/form_obsidian",
+      "xp": 750
+    }
+  ]
+}

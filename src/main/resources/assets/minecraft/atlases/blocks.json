@@ -1,0 +1,12 @@
+{
+  "sources": [
+    {
+      "type": "single",
+      "resource": "poscardsskills:models/armor/animated/brilliant_layer_1"
+    },
+    {
+      "type": "single",
+      "resource": "poscardsskills:models/armor/animated/brilliant_layer_2"
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "display": {
+    "icon": {
+      "item": "poscardsskills:marble_bricks"
+    },
+    "title": {
+      "translate": "advancement.poscardsskills.roman_architecture"
+    },
+    "description": {
+      "translate": "advancement.poscardsskills.roman_architecture.desc"
+    }
+  },
+  "parent": "poscardsskills:victorian_architecture",
+  "criteria": {
+    "bricks": {
+      "trigger": "poscardsskills:skill_crafting",
+      "conditions": {
+        "item": {
+          "items": [
+            "poscardsskills:marble_bricks"
+          ]
+        }
+      }
+    },
+    "brick_stairs": {
+      "trigger": "poscardsskills:skill_crafting",
+      "conditions": {
+        "item": {
+          "items": [
+            "poscardsskills:marble_brick_stairs"
+          ]
+        }
+      }
+    },
+    "brick_slab": {
+      "trigger": "poscardsskills:skill_crafting",
+      "conditions": {
+        "item": {
+          "items": [
+            "poscardsskills:marble_brick_slab"
+          ]
+        }
+      }
+    },
+    "brick_wall": {
+      "trigger": "poscardsskills:skill_crafting",
+      "conditions": {
+        "item": {
+          "items": [
+            "poscardsskills:marble_brick_wall"
+          ]
+        }
+      }
+    },
+    "chiseled": {
+      "trigger": "poscardsskills:skill_crafting",
+      "conditions": {
+        "item": {
+          "items": [
+            "poscardsskills:chiseled_marble"
+          ]
+        }
+      }
+    },
+    "pillar": {
+      "trigger": "poscardsskills:skill_crafting",
+      "conditions": {
+        "item": {
+          "items": [
+            "poscardsskills:marble_pillar"
+          ]
+        }
+      }
+    },
+    "layered": {
+      "trigger": "poscardsskills:skill_crafting",
+      "conditions": {
+        "item": {
+          "items": [
+            "poscardsskills:layered_marble"
+          ]
+        }
+      }
+    },
+    "shiny": {
+      "trigger": "poscardsskills:skill_crafting",
+      "conditions": {
+        "item": {
+          "items": [
+            "poscardsskills:shiny_marble"
+          ]
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "bricks"
+    ],
+    [
+      "brick_stairs"
+    ],
+    [
+      "brick_slab"
+    ],
+    [
+      "brick_wall"
+    ],
+    [
+      "chiseled"
+    ],
+    [
+      "pillar"
+    ],
+    [
+      "layered"
+    ],
+    [
+      "shiny"
+    ]
+  ]
+}

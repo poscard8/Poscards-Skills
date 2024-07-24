@@ -1,0 +1,44 @@
+{
+  "values": [
+    {
+      "type": "poscardsskills:brew_potion",
+      "xp": 60,
+      "__comment": "xp is multiplied with the amount of ingredients used on the potion, most potions will yield 2 to 4 times the XP"
+    },
+    {
+      "type": "poscardsskills:use_anvil",
+      "xp": 100,
+      "__comment": "xp for use_anvil is just a multiplier, most anvil uses will yield 3 to 10 times the XP"
+    },
+    {
+      "type": "poscardsskills:enchant_item",
+      "xp": 40,
+      "__comment": "xp is multiplied with the levels at the enchantment table, most enchanting table uses will yield 5 to 30 times the XP"
+    },
+    {
+      "type": "poscardsskills:unlock_advancement",
+      "advancement": "minecraft:story/cure_zombie_villager",
+      "xp": 2000
+    },
+    {
+      "type": "poscardsskills:unlock_advancement",
+      "advancement": "minecraft:nether/charge_respawn_anchor",
+      "xp": 2000
+    },
+    {
+      "type": "poscardsskills:unlock_advancement",
+      "advancement": "minecraft:nether/all_potions",
+      "xp": 3500
+    },
+    {
+      "type": "poscardsskills:unlock_advancement",
+      "advancement": "minecraft:nether/all_effects",
+      "xp": 10000
+    },
+    {
+      "type": "poscardsskills:unlock_advancement",
+      "advancement": "minecraft:end/dragon_breath",
+      "xp": 1000
+    }
+  ]
+}

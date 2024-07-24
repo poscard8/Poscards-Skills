@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "poscardsskills:block/jasper_brick_slab"
+    },
+    "type=double": {
+      "model": "poscardsskills:block/jasper_bricks"
+    },
+    "type=top": {
+      "model": "poscardsskills:block/jasper_brick_slab_top"
+    }
+  }
+}

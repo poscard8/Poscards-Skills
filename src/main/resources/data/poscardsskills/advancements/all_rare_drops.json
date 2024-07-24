@@ -1,0 +1,73 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:enchanted_golden_apple"
+    },
+    "title": {
+      "translate": "advancement.poscardsskills.all_rare_drops"
+    },
+    "description": {
+      "translate": "advancement.poscardsskills.all_rare_drops.desc"
+    },
+    "frame": "challenge"
+  },
+  "parent": "poscardsskills:rare_drop",
+  "criteria": {
+    "break_block": {
+      "trigger": "poscardsskills:rare_drop",
+      "conditions": {
+        "type": "poscardsskills:break_block"
+      }
+    },
+    "brew_potion": {
+      "trigger": "poscardsskills:rare_drop",
+      "conditions": {
+        "type": "poscardsskills:brew_potion"
+      }
+    },
+    "enchant_item": {
+      "trigger": "poscardsskills:rare_drop",
+      "conditions": {
+        "type": "poscardsskills:enchant_item"
+      }
+    },
+    "kill_entity": {
+      "trigger": "poscardsskills:rare_drop",
+      "conditions": {
+        "type": "poscardsskills:kill_entity"
+      }
+    },
+    "open_chest": {
+      "trigger": "poscardsskills:rare_drop",
+      "conditions": {
+        "type": "poscardsskills:open_chest"
+      }
+    },
+    "visit_structure": {
+      "trigger": "poscardsskills:rare_drop",
+      "conditions": {
+        "type": "poscardsskills:visit_structure"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "break_block"
+    ],
+    [
+      "brew_potion"
+    ],
+    [
+      "enchant_item"
+    ],
+    [
+      "kill_entity"
+    ],
+    [
+      "open_chest"
+    ],
+    [
+      "visit_structure"
+    ]
+  ]
+}

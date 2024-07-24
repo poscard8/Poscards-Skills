@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:copper_ingot"
+    },
+    "title": {
+      "translate": "advancement.poscardsskills.level_10"
+    },
+    "description": {
+      "translate": "advancement.poscardsskills.level_10.desc"
+    },
+    "frame": "task"
+  },
+  "parent": "poscardsskills:beginning",
+  "criteria": {
+    "requirement": {
+      "trigger": "poscardsskills:level_up",
+      "conditions": {
+        "level": 10
+      }
+    }
+  }
+}

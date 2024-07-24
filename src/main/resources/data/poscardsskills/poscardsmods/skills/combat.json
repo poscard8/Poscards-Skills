@@ -1,0 +1,167 @@
+{
+  "icon": "iron_sword",
+  "background": "block/stone_bricks",
+  "attribute": "generic.attack_damage",
+  "amount": 0.05,
+  "rewards": [
+    {
+      "from": 2,
+      "to": 14,
+      "itemStack":
+      {
+        "item": "minecraft:golden_carrot",
+        "count": 4
+      }
+    },
+    {
+      "from": 15,
+      "to": 29,
+      "itemStack":
+      {
+        "item": "minecraft:golden_carrot",
+        "count": 12
+      }
+    },
+    {
+      "from": 30,
+      "to": 69,
+      "itemStack":
+      {
+        "item": "minecraft:golden_carrot",
+        "count": 32
+      }
+    },
+    {
+      "from": 70,
+      "to": 199,
+      "itemStack":
+      {
+        "item": "minecraft:golden_carrot",
+        "count": 64
+      }
+    },
+    {
+      "at": [200],
+      "itemStack":
+      {
+        "item": "minecraft:enchanted_golden_apple",
+        "count": 10
+      }
+    }
+  ],
+  "recipes": [
+    {
+      "at": 20,
+      "input1": {
+        "item": "poscardsskills:jade_bricks",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:layered_jade",
+        "count": 1
+      }
+    },
+    {
+      "at": 20,
+      "input1": {
+        "item": "poscardsskills:jade_bricks",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:shiny_jade",
+        "count": 1
+      }
+    },
+    {
+      "at": 30,
+      "input1": {
+        "item": "poscardsskills:jasper_bricks",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:layered_jasper",
+        "count": 1
+      }
+    },
+    {
+      "at": 30,
+      "input1": {
+        "item": "poscardsskills:jasper_bricks",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:shiny_jasper",
+        "count": 1
+      }
+    },
+    {
+      "at": 40,
+      "input1": {
+        "item": "poscardsskills:marble_bricks",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:layered_marble",
+        "count": 1
+      }
+    },
+    {
+      "at": 40,
+      "input1": {
+        "item": "poscardsskills:marble_bricks",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:shiny_marble",
+        "count": 1
+      }
+    },
+    {
+      "at": 45,
+      "input1": {
+        "item": "poscardsskills:brilliant_shard",
+        "count": 4
+      },
+      "input2": {
+        "item": "minecraft:stick",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:brilliant_sword",
+        "count": 1
+      }
+    },
+    {
+      "at": 45,
+      "input1": {
+        "item": "poscardsskills:brilliant_shard",
+        "count": 10
+      },
+      "output": {
+        "item": "poscardsskills:brilliant_helmet",
+        "count": 1
+      }
+    },
+    {
+      "at": 50,
+      "input1": {
+        "item": "poscardsskills:brilliant_shard",
+        "count": 3
+      },
+      "input2": {
+        "item": "minecraft:ender_pearl",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:brilliant_pearl",
+        "count": 2
+      }
+    }
+  ],
+  "additional" : [
+    {
+      "at": 15,
+      "key": "rare_drops"
+    }
+  ]
+}

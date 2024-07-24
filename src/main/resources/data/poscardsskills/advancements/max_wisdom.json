@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:experience_bottle"
+    },
+    "title": {
+      "translate": "advancement.poscardsskills.max_wisdom"
+    },
+    "description": {
+      "translate": "advancement.poscardsskills.max_wisdom.desc"
+    },
+    "frame": "challenge"
+  },
+  "parent": "poscardsskills:obtain_brilliant_shard",
+  "criteria": {
+    "requirement": {
+      "trigger": "poscardsskills:carry_brilliant_shard",
+      "conditions": {
+        "count": 50
+      }
+    }
+  }
+}

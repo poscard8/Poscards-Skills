@@ -1,0 +1,122 @@
+{
+  "display": {
+    "icon": {
+      "item": "poscardsskills:jasper_bricks"
+    },
+    "title": {
+      "translate": "advancement.poscardsskills.victorian_architecture"
+    },
+    "description": {
+      "translate": "advancement.poscardsskills.victorian_architecture.desc"
+    }
+  },
+  "parent": "poscardsskills:asian_architecture",
+  "criteria": {
+    "bricks": {
+      "trigger": "poscardsskills:skill_crafting",
+      "conditions": {
+        "item": {
+          "items": [
+            "poscardsskills:jasper_bricks"
+          ]
+        }
+      }
+    },
+    "brick_stairs": {
+      "trigger": "poscardsskills:skill_crafting",
+      "conditions": {
+        "item": {
+          "items": [
+            "poscardsskills:jasper_brick_stairs"
+          ]
+        }
+      }
+    },
+    "brick_slab": {
+      "trigger": "poscardsskills:skill_crafting",
+      "conditions": {
+        "item": {
+          "items": [
+            "poscardsskills:jasper_brick_slab"
+          ]
+        }
+      }
+    },
+    "brick_wall": {
+      "trigger": "poscardsskills:skill_crafting",
+      "conditions": {
+        "item": {
+          "items": [
+            "poscardsskills:jasper_brick_wall"
+          ]
+        }
+      }
+    },
+    "chiseled": {
+      "trigger": "poscardsskills:skill_crafting",
+      "conditions": {
+        "item": {
+          "items": [
+            "poscardsskills:chiseled_jasper"
+          ]
+        }
+      }
+    },
+    "pillar": {
+      "trigger": "poscardsskills:skill_crafting",
+      "conditions": {
+        "item": {
+          "items": [
+            "poscardsskills:jasper_pillar"
+          ]
+        }
+      }
+    },
+    "layered": {
+      "trigger": "poscardsskills:skill_crafting",
+      "conditions": {
+        "item": {
+          "items": [
+            "poscardsskills:layered_jasper"
+          ]
+        }
+      }
+    },
+    "shiny": {
+      "trigger": "poscardsskills:skill_crafting",
+      "conditions": {
+        "item": {
+          "items": [
+            "poscardsskills:shiny_jasper"
+          ]
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "bricks"
+    ],
+    [
+      "brick_stairs"
+    ],
+    [
+      "brick_slab"
+    ],
+    [
+      "brick_wall"
+    ],
+    [
+      "chiseled"
+    ],
+    [
+      "pillar"
+    ],
+    [
+      "layered"
+    ],
+    [
+      "shiny"
+    ]
+  ]
+}

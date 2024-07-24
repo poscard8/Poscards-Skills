@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#poscardsskills:generates_marble",
+  "features": "poscardsskills:ore_marble",
+  "step": "underground_ores"
+}

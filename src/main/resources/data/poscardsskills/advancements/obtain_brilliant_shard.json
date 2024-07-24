@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "poscardsskills:brilliant_shard"
+    },
+    "title": {
+      "translate": "advancement.poscardsskills.obtain_brilliant_shard"
+    },
+    "description": {
+      "translate": "advancement.poscardsskills.obtain_brilliant_shard.desc"
+    }
+  },
+  "parent": "poscardsskills:rare_drop",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "poscardsskills:brilliant_shard"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

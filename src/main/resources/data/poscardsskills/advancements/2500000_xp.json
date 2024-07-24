@@ -1,0 +1,25 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "title": {
+      "translate": "advancement.poscardsskills.2500000_xp",
+      "color": "#aa0000"
+    },
+    "description": {
+      "translate": "advancement.poscardsskills.2500000_xp.desc"
+    },
+    "frame": "challenge",
+    "hidden": true
+  },
+  "parent": "poscardsskills:level_50",
+  "criteria": {
+    "requirement": {
+      "trigger": "poscardsskills:gain_xp",
+      "conditions": {
+        "xp": 2500000
+      }
+    }
+  }
+}

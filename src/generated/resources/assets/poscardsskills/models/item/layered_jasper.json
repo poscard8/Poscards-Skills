@@ -1,0 +1,9 @@
+{
+  "parent": "poscardsskills:item/layered_block",
+  "textures": {
+    "default": "poscardsskills:block/layered_jasper",
+    "inner": "poscardsskills:block/layered_jasper_inner",
+    "middle": "poscardsskills:block/layered_jasper_middle",
+    "side": "poscardsskills:block/layered_jasper_side"
+  }
+}

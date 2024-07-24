@@ -1,0 +1,225 @@
+{
+  "icon": "diamond_pickaxe",
+  "background": "block/deepslate",
+  "attribute": "poscardsskills:player.chest_luck",
+  "amount": 1,
+  "rewards": [
+    {
+      "at": [25],
+      "itemStack":
+      {
+        "item": "minecraft:diamond",
+        "count": 1
+      }
+    },
+    {
+      "at": [45, 200],
+      "itemStack":
+      {
+        "item": "minecraft:netherite_ingot",
+        "count": 1
+      }
+    },
+    {
+      "at": [5, 10, 14, 17, 20, 22, 24, 26, 28],
+      "itemStack":
+      {
+        "item": "poscardsskills:mendite",
+        "count": 1
+      }
+    },
+    {
+      "from": 30,
+      "to": 200,
+      "itemStack":
+      {
+        "item": "poscardsskills:mendite",
+        "count": 1
+      }
+    },
+    {
+      "from": 70,
+      "to": 199,
+      "itemStack":
+      {
+        "item": "minecraft:diamond",
+        "count": 1
+      }
+    }
+  ],
+  "recipes": [
+    {
+      "at": 20,
+      "input1": {
+        "item": "poscardsskills:rough_jade",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:jade_bricks",
+        "count": 1
+      }
+    },
+    {
+      "at": 20,
+      "input1": {
+        "item": "poscardsskills:jade_bricks",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:jade_brick_stairs",
+        "count": 1
+      }
+    },
+    {
+      "at": 20,
+      "input1": {
+        "item": "poscardsskills:jade_bricks",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:jade_brick_slab",
+        "count": 2
+      }
+    },
+    {
+      "at": 20,
+      "input1": {
+        "item": "poscardsskills:jade_bricks",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:jade_brick_wall",
+        "count": 1
+      }
+    },
+    {
+      "at": 30,
+      "input1": {
+        "item": "poscardsskills:rough_jasper",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:jasper_bricks",
+        "count": 1
+      }
+    },
+    {
+      "at": 30,
+      "input1": {
+        "item": "poscardsskills:jasper_bricks",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:jasper_brick_stairs",
+        "count": 1
+      }
+    },
+    {
+      "at": 30,
+      "input1": {
+        "item": "poscardsskills:jasper_bricks",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:jasper_brick_slab",
+        "count": 2
+      }
+    },
+    {
+      "at": 30,
+      "input1": {
+        "item": "poscardsskills:jasper_bricks",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:jasper_brick_wall",
+        "count": 1
+      }
+    },
+    {
+      "at": 40,
+      "input1": {
+        "item": "poscardsskills:rough_marble",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:marble_bricks",
+        "count": 1
+      }
+    },
+    {
+      "at": 40,
+      "input1": {
+        "item": "poscardsskills:marble_bricks",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:marble_brick_stairs",
+        "count": 1
+      }
+    },
+    {
+      "at": 40,
+      "input1": {
+        "item": "poscardsskills:marble_bricks",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:marble_brick_slab",
+        "count": 2
+      }
+    },
+    {
+      "at": 40,
+      "input1": {
+        "item": "poscardsskills:marble_bricks",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:marble_brick_wall",
+        "count": 1
+      }
+    },
+    {
+      "at": 45,
+      "input1": {
+        "item": "poscardsskills:brilliant_shard",
+        "count": 2
+      },
+      "input2": {
+        "item": "minecraft:stick",
+        "count": 2
+      },
+      "output": {
+        "item": "poscardsskills:brilliant_shovel",
+        "count": 1
+      }
+    },
+    {
+      "at": 45,
+      "input1": {
+        "item": "poscardsskills:brilliant_shard",
+        "count": 6
+      },
+      "input2": {
+        "item": "minecraft:stick",
+        "count": 2
+      },
+      "output": {
+        "item": "poscardsskills:brilliant_pickaxe",
+        "count": 1
+      }
+    },
+    {
+      "at": 50,
+      "input1": {
+        "item": "poscardsskills:brilliant_shard",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:mendite",
+        "count": 3
+      }
+    }
+  ]
+}
