@@ -1,0 +1,7 @@
+{
+  "asset_id": "poscardsskills:classical",
+  "description": {
+    "translate": "trim_pattern.poscardsskills.classical"
+  },
+  "template_item": "poscardsskills:classical_armor_trim_smithing_template"
+}

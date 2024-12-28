@@ -1,0 +1,7 @@
+{
+  "asset_id": "poscardsskills:ethereal",
+  "description": {
+    "translate": "trim_pattern.poscardsskills.ethereal"
+  },
+  "template_item": "poscardsskills:ethereal_armor_trim_smithing_template"
+}

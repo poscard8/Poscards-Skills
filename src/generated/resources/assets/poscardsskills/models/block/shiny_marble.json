@@ -1,0 +1,8 @@
+{
+  "parent": "poscardsskills:block/shiny_block",
+  "textures": {
+    "top": "poscardsskills:block/shiny_marble_top",
+    "x": "poscardsskills:block/shiny_marble_0",
+    "z": "poscardsskills:block/shiny_marble_1"
+  }
+}

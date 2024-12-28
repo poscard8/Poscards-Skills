@@ -1,0 +1,69 @@
+[25Dec2024 14:24:44.153] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\poscard\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.3.5, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, poscardsskills, --all, --output, C:\Users\poscard\poscardsskills\1.20.1\src\generated\resources, --existing, C:\Users\poscard\poscardsskills\1.20.1\src\main\resources, --mixin.config, poscardsskills.mixins.json]
+[25Dec2024 14:24:44.168] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.13 by Eclipse Adoptium; OS Windows 11 arch amd64 version 10.0
+[25Dec2024 14:24:44.294] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
+[25Dec2024 14:24:44.326] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/poscard/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
+[25Dec2024 14:24:44.577] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\poscard\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.3.5\4c589c051ef533f8898fb5d83514d4186faa0eeb\javafmllanguage-1.20.1-47.3.5.jar is missing mods.toml file
+[25Dec2024 14:24:44.593] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\poscard\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.3.5\8251eee89645828a05f3b04f5df8945baa0743c4\lowcodelanguage-1.20.1-47.3.5.jar is missing mods.toml file
+[25Dec2024 14:24:44.593] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\poscard\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.3.5\53971d6fe08ae7ce74a72fa7d14a82de70a8bd1\mclanguage-1.20.1-47.3.5.jar is missing mods.toml file
+[25Dec2024 14:24:44.593] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\poscard\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.3.5\cc377ceca3274bd1e429c0da17f73720ce29a4d6\fmlcore-1.20.1-47.3.5.jar is missing mods.toml file
+[25Dec2024 14:24:44.705] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[25Dec2024 14:24:46.276] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[25Dec2024 14:24:46.276] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\poscard\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, poscardsskills, --all, --output, C:\Users\poscard\poscardsskills\1.20.1\src\generated\resources, --existing, C:\Users\poscard\poscardsskills\1.20.1\src\main\resources]
+[25Dec2024 14:24:46.354] [main/WARN] [mixin/]: Reference map 'poscardsskills.mixins.refmap.json' for poscardsskills.mixins.json could not be read. If this is a development environment you can ignore this message
+[25Dec2024 14:24:46.933] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [poscardsskills]
+[25Dec2024 14:24:51.743] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.3.5, for MC 1.20.1 with MCP 20230612.114412
+[25Dec2024 14:24:51.743] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.3.5 Initialized
+[25Dec2024 14:24:52.053] [modloading-worker-0/ERROR] [mezz.jei.common.config.file.ConfigSerializer/]: 'CenterSearch' is not a valid config key for config category 'advanced'.
+Valid keys: [LowMemorySlowSearchEnabled, CatchRenderErrorsEnabled, lookupFluidContentsEnabled, lookupBlockTagsEnabled, showTagRecipesEnabled, showCreativeTabNamesEnabled]
+Skipping this key.
+Config file: C:\Users\poscard\poscardsskills\1.20.1\run-data\config\jei\jei-client.ini
+Line #5: "	CenterSearch = false"
+[25Dec2024 14:24:52.053] [modloading-worker-0/ERROR] [mezz.jei.common.config.file.ConfigSerializer/]: 'CheatToHotbarUsingHotkeysEnabled' is not a valid config key for config category 'advanced'.
+Valid keys: [LowMemorySlowSearchEnabled, CatchRenderErrorsEnabled, lookupFluidContentsEnabled, lookupBlockTagsEnabled, showTagRecipesEnabled, showCreativeTabNamesEnabled]
+Skipping this key.
+Config file: C:\Users\poscard\poscardsskills\1.20.1\run-data\config\jei\jei-client.ini
+Line #20: "	CheatToHotbarUsingHotkeysEnabled = false"
+[25Dec2024 14:24:52.053] [modloading-worker-0/ERROR] [mezz.jei.common.config.file.ConfigSerializer/]: 'AddBookmarksToFrontEnabled' is not a valid config key for config category 'advanced'.
+Valid keys: [LowMemorySlowSearchEnabled, CatchRenderErrorsEnabled, lookupFluidContentsEnabled, lookupBlockTagsEnabled, showTagRecipesEnabled, showCreativeTabNamesEnabled]
+Skipping this key.
+Config file: C:\Users\poscard\poscardsskills\1.20.1\run-data\config\jei\jei-client.ini
+Line #25: "	AddBookmarksToFrontEnabled = false"
+[25Dec2024 14:24:52.053] [modloading-worker-0/ERROR] [mezz.jei.common.config.file.ConfigSerializer/]: 'GiveMode' is not a valid config key for config category 'advanced'.
+Valid keys: [LowMemorySlowSearchEnabled, CatchRenderErrorsEnabled, lookupFluidContentsEnabled, lookupBlockTagsEnabled, showTagRecipesEnabled, showCreativeTabNamesEnabled]
+Skipping this key.
+Config file: C:\Users\poscard\poscardsskills\1.20.1\run-data\config\jei\jei-client.ini
+Line #40: "	GiveMode = MOUSE_PICKUP"
+[25Dec2024 14:24:52.053] [modloading-worker-0/ERROR] [mezz.jei.common.config.file.ConfigSerializer/]: 'RecipeGuiHeight' is not a valid config key for config category 'advanced'.
+Valid keys: [LowMemorySlowSearchEnabled, CatchRenderErrorsEnabled, lookupFluidContentsEnabled, lookupBlockTagsEnabled, showTagRecipesEnabled, showCreativeTabNamesEnabled]
+Skipping this key.
+Config file: C:\Users\poscard\poscardsskills\1.20.1\run-data\config\jei\jei-client.ini
+Line #45: "	RecipeGuiHeight = 350"
+[25Dec2024 14:24:52.069] [modloading-worker-0/ERROR] [mezz.jei.common.config.file.ConfigSerializer/]: '[bookmark_tooltips]' is not a valid category name.
+Valid names are: [appearance, cheat_mode, bookmarks, advanced, input, sorting, tags, search, IngredientList, BookmarkList]
+Skipping all values until the first valid category is declared.
+Config file: C:\Users\poscard\poscardsskills\1.20.1\run-data\config\jei\jei-client.ini
+Line #48: "[bookmark_tooltips]"
+[25Dec2024 14:24:52.069] [modloading-worker-0/ERROR] [mezz.jei.common.config.file.ConfigSerializer/]: Expected a '[category]' here.
+Configs must start with a category before defining values.
+Skipping all lines until the first valid category is declared.
+Config file: C:\Users\poscard\poscardsskills\1.20.1\run-data\config\jei\jei-client.ini
+Line #53: "	BookmarkTooltipFeatures = PREVIEW"
+[25Dec2024 14:24:52.069] [modloading-worker-0/ERROR] [mezz.jei.common.config.file.ConfigSerializer/]: Expected a '[category]' here.
+Configs must start with a category before defining values.
+Skipping all lines until the first valid category is declared.
+Config file: C:\Users\poscard\poscardsskills\1.20.1\run-data\config\jei\jei-client.ini
+Line #58: "	HoldShiftToShowBookmarkTooltipFeatures = true"
+[25Dec2024 14:24:52.069] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager...
+[25Dec2024 14:24:52.069] [modloading-worker-0/INFO] [mezz.jei.library.load.PluginCaller/]: Sending ConfigManager took 3.903 ms
+[25Dec2024 14:24:52.405] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/poscard/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.5_mapped_official_1.20.1/forge-1.20.1-47.3.5_mapped_official_1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
+[25Dec2024 14:24:52.405] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/poscard/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.5_mapped_official_1.20.1/forge-1.20.1-47.3.5_mapped_official_1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
+[25Dec2024 14:24:52.633] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: poscardsskills
+[25Dec2024 14:24:53.043] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: poscardsskills finished after 404 ms
+[25Dec2024 14:24:53.043] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: poscardsskills
+[25Dec2024 14:24:53.097] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: poscardsskills finished after 50 ms
+[25Dec2024 14:24:53.097] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
+[25Dec2024 14:24:53.177] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 79 ms
+[25Dec2024 14:24:53.177] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
+[25Dec2024 14:24:53.193] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 28 ms
+[25Dec2024 14:24:53.193] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 564 ms
+[25Dec2024 14:24:53.209] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 132, old count: 132, new count: 133, removed stale: 0, written: 6

@@ -1,0 +1,213 @@
+{
+  "icon": "minecraft:iron_sword",
+  "background": "minecraft:block/stone_bricks",
+  "row": 1,
+  "column": 5,
+  "max_level": 50,
+  "attribute": "poscardsskills:generic.crit_damage",
+  "amount": 0.5,
+  "rewards": [
+    {
+      "at": [9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39],
+      "item_stack":
+      {
+        "item": "minecraft:golden_carrot",
+        "count": 8
+      }
+    },
+    {
+      "at": [28, 40, 42, 44, 46, 48, 50],
+      "item_stack":
+      {
+        "item": "minecraft:totem_of_undying",
+        "count": 1
+      }
+    },
+    {
+      "at": 20,
+      "item_stack":
+      {
+        "item": "minecraft:enchanted_book",
+        "count": 1,
+        "nbt": {
+          "StoredEnchantments": [
+            {
+              "id": "minecraft:sharpness",
+              "lvl": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "at": 25,
+      "item_stack":
+      {
+        "item": "minecraft:enchanted_book",
+        "count": 1,
+        "nbt": {
+          "StoredEnchantments": [
+            {
+              "id": "minecraft:sharpness",
+              "lvl": 4
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "recipes": [
+    {
+      "at": 16,
+      "group": "survival_utilities",
+      "input1": {
+        "item": "minecraft:iron_ingot",
+        "count": 10
+      },
+      "output": {
+        "item": "minecraft:iron_sword",
+        "count": 1,
+        "nbt": {
+          "display": {
+            "Name": "{\"translate\":\"item.poscardsskills.refined_iron_sword\",\"italic\":false}"
+          },
+          "Enchantments": [
+            {
+              "id": "minecraft:sharpness",
+              "lvl": 1
+            },
+            {
+              "id": "minecraft:unbreaking",
+              "lvl": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "at": 20,
+      "customText": "skill_recipe.poscardsskills.elegant_armor_trim",
+      "input1": {
+        "item": "poscardsskills:rough_jade",
+        "count": 1
+      },
+      "input2": {
+        "item": "minecraft:diamond",
+        "count": 7
+      },
+      "output": {
+        "item": "poscardsskills:elegant_armor_trim_smithing_template",
+        "count": 1
+      }
+    },
+    {
+      "at": 22,
+      "group": "survival_utilities",
+      "input1": {
+        "item": "minecraft:diamond",
+        "count": 4
+      },
+      "output": {
+        "item": "minecraft:diamond_sword",
+        "count": 1,
+        "nbt": {
+          "display": {
+            "Name": "{\"translate\":\"item.poscardsskills.exalted_sword\",\"italic\":false}"
+          },
+          "Enchantments": [
+            {
+              "id": "minecraft:sharpness",
+              "lvl": 2
+            },
+            {
+              "id": "minecraft:looting",
+              "lvl": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "at": 30,
+      "customText": "skill_recipe.poscardsskills.ethereal_armor_trim",
+      "input1": {
+        "item": "poscardsskills:rough_jasper",
+        "count": 1
+      },
+      "input2": {
+        "item": "minecraft:diamond",
+        "count": 7
+      },
+      "output": {
+        "item": "poscardsskills:ethereal_armor_trim_smithing_template",
+        "count": 1
+      }
+    },
+    {
+      "at": 40,
+      "customText": "skill_recipe.poscardsskills.classical_armor_trim",
+      "input1": {
+        "item": "poscardsskills:rough_marble",
+        "count": 1
+      },
+      "input2": {
+        "item": "minecraft:diamond",
+        "count": 7
+      },
+      "output": {
+        "item": "poscardsskills:classical_armor_trim_smithing_template",
+        "count": 1
+      }
+    },
+    {
+      "at": 50,
+      "group": "mod_enchantments_and_no_extra_progression",
+      "customText": "skill_recipe.poscardsskills.exploitation",
+      "input1": {
+        "item": "minecraft:book",
+        "count": 1
+      },
+      "input2": {
+        "item": "poscardsskills:brilliant_shard",
+        "count": 12
+      },
+      "output": {
+        "item": "minecraft:enchanted_book",
+        "count": 1,
+        "nbt": {
+          "StoredEnchantments": [
+            {
+              "id": "poscardsskills:critical_edge",
+              "lvl": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "at": 50,
+      "group": "mod_enchantments_and_extra_progression",
+      "customText": "skill_recipe.poscardsskills.exploitation",
+      "input1": {
+        "item": "minecraft:book",
+        "count": 1
+      },
+      "input2": {
+        "item": "poscardsskills:blessed_shard",
+        "count": 4
+      },
+      "output": {
+        "item": "minecraft:enchanted_book",
+        "count": 1,
+        "nbt": {
+          "StoredEnchantments": [
+            {
+              "id": "poscardsskills:exploitation",
+              "lvl": 1
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

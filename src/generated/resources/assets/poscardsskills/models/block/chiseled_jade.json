@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "poscardsskills:block/chiseled_jade_top",
+    "side": "poscardsskills:block/chiseled_jade"
+  }
+}

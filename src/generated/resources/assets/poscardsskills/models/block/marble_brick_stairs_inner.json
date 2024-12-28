@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "poscardsskills:block/marble_bricks",
+    "side": "poscardsskills:block/marble_bricks",
+    "top": "poscardsskills:block/marble_bricks"
+  }
+}

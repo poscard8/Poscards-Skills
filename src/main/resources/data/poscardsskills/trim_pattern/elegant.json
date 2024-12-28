@@ -1,0 +1,7 @@
+{
+  "asset_id": "poscardsskills:elegant",
+  "description": {
+    "translate": "trim_pattern.poscardsskills.elegant"
+  },
+  "template_item": "poscardsskills:elegant_armor_trim_smithing_template"
+}

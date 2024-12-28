@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "phase=0": {
+      "model": "poscardsskills:block/shiny_marble"
+    },
+    "phase=1": {
+      "model": "poscardsskills:block/shiny_marble",
+      "uvlock": true,
+      "y": 90
+    }
+  }
+}

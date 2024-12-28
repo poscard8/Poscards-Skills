@@ -1,0 +1,9 @@
+{
+  "parent": "poscardsskills:block/layered_block",
+  "textures": {
+    "default": "poscardsskills:block/layered_marble",
+    "inner": "poscardsskills:block/layered_marble_inner",
+    "middle": "poscardsskills:block/layered_marble_middle",
+    "side": "poscardsskills:block/layered_marble_side"
+  }
+}

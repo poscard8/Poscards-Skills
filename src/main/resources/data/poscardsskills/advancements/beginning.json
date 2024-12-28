@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "poscardsskills:brilliant_shard"
+    },
+    "title": {
+      "translate": "advancement.poscardsskills.beginning"
+    },
+    "description": {
+      "translate": "advancement.poscardsskills.beginning.desc"
+    },
+    "background": "poscardsskills:textures/block/marble_bricks.png",
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

@@ -1,0 +1,327 @@
+{
+  "icon": "minecraft:diamond_pickaxe",
+  "background": "minecraft:block/deepslate",
+  "row": 1,
+  "column": 2,
+  "max_level": 50,
+  "attribute": "poscardsskills:player.chest_luck",
+  "amount": 0.6,
+  "rewards": [
+    {
+      "at": [9, 12, 15, 18, 21, 24],
+      "item_stack":
+      {
+        "item": "minecraft:iron_ingot",
+        "count": 8
+      }
+    },
+    {
+      "at": 15,
+      "item_stack":
+      {
+        "item": "minecraft:enchanted_book",
+        "count": 1,
+        "nbt": {
+          "StoredEnchantments": [
+            {
+              "id": "minecraft:efficiency",
+              "lvl": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "at": 20,
+      "item_stack":
+      {
+        "item": "minecraft:enchanted_book",
+        "count": 1,
+        "nbt": {
+          "StoredEnchantments": [
+            {
+              "id": "minecraft:efficiency",
+              "lvl": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "at": 25,
+      "item_stack":
+      {
+        "item": "minecraft:enchanted_book",
+        "count": 1,
+        "nbt": {
+          "StoredEnchantments": [
+            {
+              "id": "minecraft:efficiency",
+              "lvl": 5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "at": [10, 20, 30, 40, 50],
+      "item_stack":
+      {
+        "item": "poscardsskills:brilliant_repair_stone",
+        "count": 4
+      }
+    }
+  ],
+  "recipes": [
+    {
+      "at": 12,
+      "group": "survival_utilities",
+      "input1": {
+        "item": "minecraft:iron_ingot",
+        "count": 3
+      },
+      "output": {
+        "item": "minecraft:iron_shovel",
+        "count": 1,
+        "nbt": {
+          "display": {
+            "Name": "{\"translate\":\"item.poscardsskills.refined_iron_shovel\",\"italic\":false}"
+          },
+          "Enchantments": [
+            {
+              "id": "minecraft:efficiency",
+              "lvl": 1
+            },
+            {
+              "id": "minecraft:unbreaking",
+              "lvl": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "at": 14,
+      "group": "survival_utilities",
+      "input1": {
+        "item": "minecraft:iron_ingot",
+        "count": 7
+      },
+      "output": {
+        "item": "minecraft:iron_pickaxe",
+        "count": 1,
+        "nbt": {
+          "display": {
+            "Name": "{\"translate\":\"item.poscardsskills.refined_iron_pickaxe\",\"italic\":false}"
+          },
+          "Enchantments": [
+            {
+              "id": "minecraft:efficiency",
+              "lvl": 1
+            },
+            {
+              "id": "minecraft:unbreaking",
+              "lvl": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "at": 20,
+      "group": "decorative_blocks",
+      "input1": {
+        "item": "poscardsskills:rough_jade",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:jade_bricks",
+        "count": 1
+      }
+    },
+    {
+      "at": 20,
+      "group": "decorative_blocks",
+      "input1": {
+        "item": "poscardsskills:jade_bricks",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:jade_brick_stairs",
+        "count": 1
+      }
+    },
+    {
+      "at": 20,
+      "group": "decorative_blocks",
+      "input1": {
+        "item": "poscardsskills:jade_bricks",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:jade_brick_slab",
+        "count": 2
+      }
+    },
+    {
+      "at": 20,
+      "group": "decorative_blocks",
+      "input1": {
+        "item": "poscardsskills:jade_bricks",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:jade_brick_wall",
+        "count": 1
+      }
+    },
+    {
+      "at": 22,
+      "group": "survival_utilities",
+      "input1": {
+        "item": "minecraft:diamond",
+        "count": 4
+      },
+      "output": {
+        "item": "minecraft:diamond_pickaxe",
+        "count": 1,
+        "nbt": {
+          "display": {
+            "Name": "{\"translate\":\"item.poscardsskills.exalted_pickaxe\",\"italic\":false}"
+          },
+          "Enchantments": [
+            {
+              "id": "minecraft:efficiency",
+              "lvl": 2
+            },
+            {
+              "id": "minecraft:fortune",
+              "lvl": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "at": 30,
+      "group": "decorative_blocks",
+      "input1": {
+        "item": "poscardsskills:rough_jasper",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:jasper_bricks",
+        "count": 1
+      }
+    },
+    {
+      "at": 30,
+      "group": "decorative_blocks",
+      "input1": {
+        "item": "poscardsskills:jasper_bricks",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:jasper_brick_stairs",
+        "count": 1
+      }
+    },
+    {
+      "at": 30,
+      "group": "decorative_blocks",
+      "input1": {
+        "item": "poscardsskills:jasper_bricks",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:jasper_brick_slab",
+        "count": 2
+      }
+    },
+    {
+      "at": 30,
+      "group": "decorative_blocks",
+      "input1": {
+        "item": "poscardsskills:jasper_bricks",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:jasper_brick_wall",
+        "count": 1
+      }
+    },
+    {
+      "at": 40,
+      "group": "decorative_blocks",
+      "input1": {
+        "item": "poscardsskills:rough_marble",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:marble_bricks",
+        "count": 1
+      }
+    },
+    {
+      "at": 40,
+      "group": "decorative_blocks",
+      "input1": {
+        "item": "poscardsskills:marble_bricks",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:marble_brick_stairs",
+        "count": 1
+      }
+    },
+    {
+      "at": 40,
+      "group": "decorative_blocks",
+      "input1": {
+        "item": "poscardsskills:marble_bricks",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:marble_brick_slab",
+        "count": 2
+      }
+    },
+    {
+      "at": 40,
+      "group": "decorative_blocks",
+      "input1": {
+        "item": "poscardsskills:marble_bricks",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:marble_brick_wall",
+        "count": 1
+      }
+    },
+    {
+      "at": 50,
+      "group": "mod_enchantments",
+      "customText": "skill_recipe.poscardsskills.true_efficiency",
+      "input1": {
+        "item": "minecraft:book",
+        "count": 1
+      },
+      "input2": {
+        "item": "poscardsskills:brilliant_shard",
+        "count": 4
+      },
+      "output": {
+        "item": "minecraft:enchanted_book",
+        "count": 1,
+        "nbt": {
+          "StoredEnchantments": [
+            {
+              "id": "poscardsskills:true_efficiency",
+              "lvl": 1
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

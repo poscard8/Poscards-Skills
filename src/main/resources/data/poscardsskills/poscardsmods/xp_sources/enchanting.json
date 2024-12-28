@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "type": "poscardsskills:anvil_enchant",
+      "xp": 50
+    },
+    {
+      "type": "poscardsskills:enchanting_table",
+      "xp": 20
+    }
+  ]
+}

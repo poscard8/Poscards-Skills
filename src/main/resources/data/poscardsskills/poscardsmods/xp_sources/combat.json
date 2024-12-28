@@ -1,0 +1,144 @@
+{
+  "values": [
+    {
+      "type": "poscardsskills:entity",
+      "tag": "poscardsskills:common_enemies",
+      "xp": 100
+    },
+    {
+      "type": "poscardsskills:entity",
+      "entity": "minecraft:creeper",
+      "xp": 150
+    },
+    {
+      "type": "poscardsskills:entity",
+      "entity": "minecraft:enderman",
+      "xp": 400
+    },
+    {
+      "type": "poscardsskills:entity",
+      "entity": "minecraft:witch",
+      "xp": 320
+    },
+    {
+      "type": "poscardsskills:entity",
+      "entity": "minecraft:slime",
+      "xp": 40
+    },
+    {
+      "type": "poscardsskills:entity",
+      "entity": "minecraft:pillager",
+      "xp": 160
+    },
+    {
+      "type": "poscardsskills:entity",
+      "entity": "minecraft:vindicator",
+      "xp": 400
+    },
+    {
+      "type": "poscardsskills:entity",
+      "entity": "minecraft:ravager",
+      "xp": 1250
+    },
+    {
+      "type": "poscardsskills:entity",
+      "entity": "minecraft:evoker",
+      "xp": 1250
+    },
+    {
+      "type": "poscardsskills:entity",
+      "entity": "minecraft:vex",
+      "xp": 40
+    },
+    {
+      "type": "poscardsskills:entity",
+      "entity": "minecraft:phantom",
+      "xp": 120
+    },
+    {
+      "type": "poscardsskills:entity",
+      "entity": "minecraft:silverfish",
+      "xp": 40
+    },
+    {
+      "type": "poscardsskills:entity",
+      "entity": "minecraft:guardian",
+      "xp": 250
+    },
+    {
+      "type": "poscardsskills:entity",
+      "entity": "minecraft:elder_guardian",
+      "xp": 1500
+    },
+    {
+      "type": "poscardsskills:entity",
+      "entity": "minecraft:hoglin",
+      "xp": 320
+    },
+    {
+      "type": "poscardsskills:entity",
+      "entity": "minecraft:zoglin",
+      "xp": 320
+    },
+    {
+      "type": "poscardsskills:entity",
+      "entity": "minecraft:ghast",
+      "xp": 450
+    },
+    {
+      "type": "poscardsskills:entity",
+      "entity": "minecraft:blaze",
+      "xp": 450
+    },
+    {
+      "type": "poscardsskills:entity",
+      "entity": "minecraft:wither_skeleton",
+      "xp": 400
+    },
+    {
+      "type": "poscardsskills:entity",
+      "entity": "minecraft:magma_cube",
+      "xp": 60
+    },
+    {
+      "type": "poscardsskills:entity",
+      "entity": "minecraft:endermite",
+      "xp": 80
+    },
+    {
+      "type": "poscardsskills:entity",
+      "entity": "minecraft:shulker",
+      "xp": 500
+    },
+    {
+      "type": "poscardsskills:entity",
+      "entity": "minecraft:warden",
+      "xp": 6400
+    },
+    {
+      "type": "poscardsskills:entity",
+      "entity": "minecraft:wither",
+      "xp": 4000
+    },
+    {
+      "type": "poscardsskills:entity",
+      "entity": "minecraft:ender_dragon",
+      "xp": 8000
+    },
+    {
+      "type": "poscardsskills:advancement",
+      "advancement": "minecraft:husbandry/throw_trident",
+      "xp": 3500
+    },
+    {
+      "type": "poscardsskills:advancement",
+      "advancement": "minecraft:husbandry/sniper_duel",
+      "xp": 3000
+    },
+    {
+      "type": "poscardsskills:advancement",
+      "advancement": "minecraft:husbandry/kill_all_mobs",
+      "xp": 20000
+    }
+  ]
+}

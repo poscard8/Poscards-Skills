@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "poscardsskills:block/jasper_bricks",
+    "side": "poscardsskills:block/jasper_bricks",
+    "top": "poscardsskills:block/jasper_bricks"
+  }
+}

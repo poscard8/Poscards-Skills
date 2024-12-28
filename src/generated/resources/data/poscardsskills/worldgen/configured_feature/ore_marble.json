@@ -1,0 +1,24 @@
+{
+  "type": "poscardsskills:double_ore",
+  "config": {
+    "inner": {
+      "state": {
+        "Name": "poscardsskills:rough_marble"
+      },
+      "target": {
+        "predicate_type": "minecraft:tag_match",
+        "tag": "minecraft:base_stone_overworld"
+      }
+    },
+    "outer": {
+      "state": {
+        "Name": "minecraft:cobbled_deepslate"
+      },
+      "target": {
+        "predicate_type": "minecraft:tag_match",
+        "tag": "minecraft:base_stone_overworld"
+      }
+    },
+    "size": 96
+  }
+}

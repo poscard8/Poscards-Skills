@@ -1,0 +1,18 @@
+{
+  "parent": "minecraft:item/handheld_rod",
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [ 0, 90, 55 ],
+      "translation": [ 0, 3.0, 2.5 ],
+      "scale": [ 0.4, 0.4, 0.4 ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [ 0, -90, -55 ],
+      "translation": [ 0, 3.0, 2.5 ],
+      "scale": [ 0.4, 0.4, 0.4 ]
+    }
+  },
+  "textures": {
+    "layer0": "poscardsskills:item/brilliant_repair_stone"
+  }
+}
