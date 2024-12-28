@@ -1,0 +1,89 @@
+{
+  "display": {
+    "icon": {
+      "item": "poscardsskills:divine_catalyst"
+    },
+    "title": {
+      "translate": "advancement.poscardsskills.ascend_10"
+    },
+    "description": {
+      "translate": "advancement.poscardsskills.ascend_10.desc"
+    },
+    "frame": "goal"
+  },
+  "parent": "poscardsskills:ascend",
+  "criteria": {
+    "1": {
+      "trigger": "poscardsskills:ascension",
+      "conditions": {
+        "count": 1
+      }
+    },
+    "2": {
+      "trigger": "poscardsskills:ascension",
+      "conditions": {
+        "count": 2
+      }
+    },
+    "3": {
+      "trigger": "poscardsskills:ascension",
+      "conditions": {
+        "count": 3
+      }
+    },
+    "4": {
+      "trigger": "poscardsskills:ascension",
+      "conditions": {
+        "count": 4
+      }
+    },
+    "5": {
+      "trigger": "poscardsskills:ascension",
+      "conditions": {
+        "count": 5
+      }
+    },
+    "6": {
+      "trigger": "poscardsskills:ascension",
+      "conditions": {
+        "count": 6
+      }
+    },
+    "7": {
+      "trigger": "poscardsskills:ascension",
+      "conditions": {
+        "count": 7
+      }
+    },
+    "8": {
+      "trigger": "poscardsskills:ascension",
+      "conditions": {
+        "count": 8
+      }
+    },
+    "9": {
+      "trigger": "poscardsskills:ascension",
+      "conditions": {
+        "count": 9
+      }
+    },
+    "10": {
+      "trigger": "poscardsskills:ascension",
+      "conditions": {
+        "count": 10
+      }
+    }
+  },
+  "requirements": [
+    ["1"],
+    ["2"],
+    ["3"],
+    ["4"],
+    ["5"],
+    ["6"],
+    ["7"],
+    ["8"],
+    ["9"],
+    ["10"]
+  ]
+}

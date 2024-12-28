@@ -18,6 +18,9 @@ import java.util.Map;
 import static github.poscard8.poscardsskills.util.model.BakedQuadHelper.copy;
 import static github.poscard8.poscardsskills.util.model.BakedQuadHelper.crop;
 
+/**
+ * Block with horizontally connected texture. See {@link ShiftedTextureBlock} and {@link BakedQuadHelper} for more info.
+ */
 public class LayeredBlock extends Block implements ShiftedTextureBlock {
 
     public static final ModelProperty<Boolean> NORTH = new ModelProperty<>();
@@ -28,6 +31,12 @@ public class LayeredBlock extends Block implements ShiftedTextureBlock {
     public static final ModelProperty<Boolean> NORTH_WEST = new ModelProperty<>();
     public static final ModelProperty<Boolean> SOUTH_EAST = new ModelProperty<>();
     public static final ModelProperty<Boolean> SOUTH_WEST = new ModelProperty<>();
+
+    protected static Map<ModelProperty<Boolean>, ModelProperty<Boolean>> MIRROR_MAP = Map.of(
+
+            NORTH, SOUTH, NORTH_WEST, SOUTH_WEST, NORTH_EAST, SOUTH_EAST,
+            SOUTH, NORTH, SOUTH_WEST, NORTH_WEST, SOUTH_EAST, NORTH_EAST
+    );
 
     public LayeredBlock(Properties property) { super(property); }
 
@@ -182,7 +191,7 @@ public class LayeredBlock extends Block implements ShiftedTextureBlock {
         return builder.build();
     }
 
-    private boolean checkBlocks(BlockAndTintGetter level, BlockPos... positions) {
+    protected boolean checkBlocks(BlockAndTintGetter level, BlockPos... positions) {
 
         for (BlockPos position : positions) {
 
@@ -191,18 +200,13 @@ public class LayeredBlock extends Block implements ShiftedTextureBlock {
         return true;
     }
 
-    private boolean has(ModelData data, BakedQuad quad, ModelProperty<Boolean> property) {
+    protected boolean has(ModelData data, BakedQuad quad, ModelProperty<Boolean> property) {
 
-        Map<ModelProperty<Boolean>, ModelProperty<Boolean>> map = Map.of(
-
-                NORTH, SOUTH, NORTH_WEST, SOUTH_WEST, NORTH_EAST, SOUTH_EAST,
-                SOUTH, NORTH, SOUTH_WEST, NORTH_WEST, SOUTH_EAST, NORTH_EAST
-        );
-        ModelProperty<Boolean> newProperty = quad.getDirection() == Direction.DOWN ? map.getOrDefault(property, property) : property;
+        ModelProperty<Boolean> newProperty = quad.getDirection() == Direction.DOWN ? MIRROR_MAP.getOrDefault(property, property) : property;
         return Boolean.TRUE.equals(data.get(newProperty));
     }
 
-    private boolean hasLeft(ModelData data, BakedQuad quad) {
+    protected boolean hasLeft(ModelData data, BakedQuad quad) {
 
         Map<Direction, ModelProperty<Boolean>> map = Map.of(Direction.NORTH, EAST, Direction.SOUTH, WEST, Direction.EAST, SOUTH, Direction.WEST, NORTH);
 
@@ -210,7 +214,7 @@ public class LayeredBlock extends Block implements ShiftedTextureBlock {
         return Boolean.TRUE.equals(data.get(map.get(quad.getDirection())));
     }
 
-    private boolean hasRight(ModelData data, BakedQuad quad) {
+    protected boolean hasRight(ModelData data, BakedQuad quad) {
 
         Map<Direction, ModelProperty<Boolean>> map = Map.of(Direction.NORTH, WEST, Direction.SOUTH, EAST, Direction.EAST, NORTH, Direction.WEST, SOUTH);
 

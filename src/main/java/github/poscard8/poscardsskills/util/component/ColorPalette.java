@@ -5,44 +5,44 @@ import net.minecraft.ChatFormatting;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Colors of the UI texts of the mod. Configurable.
+ * {@link Key} defines the category of the text.
+ */
 public enum ColorPalette {
+
     DEFAULT(
-            ChatFormatting.GRAY, ChatFormatting.DARK_GRAY, ChatFormatting.YELLOW,
-            ChatFormatting.GREEN, ChatFormatting.RED, ChatFormatting.DARK_AQUA,
-            ChatFormatting.GREEN, ChatFormatting.LIGHT_PURPLE, ChatFormatting.DARK_PURPLE,
-            ChatFormatting.AQUA, ChatFormatting.GREEN, ChatFormatting.DARK_GRAY,
-            ChatFormatting.WHITE, ChatFormatting.BLUE, ChatFormatting.GOLD
+            ChatFormatting.GRAY, ChatFormatting.DARK_GRAY, ChatFormatting.YELLOW, ChatFormatting.GREEN,
+            ChatFormatting.RED, ChatFormatting.DARK_AQUA, ChatFormatting.GREEN, ChatFormatting.LIGHT_PURPLE,
+            ChatFormatting.DARK_PURPLE, ChatFormatting.AQUA, ChatFormatting.GREEN, ChatFormatting.DARK_GRAY,
+            ChatFormatting.WHITE, ChatFormatting.BLUE, ChatFormatting.YELLOW, ChatFormatting.GOLD
     ),
     WARM(
-            ChatFormatting.GRAY, ChatFormatting.DARK_GRAY, ChatFormatting.YELLOW,
-            ChatFormatting.GREEN, ChatFormatting.RED, ChatFormatting.GOLD,
-            ChatFormatting.GOLD, ChatFormatting.RED, ChatFormatting.DARK_RED,
-            ChatFormatting.GOLD, ChatFormatting.YELLOW, ChatFormatting.WHITE,
-            ChatFormatting.RED, ChatFormatting.DARK_RED, ChatFormatting.GOLD
+            ChatFormatting.GRAY, ChatFormatting.DARK_GRAY, ChatFormatting.YELLOW, ChatFormatting.GREEN,
+            ChatFormatting.RED, ChatFormatting.GOLD, ChatFormatting.GOLD, ChatFormatting.RED,
+            ChatFormatting.DARK_RED, ChatFormatting.GOLD, ChatFormatting.YELLOW, ChatFormatting.WHITE,
+            ChatFormatting.RED, ChatFormatting.DARK_RED, ChatFormatting.YELLOW, ChatFormatting.GOLD
     ),
     COLD(
-            ChatFormatting.GRAY, ChatFormatting.DARK_GRAY, ChatFormatting.AQUA,
-            ChatFormatting.GREEN, ChatFormatting.RED, ChatFormatting.BLUE,
-            ChatFormatting.GREEN, ChatFormatting.LIGHT_PURPLE, ChatFormatting.DARK_BLUE,
-            ChatFormatting.AQUA, ChatFormatting.GREEN, ChatFormatting.WHITE,
-            ChatFormatting.BLUE, ChatFormatting.DARK_AQUA, ChatFormatting.DARK_PURPLE
+            ChatFormatting.GRAY, ChatFormatting.DARK_GRAY, ChatFormatting.AQUA, ChatFormatting.GREEN,
+            ChatFormatting.RED, ChatFormatting.BLUE, ChatFormatting.GREEN, ChatFormatting.LIGHT_PURPLE,
+            ChatFormatting.DARK_BLUE, ChatFormatting.AQUA, ChatFormatting.GREEN, ChatFormatting.WHITE,
+            ChatFormatting.BLUE, ChatFormatting.DARK_AQUA, ChatFormatting.YELLOW, ChatFormatting.DARK_PURPLE
     ),
     HIGH_CONTRAST(
-            ChatFormatting.WHITE, ChatFormatting.LIGHT_PURPLE, ChatFormatting.YELLOW,
-            ChatFormatting.GREEN, ChatFormatting.YELLOW, ChatFormatting.AQUA,
-            ChatFormatting.GREEN, ChatFormatting.LIGHT_PURPLE, ChatFormatting.LIGHT_PURPLE,
-            ChatFormatting.AQUA, ChatFormatting.GREEN, ChatFormatting.WHITE,
-            ChatFormatting.GREEN, ChatFormatting.AQUA, ChatFormatting.YELLOW
+            ChatFormatting.WHITE, ChatFormatting.LIGHT_PURPLE, ChatFormatting.YELLOW, ChatFormatting.GREEN,
+            ChatFormatting.YELLOW, ChatFormatting.AQUA, ChatFormatting.GREEN, ChatFormatting.LIGHT_PURPLE,
+            ChatFormatting.LIGHT_PURPLE, ChatFormatting.AQUA, ChatFormatting.GREEN, ChatFormatting.WHITE,
+            ChatFormatting.GREEN, ChatFormatting.AQUA, ChatFormatting.YELLOW, ChatFormatting.YELLOW
     ),
     ALL_WHITE(
-            ChatFormatting.WHITE, ChatFormatting.WHITE, ChatFormatting.WHITE,
-            ChatFormatting.WHITE, ChatFormatting.WHITE, ChatFormatting.WHITE,
-            ChatFormatting.WHITE, ChatFormatting.WHITE, ChatFormatting.WHITE,
-            ChatFormatting.WHITE, ChatFormatting.WHITE, ChatFormatting.WHITE,
-            ChatFormatting.WHITE, ChatFormatting.WHITE, ChatFormatting.WHITE
+            ChatFormatting.WHITE, ChatFormatting.WHITE, ChatFormatting.WHITE, ChatFormatting.WHITE,
+            ChatFormatting.WHITE, ChatFormatting.WHITE, ChatFormatting.WHITE, ChatFormatting.WHITE,
+            ChatFormatting.WHITE, ChatFormatting.WHITE, ChatFormatting.WHITE, ChatFormatting.WHITE,
+            ChatFormatting.WHITE, ChatFormatting.WHITE, ChatFormatting.WHITE, ChatFormatting.WHITE
     );
 
-    private final Map<Key, ChatFormatting> colorMap;
+    final Map<Key, ChatFormatting> colorMap;
 
     ColorPalette(ChatFormatting... colors) {
 
@@ -81,6 +81,7 @@ public enum ColorPalette {
         BAR_EMPTY,
         BAR_FULL,
         FILLER,
+        SPLASH,
         MISC
     }
 

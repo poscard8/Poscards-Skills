@@ -13,7 +13,7 @@ public class RomanNumeral {
     private static final String[] THIRD_DIGIT = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
 
 
-    private final String string;
+    final String string;
 
     private RomanNumeral(String string) { this.string = string; }
 

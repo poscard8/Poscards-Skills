@@ -5,6 +5,7 @@ import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
@@ -21,24 +22,22 @@ import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 /**
- * Exists to make block registration and JSON file generation easier.
+ * Makes block registration and JSON file generation simpler.
  * Registers blocks and block items at once.
- * Still uses deferred register and registry objects, but they are hidden/private.
+ * Still uses deferred register and registry objects, but they are hidden.
  * Most methods utilize {@link BlockType} class, which is customized for my needs.
  */
 public class BlockWrapper implements Supplier<Block>, ItemLike {
 
-    public static final DeferredRegister<Block> BASE_BLOCK_REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, PoscardsSkills.ID);
-    public static final DeferredRegister<Item> BASE_ITEM_REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, PoscardsSkills.ID);
-    public static final DeferredRegister<Block> DECORATIVE_BLOCK_REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, PoscardsSkills.ID);
-    public static final DeferredRegister<Item> DECORATIVE_ITEM_REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, PoscardsSkills.ID);
+    public static final DeferredRegister<Block> BLOCK_REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, PoscardsSkills.ID);
+    public static final DeferredRegister<Item> ITEM_REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, PoscardsSkills.ID);
     public static final List<BlockWrapper> VALUES = new ArrayList<>();
 
     public final BlockSet blockSet;
     public final BlockType blockType;
 
-    private final RegistryObject<Block> blockHolder;
-    private final RegistryObject<BlockItem> itemHolder;
+    final RegistryObject<Block> blockHolder;
+    final RegistryObject<BlockItem> itemHolder;
 
     public BlockWrapper(BlockSet blockSet, BlockType blockType) {
 
@@ -46,11 +45,8 @@ public class BlockWrapper implements Supplier<Block>, ItemLike {
         this.blockSet = blockSet;
         this.blockType = blockType;
 
-        DeferredRegister<Block> blockDeferredRegister = this.blockType == BlockType.ROUGH ? BASE_BLOCK_REGISTRY : DECORATIVE_BLOCK_REGISTRY;
-        DeferredRegister<Item> itemDeferredRegister = this.blockType == BlockType.ROUGH ? BASE_ITEM_REGISTRY : DECORATIVE_ITEM_REGISTRY;
-
-        this.blockHolder = blockDeferredRegister.register(name, blockType.getBlock(blockSet));
-        this.itemHolder = itemDeferredRegister.register(name, () -> new BlockItem(get(), new Item.Properties().tab(PoscardsSkills.CREATIVE_TAB)));
+        this.blockHolder = BLOCK_REGISTRY.register(name, blockType.getBlock(blockSet));
+        this.itemHolder = ITEM_REGISTRY.register(name, () -> new BlockItem(get(), new Item.Properties()));
 
         VALUES.add(this);
     }
@@ -66,6 +62,8 @@ public class BlockWrapper implements Supplier<Block>, ItemLike {
     public Block get() { return blockHolder.get(); }
 
     public BlockItem getItem() { return itemHolder.get(); }
+
+    public ItemStack getItemStack() { return getItem().getDefaultInstance(); }
 
     @NotNull
     public Item asItem() { return getItem(); }

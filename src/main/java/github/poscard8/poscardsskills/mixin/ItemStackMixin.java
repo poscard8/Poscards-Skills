@@ -1,5 +1,6 @@
 package github.poscard8.poscardsskills.mixin;
 
+import github.poscard8.poscardsskills.item.RuneItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import org.spongepowered.asm.mixin.Mixin;
@@ -9,26 +10,27 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.Optional;
 
+/**
+ * Enabling custom rarities. See {@link github.poscard8.poscardsskills.util.item.PSRarities}.
+ */
 @SuppressWarnings("ALL")
 @Mixin(ItemStack.class)
 public abstract class ItemStackMixin {
 
-    private ItemStack self = (ItemStack) (Object) this;
+    ItemStack self = (ItemStack) (Object) this;
 
     @Inject(method = "getRarity", at = @At("TAIL"), cancellable = true)
-    private void poscardsskills$getRarity(CallbackInfoReturnable<Rarity> ci) {
+    void poscardsskills$getRarity(CallbackInfoReturnable<Rarity> ci) {
 
         if (!self.hasTag()) return;
-        if (!self.getOrCreateTag().contains("customRarity")) return;
+        if (!self.getOrCreateTag().contains(RuneItem.NBT_KEY)) return;
 
-        String name = self.getOrCreateTag().getString("customRarity");
+        String name = self.getOrCreateTag().getString(RuneItem.NBT_KEY);
         Optional<Rarity> optional = rarityByName(name);
-
-        if (optional.isEmpty()) return;
-        ci.setReturnValue(optional.get());
+        optional.ifPresent(rarity -> ci.setReturnValue(rarity));
     }
 
-    private Optional<Rarity> rarityByName(String name) {
+    Optional<Rarity> rarityByName(String name) {
 
         for (Rarity rarity : Rarity.values()) {
 

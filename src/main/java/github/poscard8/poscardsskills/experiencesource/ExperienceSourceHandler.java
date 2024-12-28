@@ -1,86 +1,100 @@
 package github.poscard8.poscardsskills.experiencesource;
 
 import com.google.gson.*;
+import com.mojang.logging.LogUtils;
 import github.poscard8.poscardsskills.skill.Skill;
-import github.poscard8.poscardsskills.util.file.JsonWrapper;
-import github.poscard8.poscardsskills.util.file.MultiJsonResourceReloadListener;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
+import net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.util.profiling.ProfilerFiller;
-import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.slf4j.Logger;
 
 import java.util.*;
 import java.util.stream.Stream;
 
-public class ExperienceSourceHandler extends MultiJsonResourceReloadListener {
+/**
+ * Loads experience sources.
+ * New types need to be registered using {@link #registerType(ResourceLocation typeKey, ExperienceSourceFactory factory)}.
+ * <p>See the wiki for JSON documentation of experience sources.
+ */
+public class ExperienceSourceHandler extends SimpleJsonResourceReloadListener {
 
     protected static final Gson GSON = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
     protected static final String KEY = "poscardsmods/xp_sources";
+    protected static final Logger LOGGER = LogUtils.getLogger();
 
     protected final Map<ResourceLocation, ExperienceSourceFactory<? extends ExperienceSource>> factoryMap = new HashMap<>();
-    protected final Map<Class<? extends ExperienceSource>, ResourceLocation> typeMap = new HashMap<>();
-    protected final Collection<ExperienceSource> xpSources = new HashSet<>();
+    protected final Set<ExperienceSource> xpSources = new HashSet<>();
 
     public ExperienceSourceHandler() { super(GSON, KEY); }
 
     @Override
-    protected void apply(Map<ResourceLocation, List<JsonWrapper>> wrapperMap, ResourceManager resourceManager, ProfilerFiller filler) {
+    protected void apply(Map<ResourceLocation, JsonElement> map, @NotNull ResourceManager resourceManager, @NotNull ProfilerFiller filler) {
 
         xpSources.clear();
 
-        for (Map.Entry<ResourceLocation, List<JsonWrapper>> entry : wrapperMap.entrySet()) {
+        for (Map.Entry<ResourceLocation, JsonElement> entry : map.entrySet()) {
 
             ResourceLocation skillKey = entry.getKey();
 
-            for (JsonWrapper wrapper : entry.getValue()) {
+            if (!entry.getValue().isJsonObject()) {
 
-                try {
+                LOGGER.error("Parsing error loading experience sources for {}", skillKey);
+                continue;
+            }
 
-                    JsonObject jsonFile = wrapper.object;
-                    JsonArray values = GsonHelper.getAsJsonArray(jsonFile, "values");
+            JsonObject jsonObject = entry.getValue().getAsJsonObject();
 
-                    if (wrapper.doesReplace) {
+            try {
 
-                        Skill skill = Skill.byKey(skillKey);
-                        if (skill != null) xpSources.removeAll(ExperienceSource.filterBy(skill));
-                    }
+                JsonArray values = GsonHelper.getAsJsonArray(jsonObject, "values");
 
-                    for (JsonElement element : values) {
+                Skill skill = Skill.byKey(skillKey);
+                if (skill == null) continue;
 
-                        JsonObject object = element.getAsJsonObject();
-                        ResourceLocation typeKey = ResourceLocation.tryParse(GsonHelper.getAsString(object, "type"));
+                xpSources.removeAll(ExperienceSource.filterBy(skill));
 
-                        if (!factoryMap.containsKey(typeKey)) continue;
+                for (JsonElement element : values) {
 
-                        try {
-
-                            ExperienceSource source = factoryMap.get(typeKey).create(skillKey, object);
-                            xpSources.add(source);
-
-                        } catch (Exception ignored) {}
-                    }
-
-                } catch (IllegalArgumentException | JsonParseException jsonParseException) {
-
-                    LOGGER.error("Parsing error loading experience sources.", jsonParseException);
+                    Optional<ExperienceSource> optional = create(skillKey, element);
+                    optional.ifPresent(xpSources::add);
                 }
+
+            } catch (IllegalArgumentException | JsonParseException jsonParseException) {
+
+                LOGGER.error("Parsing error loading experience sources for {}", skillKey, jsonParseException);
             }
         }
 
         LOGGER.info("Loaded {} experience sources", xpSources.size());
     }
 
-    public Stream<ExperienceSource> values() { return xpSources.stream(); }
+    public Optional<ExperienceSource> create(ResourceLocation skillKey, JsonElement element) {
 
-    public <E extends ExperienceSource> ExperienceSourceHandler registerType(ResourceLocation typeKey, ExperienceSourceFactory<E> factory, Class<E> clazz) {
+        if (!element.isJsonObject()) return Optional.empty();
 
-        factoryMap.put(typeKey, factory);
-        typeMap.put(clazz, typeKey);
-        return this;
+        JsonObject object = element.getAsJsonObject();
+        ResourceLocation typeKey = ResourceLocation.tryParse(GsonHelper.getAsString(object, "type"));
+
+        if (!factoryMap.containsKey(typeKey)) return Optional.empty();
+
+        try {
+
+            return Optional.of(factoryMap.get(typeKey).create(skillKey, object));
+
+        } catch (Exception exception) { return Optional.empty(); }
     }
 
-    @Nullable
-    public ResourceLocation typeKeyOf(ExperienceSource xpSource) { return typeMap.getOrDefault(xpSource.getClass(), null); }
+    public Set<ExperienceSource> values() { return xpSources; }
+
+    public Stream<ExperienceSource> stream() { return values().stream(); }
+
+    public <E extends ExperienceSource> ExperienceSourceHandler registerType(ResourceLocation typeKey, ExperienceSourceFactory<E> factory) {
+
+        factoryMap.put(typeKey, factory);
+        return this;
+    }
 
 }

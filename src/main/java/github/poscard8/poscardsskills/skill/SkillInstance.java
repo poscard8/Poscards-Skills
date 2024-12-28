@@ -4,279 +4,326 @@ import github.poscard8.poscardsskills.PoscardsSkills;
 import github.poscard8.poscardsskills.advancement.PSCriteriaTriggers;
 import github.poscard8.poscardsskills.config.PoscardsSkillsClientConfig;
 import github.poscard8.poscardsskills.config.PoscardsSkillsCommonConfig;
-import github.poscard8.poscardsskills.module.BaseModule;
+import github.poscard8.poscardsskills.registry.PSAttributes;
+import github.poscard8.poscardsskills.registry.PSParticleTypes;
+import github.poscard8.poscardsskills.registry.PSSoundEvents;
 import github.poscard8.poscardsskills.util.PSUtils;
 import github.poscard8.poscardsskills.util.component.PSComponents;
-import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.world.SimpleContainer;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.storage.loot.LootContext;
-import net.minecraft.world.level.storage.loot.LootTable;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 import java.util.function.Supplier;
 
-public final class SkillInstance {
+/**
+ * The skill instances players have.
+ * <p>{@link #skill}, {@link #level}: Self explanatory.</p>
+ * <p>{@link #xp}: <b>Leftover</b> xp, not total xp.</p>
+ * <p>{@link #claimedRewards}: Reward claim data. If there are no rewards for level <i>n</i>,
+ * {@code claimedRewards[n+1]} is automatically passed as {@code true}.</p>
+ * <p>{@link #milestones}: See {@link SkillMilestone}.</p>
+ */
+@SuppressWarnings("unused")
+public class SkillInstance {
 
     public final Skill skill;
     public int level;
-    public int leftoverXP;
-    public int totalXP;
+    public int xp;
     public boolean[] claimedRewards;
     public List<SkillMilestone> milestones;
 
-    SkillInstance(Skill skill) { this(skill, 1, 0, skill.getDefaultRewardArray()); }
+    protected SkillInstance(Skill skill) { this(skill, 1, 0, skill.getDefaultRewardArray()); }
 
-    SkillInstance(Skill skill, int level, int leftoverXP, boolean[] claimedRewards) {
+    protected SkillInstance(Skill skill, int level, int xp, boolean[] claimedRewards) {
 
         this.skill = skill;
-        this.level = Math.min(level, Skill.MAX_LEVEL);
-        this.leftoverXP = leftoverXP;
-        this.totalXP = calculateTotalXP();
+        this.level = Math.min(level, skill.maxLevel); // this line ensures the level is set properly
+        this.xp = xp;
         this.claimedRewards = claimedRewards;
         this.milestones = generateMilestones();
 
-        int newLevel = level;
-
-        for (int lvl = nextLevel(); lvl <= Skill.MAX_LEVEL; lvl++) {
-
-            if (leftoverXP >= Skill.getNeededXP(this.level, lvl)) { newLevel = lvl; } else break;
-        }
-
-        if (newLevel > level) {
-
-            this.leftoverXP -= Skill.getNeededXP(this.level, newLevel);
-            this.level = newLevel;
-        }
+        updateLevel();
     }
 
-    public static SkillInstance of(Player player, Skill skill) { return SkillData.of(player).getSkill(skill); }
+    public static SkillInstance of(ServerPlayer player, Skill skill) { return SkillData.of(player).getSkill(skill); }
 
     public static SkillInstance deserialize(String serialized) {
 
         String[] stringArray = serialized.split(",");
-        boolean[] byteArray = new boolean[Skill.MAX_LEVEL + 1];
 
         ResourceLocation location = ResourceLocation.tryParse(stringArray[0]);
-        Optional<Skill> optional = PoscardsSkills.getSkillHandler().byLocation(location);
+        if (location == null) return null;
+
+        Optional<Skill> optional = PoscardsSkills.getSkillHandler().byKey(location);
         if (optional.isEmpty()) return null;
 
         Skill skill = optional.get();
         int level = Integer.parseInt(stringArray[1]);
         int leftoverXP = Integer.parseInt(stringArray[2]);
 
+        boolean[] booleanArray = new boolean[skill.maxLevel + 1];
         boolean[] fullData = skill.getDefaultRewardArray();
 
-        for (int i = 0; i <= Skill.MAX_LEVEL; i++) {
+        for (int i = 0; i <= skill.maxLevel; i++) {
 
             try {
 
                 char c = stringArray[3].charAt(i);
-                byteArray[i] = Character.getNumericValue(c) == 1;
+                booleanArray[i] = Character.getNumericValue(c) == 1;
 
-            } catch (Exception exception) { byteArray[i] = fullData[i]; }
+            } catch (Exception exception) { booleanArray[i] = fullData[i]; }
         }
 
-        return new SkillInstance(skill, level, leftoverXP, byteArray);
+        return new SkillInstance(skill, level, leftoverXP, booleanArray);
+    }
+
+    /**
+     * Disables the skill from playing level up sound at low levels since
+     * the player can level up quickly at early game and hearing the same sound
+     * can be irritating.
+     */
+    protected static boolean shouldPlayLevelUpSound(int oldLevel, int newLevel) {
+
+        for (int i = oldLevel + 1; i <= newLevel; i++) {
+
+            if (i >= 20 || i % 5 == 0) return true;
+        }
+        return false;
     }
 
     public String serialize() {
 
         StringBuilder builder = new StringBuilder();
 
-        for (boolean bool : claimedRewards) { if (bool) { builder.append('1'); } else builder.append('0'); }
-        String rewardData = builder.toString();
+        for (boolean bool : claimedRewards) {
 
-        return String.format("%s,%d,%d,%s", skill, level, leftoverXP, rewardData);
+            char dataChar = bool ? '1' : '0';
+            builder.append(dataChar);
+        }
+
+        String rewardData = builder.toString();
+        return String.format("%s,%d,%d,%s", skill, level, xp, rewardData);
     }
 
-    public Map.Entry<Attribute, AttributeModifier> getAttributeModifier() { return getAttributeModifier(UUID.fromString("CB3F55D3-645C-4F38-A497-9C13A33DB5C" + skill.indexAsString())); }
+    /**
+     * Last two characters are set by the skill's position. This ensures that each skill has a different UUID.
+     */
+    public Map.Entry<Attribute, AttributeModifier> getAttributeModifier() { return getAttributeModifier(UUID.fromString("CB3F55D3-645C-4F38-A497-9C13A33DB5" + skill.indexAsString())); }
 
     public Map.Entry<Attribute, AttributeModifier> getAttributeModifier(UUID uuid) {
 
         return Map.entry(skill.attribute, new AttributeModifier(uuid, () -> "Poscard's Skills: Skill modifier", level * skill.attributeAmount, AttributeModifier.Operation.ADDITION));
     }
 
-    public boolean addXP(Player player, int amount, @Nullable ResourceLocation typeKey) { return addXP(player, amount, typeKey, true, true); }
+    @SuppressWarnings("ALL")
+    public final boolean addXP(ServerPlayer player, int amount) { return addXP(player, amount, true, true); }
 
-    public boolean addXP(Player player, int amount, @Nullable ResourceLocation typeKey, boolean displayMessage, boolean playSounds) {
+    /**
+     * Adds <i>n</i> xp.
+     * @param manually True if by an experience source, false if by a command. Determines if the wisdom will apply
+     *                 and if a pop-up message will be displayed.
+     * @param soundAndParticles Prevents the skill from playing more sounds and displaying more particles than needed.
+     * @return Level up.
+     */
+    public final boolean addXP(ServerPlayer player, int amount, boolean manually, boolean soundAndParticles) {
 
-        boolean manually = typeKey != null;
-        int newAmount = manually ? Math.round(((float) player.getAttributeValue(BaseModule.Attributes.WISDOM.get()) / 100 + 1) * amount) : amount;
+        double universalMultiplier = PoscardsSkillsCommonConfig.UNIVERSAL_XP_MULTIPLIER.get();
 
-        leftoverXP += newAmount;
-        totalXP += newAmount;
+        // new amount based on the player's wisdom
+        int newAmount = manually ? (int) Math.round((player.getAttributeValue(PSAttributes.WISDOM.get()) / 100 + 1) * universalMultiplier * amount) : amount;
+        int oldLevel = level;
 
-        if (player instanceof ServerPlayer serverPlayer) PSCriteriaTriggers.GAIN_XP.trigger(serverPlayer, totalXP);
+        xp += newAmount;
+        boolean levelUp = updateLevel();
 
+        if (levelUp) onLevelUp(player, oldLevel, level, manually, soundAndParticles);
+        onXPAdd(player, newAmount, oldLevel, level, manually, soundAndParticles);
+
+        updateAdvancements(player);
+        updateSkillData(player);
+        return levelUp;
+    }
+
+    /**
+     * Sets the leftover xp to <i>n</i>. Only possible with commands.
+     * @return Level up.
+     */
+    public final boolean setXP(ServerPlayer player, int amount, boolean soundAndParticles) {
+
+        int oldLevel = level;
+
+        xp = amount;
+        boolean levelUp = updateLevel();
+
+        if (levelUp) onLevelUp(player, oldLevel, level, false, soundAndParticles);
+        onXPSet(player, xp, oldLevel, level, soundAndParticles);
+
+        updateAdvancements(player);
+        updateSkillData(player);
+        return levelUp;
+    }
+
+    /**
+     * Adds <i>n</i> levels while keeping the xp same. Only possible with commands.
+     * @return Level up.
+     */
+    public final boolean addLevel(ServerPlayer player, int amount, boolean soundAndParticles) {
+
+        int oldLevel = level;
+        level = Mth.clamp(level + amount, level, maxLevel());
+
+        boolean levelUp = level > oldLevel;
+        if (levelUp) onLevelUp(player, oldLevel, level, false, soundAndParticles);
+        onLevelAdd(player, oldLevel, level, soundAndParticles);
+
+        updateAdvancements(player);
+        updateSkillData(player);
+        return levelUp;
+    }
+
+    /**
+     * Sets the level to <i>n</i> and xp to <i>0</i>. Only possible with commands.
+     * @return Level up.
+     */
+    public final boolean setLevel(ServerPlayer player, int amount, boolean soundAndParticles) {
+
+        int oldLevel = level;
+        level = Mth.clamp(amount, Skill.TRUE_MIN_LEVEL, maxLevel());
+        xp = 0;
+
+        boolean levelUp = level > oldLevel;
+        if (levelUp) onLevelUp(player, oldLevel, level, false, soundAndParticles);
+        onLevelSet(player, oldLevel, level, soundAndParticles);
+
+        updateAdvancements(player);
+        updateSkillData(player);
+        return levelUp;
+    }
+
+    public final void reset(ServerPlayer player) {
+
+        int oldLevel = level;
+        int oldXp = xp;
+
+        level = 1;
+        xp = 0;
+        claimedRewards = skill.getDefaultRewardArray();
+        milestones = generateMilestones();
+
+        onReset(player, oldLevel, oldXp);
+
+        updateAdvancements(player);
+        updateSkillData(player);
+    }
+
+    public final void claimRewards(ServerPlayer player, int level) {
+
+        claimedRewards[level] = true;
+        updateSkillData(player);
+    }
+
+    public final void updateSkillData(ServerPlayer player) { SkillData.of(player).updateSkill(this); }
+
+    public void updateAdvancements(ServerPlayer player) {
+
+        PSCriteriaTriggers.GAIN_XP.trigger(player, totalXP());
+        PSCriteriaTriggers.LEVEL_UP.trigger(player, level);
+    }
+
+    /**
+     * Displays xp and message.
+     */
+    public void onXPAdd(ServerPlayer player, int amount, int oldLevel, int newLevel, boolean manually, boolean soundAndParticles) {
+
+        boolean levelUp = newLevel > oldLevel;
+
+        if (!levelUp && manually && soundAndParticles && PoscardsSkillsClientConfig.XP_GAIN_SOUND.get()) PSUtils.playLocalSound(player, PSSoundEvents.XP_GAIN);
+        if (manually && amount >= PoscardsSkillsClientConfig.MINIMUM_XP_FOR_PROGRESS_MESSAGE.get()) player.displayClientMessage(PSComponents.xpGain(amount, this), true);
+    }
+
+    public void onXPSet(ServerPlayer player, int amount, int oldLevel, int newLevel, boolean soundAndParticles) {
+    }
+
+    public void onLevelAdd(ServerPlayer player, int oldLevel, int newLevel, boolean soundAndParticles) {
+    }
+
+    public void onLevelSet(ServerPlayer player, int oldLevel, int newLevel, boolean soundAndParticles) {
+    }
+
+    public void onReset(ServerPlayer player, int oldLevel, int oldXp) {
+    }
+
+    /**
+     * Level ups are made from <i>n</i> to <i>m</i> instead of <i>n</i> to <i>n+1</i>. This is to prevent
+     * the skill from displaying more messages than needed when large amounts of xp is gained instantly (commands).
+     */
+    public void onLevelUp(ServerPlayer player, int oldLevel, int newLevel, boolean manually, boolean soundAndParticles) {
+
+        if (newLevel > skill.maxLevel) return;
+
+        Supplier<SoundEvent> soundGetter = shouldPlayLevelUpSound(oldLevel, newLevel) ? PSSoundEvents.LEVEL_UP : PSSoundEvents.XP_GAIN;
+
+        if (soundAndParticles && PoscardsSkillsClientConfig.LEVEL_UP_PARTICLES.get()) PSUtils.addParticlesAroundPlayer(player, PSParticleTypes.LEVEL_UP);
+        if (soundAndParticles && PoscardsSkillsClientConfig.LEVEL_UP_SOUND.get()) PSUtils.playLocalSound(player, soundGetter);
+
+        PSComponents.levelUpComponents(this, oldLevel, newLevel, manually).forEach(component -> player.displayClientMessage(component, false));
+    }
+
+    public final boolean hasUnclaimedRewards() {
+
+        for (SkillMilestone milestone : milestones) { if (milestone.canClaimRewards()) return true; }
+        return false;
+    }
+
+    public final boolean isMaxLevel() { return level == skill.maxLevel; }
+
+    public final int maxLevel() { return skill.maxLevel; }
+
+    public final int nextLevel() { return Math.min(level + 1, maxLevel()); }
+
+    public final int totalXP() { return Skill.getNeededTotalXP(level) + xp; }
+
+    public final SkillMilestone milestone(int level) { return milestones.get(level); }
+
+    public final boolean[] getRewardArrayForAscension() { return PoscardsSkillsCommonConfig.KEEP_CLAIMED_REWARDS.get() ? claimedRewards : skill.getDefaultRewardArray(); }
+
+    /**
+     * Updates the level if there is overflow xp.
+     * @return Level up.
+     */
+    protected final boolean updateLevel() {
+
+        int oldLevel = level;
         int newLevel = level;
 
-        for (int n = level + 1; n <= Skill.MAX_LEVEL; n++) {
+        for (int n = level + 1; n <= skill.maxLevel; n++) {
 
-            if (leftoverXP >= Skill.getNeededXP(level, n)) { newLevel = n; } else break;
+            if (xp >= Skill.getNeededXP(level, n)) { newLevel = n; } else break;
         }
 
         boolean levelUp = newLevel > level;
 
         if (levelUp) {
 
-            levelUp(player, level, newLevel, displayMessage, playSounds);
-
-        } else if (manually && playSounds && PoscardsSkillsClientConfig.XP_GAIN_SOUND.get()) playXPSound(player);
-
-
-        if (manually && amount >= PoscardsSkillsClientConfig.MINIMUM_XP_FOR_PROGRESS_MESSAGE.get()) {
-
-            player.displayClientMessage(PSComponents.xpGain(newAmount, this), true);
+            level = newLevel;
+            xp -= Skill.getNeededXP(oldLevel, newLevel);
         }
-
-        updatePlayerData(player);
-        handleRareDrops(player, newAmount, typeKey);
-
         return levelUp;
     }
 
-    public boolean setXP(Player player, int amount, boolean playSounds) {
-
-        boolean displayMessage = amount > totalXP;
-
-        reset(player, false);
-        return addXP(player, amount, null, displayMessage, playSounds);
-    }
-
-    // passing typeKey as null since this is only used in commands
-    public boolean addLevel(Player player, int level, boolean playSounds) {
-
-        int newLevel = level < 1 ? this.level : Math.min(this.level + level, Skill.MAX_LEVEL);
-        int xpAmount = Skill.getNeededXP(this.level, newLevel);
-
-        return addXP(player, xpAmount, null, true, playSounds);
-    }
-
-    public boolean setLevel(Player player, int level, boolean playSounds) {
-
-        int newLevel = level < 1 ? 1 : Math.min(level, Skill.MAX_LEVEL);
-        int xpAmount = Skill.getNeededTotalXP(newLevel);
-
-        return setXP(player, xpAmount, playSounds);
-    }
-
-    public void reset(Player player) { reset(player, true); }
-
-    public void reset(Player player, boolean resetRewards) {
-
-         level = 1;
-         leftoverXP = 0;
-         totalXP = 0;
-
-         if (resetRewards) {
-
-             claimedRewards = skill.getDefaultRewardArray();
-             milestones = generateMilestones();
-         }
-
-         updatePlayerData(player);
-    }
-
-    void handleRareDrops(Player player, int amount, @Nullable ResourceLocation typeKey) {
-
-        boolean manually = typeKey != null;
-
-        double rareDropChance = Math.min(PoscardsSkillsCommonConfig.RARE_DROP_MULTIPLIER.get() * amount, 1.0D / 3.0D);
-
-        if (new Random().nextDouble() < rareDropChance && manually && SkillData.of(player).hasAdditional("rare_drops")) {
-
-            LootTable lootTable = Objects.requireNonNull(player.level.getServer()).getLootTables().get(PoscardsSkills.asResource("gameplay/rare_drop"));
-            LootContext lootContext = new LootContext.Builder((ServerLevel) player.level)
-                    .withParameter(LootContextParams.ORIGIN, player.position())
-                    .withParameter(LootContextParams.THIS_ENTITY, player)
-                    .create(LootContextParamSets.GIFT);
-
-            SimpleContainer container = new SimpleContainer(1);
-            lootTable.fill(container, lootContext);
-
-            ItemStack stack = container.getItem(0);
-            player.getInventory().placeItemBackInInventory(stack.copy());
-            player.displayClientMessage(PSComponents.rareDrop(stack, typeKey), false);
-            playXPSound(player);
-
-            if (player instanceof ServerPlayer serverPlayer) PSCriteriaTriggers.RARE_DROP.trigger(serverPlayer, typeKey);
-        }
-    }
-
-    void levelUp(Player player, int oldLevel, int newLevel, boolean displayMessage, boolean playSounds) {
-
-        if (newLevel > Skill.MAX_LEVEL) return;
-
-        level = newLevel;
-        leftoverXP -= Skill.getNeededXP(oldLevel, newLevel);
-
-        if (player instanceof ServerPlayer serverPlayer) PSCriteriaTriggers.LEVEL_UP.trigger(serverPlayer, newLevel);
-
-        if (playSounds && PoscardsSkillsClientConfig.LEVEL_UP_SOUND.get()) playLevelUpSound(player);
-        if (displayMessage) PSComponents.levelUpComponents(this, oldLevel, newLevel).forEach(component -> player.displayClientMessage(component, false));
-    }
-
-    public void claimRewards(Player player, int level) {
-
-        claimedRewards[level] = true;
-        updatePlayerData(player);
-    }
-
-    public boolean hasUnclaimedRewards() {
-
-        for (SkillMilestone milestone : milestones) { if (milestone.canClaimRewards) return true; }
-        return false;
-    }
-
-    public boolean isMaxLevel() { return level == Skill.MAX_LEVEL; }
-
-    public int nextLevel() { return level + 1; }
-
-    public SkillMilestone milestone(int level) { return milestones.get(level); }
-
-    private void updatePlayerData(Player player) { SkillData.of(player).update(this); }
-
-    private List<SkillMilestone> generateMilestones() {
+    protected List<SkillMilestone> generateMilestones() {
 
         List<SkillMilestone> list = new ArrayList<>();
 
-        for (int i = 0; i <= Skill.MAX_LEVEL; i++) { list.add(new SkillMilestone(this, i)); }
+        for (int i = 0; i <= skill.maxLevel; i++) { list.add(new SkillMilestone(this, i)); }
         return list;
     }
 
-    private int calculateTotalXP() { return Skill.getNeededTotalXP(level) + leftoverXP; }
-
-    private void playXPSound(Player player) {
-
-        LocalPlayer localPlayer = PSUtils.getLocalPlayer(player);
-        playSound(localPlayer, BaseModule.SoundEvents.XP_GAIN);
-    }
-
-    private void playLevelUpSound(Player player) {
-
-        LocalPlayer localPlayer = PSUtils.getLocalPlayer(player);
-        playSound(localPlayer, BaseModule.SoundEvents.LEVEL_UP);
-    }
-
-    private void playSound(LocalPlayer localPlayer, Supplier<SoundEvent> supplier) {
-
-        Random random = new Random();
-
-        float volume = random.nextFloat(0.5F, 0.75F);
-        float pitch = random.nextFloat(1.0F, 1.25F);
-
-        if (localPlayer != null) PSUtils.playLocalSound(localPlayer, supplier.get(), volume, pitch);
-    }
+    @Override
+    public String toString() { return "Skill instance: " + serialize(); }
 
 }

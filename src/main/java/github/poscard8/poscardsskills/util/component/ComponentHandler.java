@@ -1,18 +1,22 @@
 package github.poscard8.poscardsskills.util.component;
 
-import com.mojang.datafixers.util.Pair;
 import github.poscard8.poscardsskills.config.PoscardsSkillsClientConfig;
-import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Supplier;
 
+/**
+ * Utility class for text-related configs.
+ */
 public class ComponentHandler {
 
-    private final Map<Supplier<Attribute>, Pair<ChatFormatting, String>> attributeStyleMap = new HashMap<>();
+    final Map<Supplier<Attribute>, AttributeStyle> attributeStyleMap;
 
+
+    public ComponentHandler() { this.attributeStyleMap = new HashMap<>(); }
 
     public ColorPalette getColorPalette() { return PoscardsSkillsClientConfig.COLOR_PALETTE.get(); }
 
@@ -24,28 +28,38 @@ public class ComponentHandler {
 
     public boolean hasSkillDescriptions() { return PoscardsSkillsClientConfig.SKILL_DESCRIPTIONS.get(); }
 
-    public ComponentHandler setAttributeStyle(Supplier<Attribute> supplier, ChatFormatting color, String icon) {
+    public boolean hasSplashTexts() { return PoscardsSkillsClientConfig.SPLASH_TEXTS.get(); }
 
-        attributeStyleMap.put(supplier, Pair.of(color, icon));
+    public ComponentHandler setAttributeStyle(Attribute attribute, AttributeStyle style) { return setAttributeStyle(() -> attribute, style); }
+
+    public ComponentHandler setAttributeStyle(Supplier<Attribute> supplier, AttributeStyle style) {
+
+        attributeStyleMap.put(supplier, style);
         return this;
     }
 
-    public ChatFormatting getAttributeColor(Attribute attribute) {
+    public AttributeStyle getAttributeStyle(Attribute attribute) {
 
         for (Supplier<Attribute> supplier : attributeStyleMap.keySet()) {
 
-            if (supplier.get().equals(attribute)) return attributeStyleMap.get(supplier).getFirst();
+            if (supplier.get().equals(attribute)) return attributeStyleMap.get(supplier);
         }
-        return ChatFormatting.WHITE;
+        return AttributeStyle.empty();
     }
 
-    public String getAttributeIcon(Attribute attribute) {
+    public Component getAttributeComponent(Attribute attribute) {
+
+        AttributeStyle style = AttributeStyle.empty();
 
         for (Supplier<Attribute> supplier : attributeStyleMap.keySet()) {
 
-            if (supplier.get().equals(attribute)) return attributeStyleMap.get(supplier).getSecond();
+            if (supplier.get().equals(attribute)) {
+
+                style = attributeStyleMap.get(supplier);
+                break;
+            }
         }
-        return "";
+        return style.applyTo(attribute);
     }
 
 

@@ -10,14 +10,17 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.Optional;
 
+/**
+ * Enables text styles with animated color. See {@link AnimatedColor}.
+ */
 @SuppressWarnings("ALL")
 @Mixin(Style.class)
 public abstract class StyleMixin {
 
-    private Style self = (Style) (Object) this;
+    Style self = (Style) (Object) this;
 
     @Inject(method = "getColor", at = @At("TAIL"), cancellable = true)
-    private void poscardsskills$getColor(CallbackInfoReturnable<TextColor> ci) {
+    void poscardsskills$getColor(CallbackInfoReturnable<TextColor> ci) {
 
         Optional<AnimatedColor> optional = AnimatedColor.ofStyle(self);
         if (optional.isPresent()) ci.setReturnValue(optional.get().getColor());

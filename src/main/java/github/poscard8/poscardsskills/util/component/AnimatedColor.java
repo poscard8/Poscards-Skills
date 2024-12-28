@@ -1,33 +1,31 @@
 package github.poscard8.poscardsskills.util.component;
 
-import github.poscard8.poscardsskills.util.item.PSRarities;
+import github.poscard8.poscardsskills.util.item.PSStyles;
 import net.minecraft.network.chat.Style;
 import net.minecraft.network.chat.TextColor;
-import net.minecraftforge.common.IExtensibleEnum;
 
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Optional;
 
-public enum AnimatedColor implements IExtensibleEnum {
+/**
+ * Class for animated text color. Returns a color based on real time,
+ * <b>not</b> minecraft ticks.
+ */
+public enum AnimatedColor {
 
-    ELEGANT(PSRarities.Styles.ELEGANT, 0x67FF67, 0x007700),
-    ETHEREAL(PSRarities.Styles.ETHEREAL, 0xFF5A5A, 0x770000),
-    CLASSICAL(PSRarities.Styles.CLASSICAL, 0xFFF9D9, 0xF0CB3A),
-    BRILLIANT(PSRarities.Styles.BRILLIANT, 0xFFFFFF, 0x444444, 0x45E9FF, 0xDE2C47),
-    RADIANT(PSRarities.Styles.RADIANT, 0xFF0000, 0xFFFF00, 0x00FF00, 0x00FFFFF, 0x0000FF, 0xFF00FF);
+    ELEGANT(PSStyles.ELEGANT, 0x67FF67, 0x007700),
+    ETHEREAL(PSStyles.ETHEREAL, 0xFF5A5A, 0x770000),
+    CLASSICAL(PSStyles.CLASSICAL, 0xFFF9D9, 0xF0CB3A);
 
-    private final Style style;
-    private final int[] colors;
+    final Style style;
+    final int[] colors;
 
     AnimatedColor(Style style, int... colors) {
 
         this.style = style;
         this.colors = colors;
     }
-
-    @SuppressWarnings("unused")
-    public static AnimatedColor create(String name, Style style, int... colors) { throw new IllegalStateException(); }
 
     public static Optional<AnimatedColor> ofStyle(Style style) { return Arrays.stream(values()).filter(animatedColor -> animatedColor.style == style).findFirst(); }
 
@@ -45,6 +43,12 @@ public enum AnimatedColor implements IExtensibleEnum {
 
         if (m == 0) return TextColor.fromRgb(colors[index]);
 
+        int newColor = getNewColor(index, next, m);
+        return TextColor.fromRgb(newColor);
+    }
+
+    int getNewColor(int index, int next, int m) {
+
         int firstColor = colors[index];
         int secondColor = colors[next];
 
@@ -55,8 +59,7 @@ public enum AnimatedColor implements IExtensibleEnum {
         int green = (firstColorRGB[1] * (10 - m) + secondColorRGB[1] * m) / 10;
         int blue = (firstColorRGB[2] * (10 - m) + secondColorRGB[2] * m) / 10;
 
-        int newColor = red * 65536 + green * 256 + blue;
-
-        return TextColor.fromRgb(newColor);
+        return red * 65536 + green * 256 + blue;
     }
+
 }

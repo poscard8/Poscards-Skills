@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "#poscardsskills:rough_stones"
+    "#poscardsskills:jade_blocks",
+    "#poscardsskills:jasper_blocks",
+    "#poscardsskills:marble_blocks"
   ]
 }

@@ -1,55 +1,135 @@
 {
-  "icon": "diamond_pickaxe",
-  "background": "block/deepslate",
+  "icon": "minecraft:diamond_pickaxe",
+  "background": "minecraft:block/deepslate",
+  "row": 1,
+  "column": 2,
+  "max_level": 50,
   "attribute": "poscardsskills:player.chest_luck",
-  "amount": 1,
+  "amount": 0.6,
   "rewards": [
     {
-      "at": [25],
-      "itemStack":
+      "at": [9, 12, 15, 18, 21, 24],
+      "item_stack":
       {
-        "item": "minecraft:diamond",
-        "count": 1
+        "item": "minecraft:iron_ingot",
+        "count": 8
       }
     },
     {
-      "at": [45, 200],
-      "itemStack":
+      "at": 15,
+      "item_stack":
       {
-        "item": "minecraft:netherite_ingot",
-        "count": 1
+        "item": "minecraft:enchanted_book",
+        "count": 1,
+        "nbt": {
+          "StoredEnchantments": [
+            {
+              "id": "minecraft:efficiency",
+              "lvl": 3
+            }
+          ]
+        }
       }
     },
     {
-      "at": [5, 10, 14, 17, 20, 22, 24, 26, 28],
-      "itemStack":
+      "at": 20,
+      "item_stack":
       {
-        "item": "poscardsskills:mendite",
-        "count": 1
+        "item": "minecraft:enchanted_book",
+        "count": 1,
+        "nbt": {
+          "StoredEnchantments": [
+            {
+              "id": "minecraft:efficiency",
+              "lvl": 4
+            }
+          ]
+        }
       }
     },
     {
-      "from": 30,
-      "to": 200,
-      "itemStack":
+      "at": 25,
+      "item_stack":
       {
-        "item": "poscardsskills:mendite",
-        "count": 1
+        "item": "minecraft:enchanted_book",
+        "count": 1,
+        "nbt": {
+          "StoredEnchantments": [
+            {
+              "id": "minecraft:efficiency",
+              "lvl": 5
+            }
+          ]
+        }
       }
     },
     {
-      "from": 70,
-      "to": 199,
-      "itemStack":
+      "at": [10, 20, 30, 40, 50],
+      "item_stack":
       {
-        "item": "minecraft:diamond",
-        "count": 1
+        "item": "poscardsskills:brilliant_repair_stone",
+        "count": 4
       }
     }
   ],
   "recipes": [
     {
+      "at": 12,
+      "group": "survival_utilities",
+      "input1": {
+        "item": "minecraft:iron_ingot",
+        "count": 3
+      },
+      "output": {
+        "item": "minecraft:iron_shovel",
+        "count": 1,
+        "nbt": {
+          "display": {
+            "Name": "{\"translate\":\"item.poscardsskills.refined_iron_shovel\",\"italic\":false}"
+          },
+          "Enchantments": [
+            {
+              "id": "minecraft:efficiency",
+              "lvl": 1
+            },
+            {
+              "id": "minecraft:unbreaking",
+              "lvl": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "at": 14,
+      "group": "survival_utilities",
+      "input1": {
+        "item": "minecraft:iron_ingot",
+        "count": 7
+      },
+      "output": {
+        "item": "minecraft:iron_pickaxe",
+        "count": 1,
+        "nbt": {
+          "display": {
+            "Name": "{\"translate\":\"item.poscardsskills.refined_iron_pickaxe\",\"italic\":false}"
+          },
+          "Enchantments": [
+            {
+              "id": "minecraft:efficiency",
+              "lvl": 1
+            },
+            {
+              "id": "minecraft:unbreaking",
+              "lvl": 1
+            }
+          ]
+        }
+      }
+    },
+    {
       "at": 20,
+      "group": "decorative_blocks",
       "input1": {
         "item": "poscardsskills:rough_jade",
         "count": 1
@@ -61,6 +141,7 @@
     },
     {
       "at": 20,
+      "group": "decorative_blocks",
       "input1": {
         "item": "poscardsskills:jade_bricks",
         "count": 1
@@ -72,6 +153,7 @@
     },
     {
       "at": 20,
+      "group": "decorative_blocks",
       "input1": {
         "item": "poscardsskills:jade_bricks",
         "count": 1
@@ -83,6 +165,7 @@
     },
     {
       "at": 20,
+      "group": "decorative_blocks",
       "input1": {
         "item": "poscardsskills:jade_bricks",
         "count": 1
@@ -93,7 +176,35 @@
       }
     },
     {
+      "at": 22,
+      "group": "survival_utilities",
+      "input1": {
+        "item": "minecraft:diamond",
+        "count": 4
+      },
+      "output": {
+        "item": "minecraft:diamond_pickaxe",
+        "count": 1,
+        "nbt": {
+          "display": {
+            "Name": "{\"translate\":\"item.poscardsskills.exalted_pickaxe\",\"italic\":false}"
+          },
+          "Enchantments": [
+            {
+              "id": "minecraft:efficiency",
+              "lvl": 2
+            },
+            {
+              "id": "minecraft:fortune",
+              "lvl": 3
+            }
+          ]
+        }
+      }
+    },
+    {
       "at": 30,
+      "group": "decorative_blocks",
       "input1": {
         "item": "poscardsskills:rough_jasper",
         "count": 1
@@ -105,6 +216,7 @@
     },
     {
       "at": 30,
+      "group": "decorative_blocks",
       "input1": {
         "item": "poscardsskills:jasper_bricks",
         "count": 1
@@ -116,6 +228,7 @@
     },
     {
       "at": 30,
+      "group": "decorative_blocks",
       "input1": {
         "item": "poscardsskills:jasper_bricks",
         "count": 1
@@ -127,6 +240,7 @@
     },
     {
       "at": 30,
+      "group": "decorative_blocks",
       "input1": {
         "item": "poscardsskills:jasper_bricks",
         "count": 1
@@ -138,6 +252,7 @@
     },
     {
       "at": 40,
+      "group": "decorative_blocks",
       "input1": {
         "item": "poscardsskills:rough_marble",
         "count": 1
@@ -149,6 +264,7 @@
     },
     {
       "at": 40,
+      "group": "decorative_blocks",
       "input1": {
         "item": "poscardsskills:marble_bricks",
         "count": 1
@@ -160,6 +276,7 @@
     },
     {
       "at": 40,
+      "group": "decorative_blocks",
       "input1": {
         "item": "poscardsskills:marble_bricks",
         "count": 1
@@ -171,6 +288,7 @@
     },
     {
       "at": 40,
+      "group": "decorative_blocks",
       "input1": {
         "item": "poscardsskills:marble_bricks",
         "count": 1
@@ -181,44 +299,28 @@
       }
     },
     {
-      "at": 45,
-      "input1": {
-        "item": "poscardsskills:brilliant_shard",
-        "count": 2
-      },
-      "input2": {
-        "item": "minecraft:stick",
-        "count": 2
-      },
-      "output": {
-        "item": "poscardsskills:brilliant_shovel",
-        "count": 1
-      }
-    },
-    {
-      "at": 45,
-      "input1": {
-        "item": "poscardsskills:brilliant_shard",
-        "count": 6
-      },
-      "input2": {
-        "item": "minecraft:stick",
-        "count": 2
-      },
-      "output": {
-        "item": "poscardsskills:brilliant_pickaxe",
-        "count": 1
-      }
-    },
-    {
       "at": 50,
+      "group": "mod_enchantments",
+      "customText": "skill_recipe.poscardsskills.true_efficiency",
       "input1": {
-        "item": "poscardsskills:brilliant_shard",
+        "item": "minecraft:book",
         "count": 1
       },
+      "input2": {
+        "item": "poscardsskills:brilliant_shard",
+        "count": 4
+      },
       "output": {
-        "item": "poscardsskills:mendite",
-        "count": 3
+        "item": "minecraft:enchanted_book",
+        "count": 1,
+        "nbt": {
+          "StoredEnchantments": [
+            {
+              "id": "poscardsskills:true_efficiency",
+              "lvl": 1
+            }
+          ]
+        }
       }
     }
   ]

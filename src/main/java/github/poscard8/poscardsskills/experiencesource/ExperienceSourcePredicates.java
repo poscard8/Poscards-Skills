@@ -7,10 +7,10 @@ import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.function.Predicate;
 
-public final class ExperienceSourcePredicates {
-
-    private ExperienceSourcePredicates() {}
-
+/**
+ * Utility class.
+ */
+public class ExperienceSourcePredicates {
 
     public static final Predicate<BlockState> ALWAYS_TRUE_BLOCK_STATE = state -> true;
     public static final Predicate<ItemStack> ALWAYS_TRUE_ITEM_STACK = stack -> true;

@@ -1,5 +1,6 @@
 package github.poscard8.poscardsskills.block;
 
+import github.poscard8.poscardsskills.util.model.BakedQuadHelper;
 import net.minecraft.client.renderer.block.model.BakedQuad;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.core.BlockPos;
@@ -17,6 +18,9 @@ import java.util.List;
 import static github.poscard8.poscardsskills.util.model.BakedQuadHelper.copy;
 import static github.poscard8.poscardsskills.util.model.BakedQuadHelper.cropPillar;
 
+/**
+ * Pillar block with vertically connected texture. See {@link ShiftedTextureBlock} and {@link BakedQuadHelper} for more info.
+ */
 public class PillarBlock extends RotatedPillarBlock implements ShiftedTextureBlock {
 
     public static final ModelProperty<Boolean> TOP = new ModelProperty<>();

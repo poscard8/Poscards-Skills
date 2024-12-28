@@ -1,35 +1,27 @@
 package github.poscard8.poscardsskills.ui.menu;
 
-import github.poscard8.poscardsskills.module.BaseModule;
+import github.poscard8.poscardsskills.PoscardsSkills;
+import github.poscard8.poscardsskills.registry.PSMenuTypes;
 import github.poscard8.poscardsskills.skill.Skill;
-import github.poscard8.poscardsskills.skill.SkillInstance;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.entity.player.Player;
+
+import java.util.Optional;
 
 public class SkillMenu extends PoscardsSkillsMenu {
 
     public static final int Y_OFFSET = 22;
 
-    public final Skill skill;
+    public Skill skill;
 
-    @SuppressWarnings("unused")
-    private SkillMenu(int id, Inventory inventory, Player player, Skill skill) {
-
-        super(BaseModule.MenuTypes.SKILL.get(), id, inventory, Y_OFFSET);
-        this.skill = skill;
-    }
-
+    /**
+     * @param id Used as the position index.
+     */
     public SkillMenu(int id, Inventory inventory) {
 
-        super(BaseModule.MenuTypes.SKILL.get(), id, inventory, Y_OFFSET);
-        this.skill = null;
-    }
+        super(PSMenuTypes.SKILL.get(), id, inventory, Y_OFFSET);
 
-    public static SkillMenuProvider provider(SkillInstance instance) { return provider(instance.skill); }
-
-    public static SkillMenuProvider provider(Skill skill) {
-
-        return new SkillMenuProvider((id, inventory, player) -> new SkillMenu(id, inventory, player, skill), skill);
+        Optional<Skill> optional = PoscardsSkills.getSkillHandler().byPositionIndex(id);
+        this.skill = optional.orElse(null);
     }
 
 }

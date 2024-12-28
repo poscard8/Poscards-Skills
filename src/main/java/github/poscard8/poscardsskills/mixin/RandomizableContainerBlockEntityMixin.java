@@ -1,12 +1,10 @@
 package github.poscard8.poscardsskills.mixin;
 
-import github.poscard8.poscardsskills.advancement.PSCriteriaTriggers;
-import github.poscard8.poscardsskills.experiencesource.types.OpenChestExperienceSource;
-import github.poscard8.poscardsskills.item.BrilliantKeyItem;
-import github.poscard8.poscardsskills.module.BaseModule;
-import github.poscard8.poscardsskills.module.BrilliantUtilitiesModule;
+import github.poscard8.poscardsskills.experiencesource.types.ChestExperienceSource;
+import github.poscard8.poscardsskills.registry.PSAttributes;
+import github.poscard8.poscardsskills.registry.PSSoundEvents;
 import github.poscard8.poscardsskills.util.PSUtils;
-import net.minecraft.client.player.LocalPlayer;
+import github.poscard8.poscardsskills.util.component.PSComponents;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
@@ -25,43 +23,52 @@ import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 import java.util.Random;
 
+/**
+ * Trigger for {@link ChestExperienceSource} and enables chest luck.
+ * <p>+7 Chest Luck: %7 chance to get double the loot.</p>
+ * <p>+111 Chest Luck: %11 chance to get triple the loot, %89 chance to get double the loot.</p>
+ */
 @SuppressWarnings("ALL")
 @Mixin(RandomizableContainerBlockEntity.class)
 public abstract class RandomizableContainerBlockEntityMixin {
 
     private static final String TARGET = "Lnet/minecraft/world/level/storage/loot/LootTable;fill(Lnet/minecraft/world/Container;Lnet/minecraft/world/level/storage/loot/LootContext;)V";
+    private static final Random RANDOM = new Random();
 
-    private RandomizableContainerBlockEntity self = (RandomizableContainerBlockEntity) (Object) this;
+    RandomizableContainerBlockEntity self = (RandomizableContainerBlockEntity) (Object) this;
 
     @Inject(method = "unpackLootTable", at = @At(value = "INVOKE", target = TARGET, shift = At.Shift.AFTER), locals = LocalCapture.CAPTURE_FAILHARD)
-    private void poscardsskills$unpackLootTable(@Nullable Player player, CallbackInfo ci, LootTable lootTable, LootContext.Builder lootcontext$builder) {
+    void poscardsskills$unpackLootTable(@Nullable Player player, CallbackInfo ci, LootTable lootTable, LootContext.Builder lootContext$builder) {
 
-        if (player != null) {
+        @Nullable ServerPlayer serverPlayer = PSUtils.getServerPlayer(player);
 
-            OpenChestExperienceSource.setWaitingLootTable(player, lootTable.getLootTableId());
+        if (serverPlayer != null) {
 
-            ItemStack mainHand = player.getItemInHand(InteractionHand.MAIN_HAND);
+            ChestExperienceSource.setWaitingLootTable(serverPlayer, lootTable.getLootTableId());
 
-            if (mainHand.getItem() instanceof BrilliantKeyItem) {
+            ItemStack mainHand = serverPlayer.getItemInHand(InteractionHand.MAIN_HAND);
+            LootContext lootContext = lootContext$builder.withLuck(serverPlayer.getLuck()).withParameter(LootContextParams.THIS_ENTITY, serverPlayer).create(LootContextParamSets.CHEST);
 
-                if (!player.isCreative() && !player.isSpectator()) mainHand.shrink(1);
-
-                LocalPlayer localPlayer = PSUtils.getLocalPlayer(player);
-                if (localPlayer != null) localPlayer.playSound(BrilliantUtilitiesModule.SoundEvents.KEY_USE.get());
-
-                PSCriteriaTriggers.USE_KEY.trigger((ServerPlayer) player);
-            }
-
-            LootContext lootContext = lootcontext$builder.withLuck(player.getLuck()).withParameter(LootContextParams.THIS_ENTITY, player).create(LootContextParamSets.CHEST);
-
-            int chestLuck = (int) player.getAttribute(BaseModule.Attributes.CHEST_LUCK.get()).getValue();
+            int chestLuck = (int) serverPlayer.getAttribute(PSAttributes.CHEST_LUCK.get()).getValue();
             int setRolls = chestLuck / 100;
             int extraRollChance = chestLuck % 100;
+            int rolls = setRolls + 1;
 
-            for (int i = 0; i < setRolls; i++) lootTable.fill(self, lootContext);
+            for (int i = 0; i < setRolls; i++) { lootTable.fill(self, lootContext); }
 
-            int randomInt = new Random().nextInt(100);
-            if (randomInt < extraRollChance) lootTable.fill(self, lootContext);
+            int randomInt = RANDOM.nextInt(100);
+
+            if (randomInt < extraRollChance) {
+
+                lootTable.fill(self, lootContext);
+                rolls++;
+            }
+
+            if (rolls > 1) {
+
+                serverPlayer.displayClientMessage(PSComponents.chestLuck(rolls), false);
+                PSUtils.playLocalSound(serverPlayer, PSSoundEvents.UNLOCK_SECRET);
+            }
         }
     }
 

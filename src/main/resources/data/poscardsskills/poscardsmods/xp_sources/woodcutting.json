@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "type": "poscardsskills:block",
+      "tag": "minecraft:logs_that_burn",
+      "xp": 35
+    },
+    {
+      "type": "poscardsskills:block",
+      "block": "minecraft:bamboo",
+      "xp": 50
+    },
+    {
+      "type": "poscardsskills:block",
+      "tag": "minecraft:crimson_stems",
+      "xp": 120
+    },
+    {
+      "type": "poscardsskills:block",
+      "tag": "minecraft:warped_stems",
+      "xp": 120
+    }
+  ]
+}

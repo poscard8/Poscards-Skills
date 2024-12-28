@@ -1,21 +1,24 @@
 package github.poscard8.poscardsskills.util.event;
 
 
+import github.poscard8.poscardsskills.event.CommonEvents;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 /**
- * Used to save performance on certain game events.
- * See {@link github.poscard8.poscardsskills.event.CommonEvents} for usage.
+ * Used to save performance on certain game events. {@link #handle(String, int)}
+ * returns false once every <i>n</i> times. If the method returns true, the wrapper method is stopped.
+ * <p>See {@link CommonEvents} for usage.</p>
  */
 public class EventOptimizer {
 
     private static final List<EventOptimizer> VALUES = new ArrayList<>();
 
-    private final String name;
-    private final int period;
-    private int tick;
+    final String name;
+    final int period;
+    int tick;
 
     private EventOptimizer(String name, int period) {
 
@@ -27,7 +30,7 @@ public class EventOptimizer {
 
     public static boolean handle(String name, int period) {
 
-        boolean throwsError;
+        boolean stop;
 
         Optional<EventOptimizer> optional = VALUES.stream().filter(optimizer -> optimizer.name.equals(name) && optimizer.period == period).findFirst();
 
@@ -35,14 +38,14 @@ public class EventOptimizer {
 
             EventOptimizer optimizer = optional.get();
             optimizer.tick();
-            throwsError = optimizer.tick != 0;
+            stop = optimizer.tick != 0;
 
         } else {
 
             new EventOptimizer(name, period);
-            throwsError = false;
+            stop = false;
         }
-        return throwsError;
+        return stop;
     }
 
     private void tick() { tick = (tick + 1) % period; }

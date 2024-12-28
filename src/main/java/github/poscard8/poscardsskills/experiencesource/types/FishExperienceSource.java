@@ -7,24 +7,28 @@ import github.poscard8.poscardsskills.experiencesource.ExperienceSourcePredicate
 import github.poscard8.poscardsskills.experiencesource.SimpleExperienceSource;
 import github.poscard8.poscardsskills.skill.Skill;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.GsonHelper;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.registries.ForgeRegistries;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Predicate;
 
-public class FishExperienceSource extends SimpleExperienceSource<ItemStack> {
+/**
+ * Gives xp when the player fishes an item. See the wiki for the format.
+ */
+public final class FishExperienceSource extends SimpleExperienceSource<ItemStack> {
 
     FishExperienceSource(Skill skill, int xp, Predicate<ItemStack> predicate) { super(skill, xp, predicate); }
 
     public static FishExperienceSource fromJsonObject(ResourceLocation location, JsonObject jsonObject) {
 
-        Optional<Skill> optional = PoscardsSkills.getSkillHandler().byLocation(location);
+        Optional<Skill> optional = PoscardsSkills.getSkillHandler().byKey(location);
         if (optional.isEmpty()) return null;
 
         Skill skill = optional.get();
@@ -53,8 +57,9 @@ public class FishExperienceSource extends SimpleExperienceSource<ItemStack> {
         return new FishExperienceSource(skill, xp, predicate);
     }
 
-    public static void handlePlayer(Player player, ItemStack stack) {
+    public static void handlePlayer(@Nullable ServerPlayer player, ItemStack stack) {
 
+        if (player == null) return;
         for (FishExperienceSource xpSource : ExperienceSource.filterBy(FishExperienceSource.class)) xpSource.applyIfMeetsConditions(player, stack);
     }
 

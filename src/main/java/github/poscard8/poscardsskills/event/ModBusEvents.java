@@ -2,24 +2,26 @@ package github.poscard8.poscardsskills.event;
 
 import github.poscard8.poscardsskills.PoscardsSkills;
 import github.poscard8.poscardsskills.block.ShiftedTextureBlock;
-import github.poscard8.poscardsskills.client.layer.AnimatedArmorLayer;
 import github.poscard8.poscardsskills.datagen.PSBlockStateProvider;
 import github.poscard8.poscardsskills.datagen.PSItemModelProvider;
 import github.poscard8.poscardsskills.datagen.PSLootTableProvider;
-import github.poscard8.poscardsskills.mixin.accessor.ModelBakeryAccessor;
-import github.poscard8.poscardsskills.module.BaseModule;
+import github.poscard8.poscardsskills.particle.PoscardsSkillsParticle;
+import github.poscard8.poscardsskills.registry.PSAttributes;
+import github.poscard8.poscardsskills.registry.PSMenuTypes;
+import github.poscard8.poscardsskills.registry.PSParticleTypes;
 import github.poscard8.poscardsskills.ui.screen.PoscardsSkillsScreen;
 import github.poscard8.poscardsskills.ui.screen.SkillCraftingScreen;
 import github.poscard8.poscardsskills.ui.screen.SkillScreen;
 import github.poscard8.poscardsskills.util.model.ShiftedTextureModel;
 import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.event.ModelEvent;
 import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.event.entity.EntityAttributeModificationEvent;
@@ -34,6 +36,9 @@ public final class ModBusEvents {
 
     private ModBusEvents() {}
 
+    /**
+     * Data generation.
+     */
     @SubscribeEvent
     static void generateData(GatherDataEvent event) {
 
@@ -48,26 +53,39 @@ public final class ModBusEvents {
     @SubscribeEvent
     static void onClientSetup(FMLClientSetupEvent event) {
 
-        MenuScreens.register(BaseModule.MenuTypes.MAIN.get(), PoscardsSkillsScreen::new);
-        MenuScreens.register(BaseModule.MenuTypes.SKILL.get(), SkillScreen::new);
-        MenuScreens.register(BaseModule.MenuTypes.SKILL_CRAFTING.get(), SkillCraftingScreen::new);
-
-        ModelBakeryAccessor.getUnreferencedTextures().add(AnimatedArmorLayer.BRILLIANT_OUTER);
-        ModelBakeryAccessor.getUnreferencedTextures().add(AnimatedArmorLayer.BRILLIANT_INNER);
+        MenuScreens.register(PSMenuTypes.MAIN.get(), PoscardsSkillsScreen::new);
+        MenuScreens.register(PSMenuTypes.SKILL.get(), SkillScreen::new);
+        MenuScreens.register(PSMenuTypes.SKILL_CRAFTING.get(), SkillCraftingScreen::new);
     }
 
     @SubscribeEvent
     static void addKeyMappings(RegisterKeyMappingsEvent event) {
 
-        event.register(PoscardsSkills.KEY_SKILL_MENU);
+        event.register(PoscardsSkills.KEY_POSCARDS_SKILLS_MENU);
+    }
+
+    @SubscribeEvent
+    static void registerParticleProviders(RegisterParticleProvidersEvent event) {
+
+        event.register(PSParticleTypes.LEVEL_UP.get(), PoscardsSkillsParticle.LevelUpProvider::new);
+        event.register(PSParticleTypes.BRILLIANT.get(), PoscardsSkillsParticle.AscensionProvider::brilliant);
+        event.register(PSParticleTypes.BLESSED.get(), PoscardsSkillsParticle.AscensionProvider::blessed);
+        event.register(PSParticleTypes.DIVINE.get(), PoscardsSkillsParticle.AscensionProvider::divine);
     }
 
     @SubscribeEvent
     static void onAttributeModification(EntityAttributeModificationEvent event) {
 
-        event.add(EntityType.PLAYER, BaseModule.Attributes.CHEST_LUCK.get());
-        event.add(EntityType.PLAYER, BaseModule.Attributes.WISDOM.get());
+        for (EntityType<? extends LivingEntity> entityType : event.getTypes()) event.add(entityType, PSAttributes.CRIT_DAMAGE.get());
+
+        event.add(EntityType.PLAYER, PSAttributes.CHEST_LUCK.get());
+        event.add(EntityType.PLAYER, PSAttributes.WISDOM.get());
+        event.add(EntityType.PLAYER, PSAttributes.LEGACY.get());
     }
+
+    /**
+     * Replacing existing models of certain blocks with {@link ShiftedTextureModel}.
+     */
 
     @SubscribeEvent
     static void onModelBake(ModelEvent.BakingCompleted event) {
@@ -80,8 +98,7 @@ public final class ModBusEvents {
 
             if (block instanceof ShiftedTextureBlock) {
 
-                BakedModel baked = event.getModels().get(location);
-                event.getModels().put(location, new ShiftedTextureModel(baked));
+                event.getModels().compute(location, (k, baked) -> new ShiftedTextureModel(baked));
             }
         }
     }

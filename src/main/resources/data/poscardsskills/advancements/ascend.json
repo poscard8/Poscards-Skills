@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "item": "poscardsskills:brilliant_catalyst"
+    },
+    "title": {
+      "translate": "advancement.poscardsskills.ascend"
+    },
+    "description": {
+      "translate": "advancement.poscardsskills.ascend.desc"
+    }
+  },
+  "parent": "poscardsskills:beginning",
+  "criteria": {
+    "requirement": {
+      "trigger": "poscardsskills:ascension",
+      "conditions": {
+        "count": 1
+      }
+    }
+  }
+}

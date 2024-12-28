@@ -1,191 +1,130 @@
 package github.poscard8.poscardsskills.skill;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
-import github.poscard8.poscardsskills.PoscardsSkills;
+import com.google.gson.*;
+import com.mojang.logging.LogUtils;
 import github.poscard8.poscardsskills.config.PoscardsSkillsCommonConfig;
-import github.poscard8.poscardsskills.util.file.JsonWrapper;
-import github.poscard8.poscardsskills.util.file.MultiJsonResourceReloadListener;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
+import net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener;
 import net.minecraft.util.profiling.ProfilerFiller;
-import net.minecraftforge.common.ForgeConfigSpec;
-import org.jetbrains.annotations.Nullable;
+import org.slf4j.Logger;
 
-import java.util.*;
+import javax.annotation.ParametersAreNonnullByDefault;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
+/**
+ * Skill loader. {@link #skills} is a skill array with a size of 27.
+ * <p>Skills are registered based on position (row and column). If multiple skills
+ * are registered on the same position, one of them will override the other.</p>
+ */
+@ParametersAreNonnullByDefault
 @SuppressWarnings("unused")
-public class SkillHandler extends MultiJsonResourceReloadListener {
-
-    protected static final int MAX_SKILL_COUNT = 15;
+public class SkillHandler extends SimpleJsonResourceReloadListener {
 
     protected static final Gson GSON = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
     protected static final String KEY = "poscardsmods/skills";
+    protected static final Logger LOGGER = LogUtils.getLogger();
 
-    protected final Map<ResourceLocation, Skill> byLocation = new HashMap<>();
-    protected final Map<Skill, SkillPosition> positions = new HashMap<>();
-    protected final Map<Integer, ResourceLocation> defaultPositions = new HashMap<>();
+    protected Skill[] skills;
 
     public SkillHandler() { super(GSON, KEY); }
 
-    @SuppressWarnings("ALL")
     @Override
-    protected void apply(Map<ResourceLocation, List<JsonWrapper>> wrapperMap, ResourceManager resourceManager, ProfilerFiller filler) {
+    protected void apply(Map<ResourceLocation, JsonElement> map, ResourceManager resourceManager, ProfilerFiller filler) {
 
-        byLocation.clear();
-        positions.clear();
+        skills = new Skill[Skill.MAX_SKILL_COUNT];
 
-        for (Map.Entry<ResourceLocation, List<JsonWrapper>> entry : wrapperMap.entrySet()) {
+        for (Map.Entry<ResourceLocation, JsonElement> entry : map.entrySet()) {
 
             ResourceLocation skillKey = entry.getKey();
-            int index;
 
-            for (JsonWrapper wrapper : entry.getValue()) {
+            if (!entry.getValue().isJsonObject()) {
 
-                try {
+                LOGGER.error("Parsing error loading skill {}", skillKey);
+                continue;
+            }
 
-                    JsonObject jsonFile = wrapper.object;
+            JsonObject jsonObject = entry.getValue().getAsJsonObject();
 
-                    if (wrapper.doesReplace) {
+            try {
 
-                        if (byLocation.containsKey(skillKey)) {
+                Skill skill = Skill.fromJsonObject(skillKey, jsonObject);
+                if (skill != null && shouldLoad(skillKey)) skills[skill.getPositionIndex()] = skill;
 
-                            positions.remove(skillKey);
-                            byLocation.remove(skillKey);
-                        }
+            } catch (IllegalArgumentException | JsonParseException jsonParseException) {
 
-                        index = byLocation.size();
-
-                        Skill skill = Skill.fromJsonObject(index, skillKey, jsonFile);
-                        boolean skillCapReached = byLocation.values().size() >= MAX_SKILL_COUNT;
-
-                        if (skillCapReached) LOGGER.error("Could not load skill {} as the mod {} only allows 15 skills", skillKey, PoscardsSkills.NAME);
-
-                        if (skill != null && !skillCapReached && isPresent(skillKey)) {
-
-                            byLocation.put(skillKey, skill);
-                            getOrCreatePosition(skill);
-                        }
-
-                    } else {
-
-                        if (byLocation.containsKey(skillKey)) {
-
-                            Skill skill = byLocation.get(skillKey);
-                            skill.addContents(jsonFile);
-
-                        } else {
-
-                            index = byLocation.size();
-
-                            Skill skill = Skill.fromJsonObject(index, skillKey, jsonFile);
-                            boolean skillCapReached = byLocation.values().size() >= MAX_SKILL_COUNT;
-
-                            if (skillCapReached) LOGGER.error("Could not load skill {} as the mod {} only allows 15 skills", skillKey, PoscardsSkills.NAME);
-
-                            if (skill != null && !skillCapReached && isPresent(skillKey)) {
-
-                                byLocation.put(skillKey, skill);
-                                getOrCreatePosition(skill);
-                            }
-                        }
-                    }
-
-                } catch (IllegalArgumentException | JsonParseException jsonParseException) {
-
-                    LOGGER.error("Parsing error loading skill {}", skillKey, jsonParseException);
-                }
+                LOGGER.error("Parsing error loading skill {}", skillKey, jsonParseException);
             }
         }
 
-        LOGGER.info("Loaded {} skills", byLocation.size());
-    }
-
-    private boolean isPresent(ResourceLocation skillKey) {
-
-        Map<ResourceLocation, ForgeConfigSpec.BooleanValue> map = Map.of(
-
-                PoscardsSkills.asResource("mining"), PoscardsSkillsCommonConfig.MINING_SKILL,
-                PoscardsSkills.asResource("farming"), PoscardsSkillsCommonConfig.FARMING_SKILL,
-                PoscardsSkills.asResource("combat"), PoscardsSkillsCommonConfig.COMBAT_SKILL,
-                PoscardsSkills.asResource("magic"), PoscardsSkillsCommonConfig.MAGIC_SKILL,
-                PoscardsSkills.asResource("exploring"), PoscardsSkillsCommonConfig.EXPLORING_SKILL
-        );
-
-        return map.containsKey(skillKey) ? map.get(skillKey).get() : true;
-    }
-
-    public Collection<ResourceLocation> getKeys() { return byLocation.keySet(); }
-
-    public Collection<Skill> getValues() { return byLocation.values(); }
-
-    public List<Skill> getSortedValues() { return getValues().stream().sorted(Comparator.comparingInt(skill -> skill.position().value)).toList(); }
-
-    public Optional<Skill> byLocation(ResourceLocation location) { return Optional.ofNullable(byLocation.get(location)); }
-
-    public SkillPosition getOrCreatePosition(Skill skill) {
-
-        if (positions.containsKey(skill)) return positions.get(skill);
-
-        int value = getOrCreatePositionValue(skill);
-        if (value == -1) return null;
-
-        SkillPosition position = new SkillPosition(value);
-
-        positions.put(skill, position);
-        return position;
+        LOGGER.info("Loaded {} skills", getValues().size());
     }
 
     /**
-     * Methods to set positions of skills in UI.
-     * If no position is set for a skill, the skill will be placed randomly in the UI.
-     * The row value should be between 0 and 2, the column value should be between 0 and 4.
-     * If the skillKey argument is null, the default skill for the position is removed.
-    */
-    public SkillHandler setDefaultPosition(int row, int column, @Nullable ResourceLocation skillKey) {
+     * Enables mod skills to load based on configs.
+     */
+    boolean shouldLoad(ResourceLocation skillKey) {
 
-        return setDefaultPosition(5 * row + column, skillKey);
-    }
+        boolean shouldLoad;
 
-    public SkillHandler setDefaultPosition(int value, @Nullable ResourceLocation skillKey) {
+        switch (skillKey.toString()) {
 
-        if (skillKey != null) { defaultPositions.put(value, skillKey); } else defaultPositions.remove(value);
-        return this;
-    }
-
-    private int getOrCreatePositionValue(Skill skill) {
-
-        if (skill == null) return -1;
-
-        for (int i = 0; i < MAX_SKILL_COUNT; i++) {
-
-            if (skill.key.equals(defaultPositions.getOrDefault(i, null))) return i;
+            case Skill.WOODCUTTING_KEY_STRING -> shouldLoad = PoscardsSkillsCommonConfig.WOODCUTTING_SKILL.get();
+            case Skill.MINING_KEY_STRING -> shouldLoad = PoscardsSkillsCommonConfig.MINING_SKILL.get();
+            case Skill.FARMING_KEY_STRING -> shouldLoad = PoscardsSkillsCommonConfig.FARMING_SKILL.get();
+            case Skill.COMBAT_KEY_STRING -> shouldLoad = PoscardsSkillsCommonConfig.COMBAT_SKILL.get();
+            case Skill.EXPLORING_KEY_STRING -> shouldLoad = PoscardsSkillsCommonConfig.EXPLORING_SKILL.get();
+            case Skill.ENCHANTING_KEY_STRING -> shouldLoad = PoscardsSkillsCommonConfig.ENCHANTING_SKILL.get();
+            default -> shouldLoad = true;
         }
 
-        if (positions.containsKey(skill)) return positions.get(skill).value;
-
-        List<Integer> fullSpots = new ArrayList<>(positions.values().stream().map(skillPosition -> skillPosition.value).toList());
-        fullSpots.addAll(defaultPositions.keySet());
-
-        for (int i = 0; i < MAX_SKILL_COUNT; i++) { if (!fullSpots.contains(i)) return i; }
-        return -1;
+        return shouldLoad;
     }
 
+    public List<ResourceLocation> getKeys() {
 
-    public static class SkillPosition {
+        List<ResourceLocation> keys = new ArrayList<>();
 
-        public final int row;
-        public final int column;
-        public final int value;
+        for (Skill skill : skills) {
 
-        public SkillPosition(int value) {
-
-            this.row = value / 5;
-            this.column = value % 5;
-            this.value = value;
+            if (skill != null) keys.add(skill.key);
         }
+        return keys;
     }
+
+    public List<Skill> getValues() {
+
+        List<Skill> keys = new ArrayList<>();
+
+        for (Skill skill : skills) {
+
+            if (skill != null) keys.add(skill);
+        }
+        return keys;
+    }
+
+    public Optional<Skill> byPositionIndex(int index) {
+
+        try {
+
+            Skill skill = skills[index];
+            return Optional.ofNullable(skill);
+
+        } catch (Exception exception) { return Optional.empty(); }
+    }
+
+    public Optional<Skill> byKey(ResourceLocation key) {
+
+        for (Skill skill : skills) {
+
+            if (skill != null && skill.key.equals(key)) return Optional.of(skill);
+        }
+        return Optional.empty();
+    }
+
+    public int getMaxSkillLevel() { return getValues().stream().map(skill -> skill.maxLevel).max(Integer::compareTo).orElse(Skill.TRUE_MAX_LEVEL); }
 
 }

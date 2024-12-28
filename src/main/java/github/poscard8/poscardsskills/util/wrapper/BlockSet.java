@@ -6,15 +6,17 @@ import net.minecraft.world.level.material.MaterialColor;
 
 public enum BlockSet {
 
-    JADE(MaterialColor.EMERALD),
+    JADE(MaterialColor.COLOR_LIGHT_GREEN),
     JASPER(MaterialColor.TERRACOTTA_RED),
     MARBLE(MaterialColor.QUARTZ);
 
-    private final MaterialColor materialColor;
-    BlockSet(MaterialColor materialColor) { this.materialColor = materialColor; }
+    final MaterialColor mapColor;
+
+    BlockSet(MaterialColor mapColor) { this.mapColor = mapColor; }
 
     @Override
     public String toString() { return super.toString().toLowerCase(); }
 
-    public BlockBehaviour.Properties getProperties() { return BlockBehaviour.Properties.copy(Blocks.STONE).color(materialColor); }
+    public BlockBehaviour.Properties getProperties() { return BlockBehaviour.Properties.copy(Blocks.STONE).color(mapColor); }
+
 }

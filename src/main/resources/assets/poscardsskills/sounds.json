@@ -1,12 +1,17 @@
 {
   "xp_gain": {
     "sounds": [
-      "poscardsskills:xp_gain_1"
+      "poscardsskills:xp_gain"
     ]
   },
   "level_up": {
     "sounds": [
-      "poscardsskills:level_up_1"
+      "random/levelup"
+    ]
+  },
+  "unlock_secret": {
+    "sounds": [
+      "poscardsskills:unlock_secret"
     ]
   },
   "rune_apply": {
@@ -17,30 +22,19 @@
       "poscardsskills:rune_apply_3"
     ]
   },
-  "mendite_apply": {
-    "subtitle": "subtitle.poscardsskills.mendite_apply",
+  "repair_stone_apply": {
+    "subtitle": "subtitle.poscardsskills.repair_stone_apply",
     "sounds": [
       "block/grindstone/grindstone1",
       "block/grindstone/grindstone2",
       "block/grindstone/grindstone3"
     ]
   },
-  "key_use": {
-    "subtitle": "subtitle.poscardsskills.key_use",
+  "catalyst_use": {
+    "subtitle": "subtitle.poscardsskills.catalyst_use",
     "sounds": [
-      "poscardsskills:key_use_1",
-      "poscardsskills:key_use_2",
-      "poscardsskills:key_use_3"
-    ]
-  },
-  "item.armor.equip_brilliant": {
-    "subtitle": "subtitle.poscardsskills.item.armor.equip_brilliant",
-    "sounds": [
-      "item/armor/equip_diamond1",
-      "item/armor/equip_diamond2",
-      "item/armor/equip_diamond3",
-      "item/armor/equip_diamond4",
-      "item/armor/equip_diamond5"
+      "poscardsskills:catalyst_use_1",
+      "poscardsskills:catalyst_use_2"
     ]
   }
 }

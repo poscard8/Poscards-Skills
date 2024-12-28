@@ -13,9 +13,10 @@ import net.minecraftforge.client.model.data.ModelData;
 import java.util.Arrays;
 import java.util.Map;
 
-// Took most the methods from Create source code, so credits to that
-
-public abstract class BakedQuadHelper {
+/**
+ * Utility class.
+ */
+public class BakedQuadHelper {
 
     public static final int VERTEX_STRIDE = DefaultVertexFormat.BLOCK.getIntegerSize();
 
@@ -122,16 +123,16 @@ public abstract class BakedQuadHelper {
 
         switch (axis) {
 
-            default -> vertexOrder = new int[]{0, 1, 2, 3};
             case X -> vertexOrder = new int[]{3, 0, 1, 2};
             case Z -> {
 
                 switch (quad.getDirection()) {
 
-                    default -> vertexOrder = new int[]{2, 3, 0, 1};
                     case EAST, WEST -> vertexOrder = new int[]{1, 2, 3, 0};
+                    default -> vertexOrder = new int[]{2, 3, 0, 1};
                 }
             }
+            default -> vertexOrder = new int[]{0, 1, 2, 3};
         }
         u0 = 0;
         u1 = 16;

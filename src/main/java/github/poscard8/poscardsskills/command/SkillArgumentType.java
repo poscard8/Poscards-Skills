@@ -19,20 +19,27 @@ import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
+/**
+ * Argument type that suggests skills.
+ */
 public class SkillArgumentType implements ArgumentType<String> {
 
-    private static final SimpleCommandExceptionType NO_SKILL_FOUND = new SimpleCommandExceptionType(Component.translatable("command.poscardsskills.no_skill_found"));
+    private static final SimpleCommandExceptionType NO_SKILL_FOUND = new SimpleCommandExceptionType(Component.translatable("command.github.poscard8.poscardsskills.no_skill_found"));
 
     private SkillArgumentType() {}
 
     public static SkillArgumentType of() { return new SkillArgumentType(); }
 
+    /**
+     * Commands already have a similar method. However {@link ResourceLocation} does not accept the character {@code '#'}.
+     * This method enables the parser to read {@code '#all'}.
+     */
     @Override
     public String parse(StringReader reader) throws CommandSyntaxException {
 
         int start = reader.getCursor();
         ResourceLocation location = ResourceLocation.read(reader);
-        Optional<Skill> optional = PoscardsSkills.getSkillHandler().byLocation(location);
+        Optional<Skill> optional = PoscardsSkills.getSkillHandler().byKey(location);
 
         reader.setCursor(start);
 
@@ -42,9 +49,11 @@ public class SkillArgumentType implements ArgumentType<String> {
         if (optional.isPresent()) {
 
             return location.toString();
+
         } else if (Objects.equals(s, "#all")) {
 
             return s;
+
         } else {
 
             reader.setCursor(start);
@@ -52,6 +61,9 @@ public class SkillArgumentType implements ArgumentType<String> {
         }
     }
 
+    /**
+     * Suggests all the registered skills and {@code '#all'}.
+     */
     public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> context, SuggestionsBuilder suggestionsBuilder) {
 
         Collection<String> keySet = PoscardsSkills.getSkillHandler().getKeys().stream().map(ResourceLocation::toString).collect(Collectors.toSet());

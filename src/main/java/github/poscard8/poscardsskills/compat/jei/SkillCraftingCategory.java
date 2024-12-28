@@ -13,18 +13,23 @@ import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.ChatFormatting;
+import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
+@ParametersAreNonnullByDefault
+@MethodsReturnNonnullByDefault
 public class SkillCraftingCategory implements IRecipeCategory<SkillRecipe> {
 
     public static final ResourceLocation TEXTURE_LOCATION = PoscardsSkills.asResource("textures/gui/jei_skill_crafting.png");
 
-    private final IDrawable background;
-    private final IDrawable icon;
+    final IDrawable background;
+    final IDrawable icon;
 
     public SkillCraftingCategory(IGuiHelper guiHelper) {
 
@@ -33,7 +38,7 @@ public class SkillCraftingCategory implements IRecipeCategory<SkillRecipe> {
     }
 
     @Override
-    public RecipeType<SkillRecipe> getRecipeType() { return SkillRecipe.JEI_TYPE; }
+    public RecipeType<SkillRecipe> getRecipeType() { return PoscardsSkillsJEIPlugin.SKILL_RECIPE_TYPE; }
 
     @Override
     public Component getTitle() { return PSComponents.skillCrafting(); }
@@ -54,14 +59,18 @@ public class SkillCraftingCategory implements IRecipeCategory<SkillRecipe> {
         builder.addSlot(RecipeIngredientRole.OUTPUT, 104, 40).addItemStack(recipe.output);
     }
 
+    /**
+     * Method to write the skill requisite on the menu.
+     */
     @Override
-    public void draw(SkillRecipe recipe, IRecipeSlotsView recipeSlotsView, PoseStack stack, double mouseX, double mouseY) {
+    public void draw(SkillRecipe recipe, IRecipeSlotsView recipeSlotsView, PoseStack poseStack, double mouseX, double mouseY) {
 
-        IRecipeCategory.super.draw(recipe, recipeSlotsView, stack, mouseX, mouseY);
+        IRecipeCategory.super.draw(recipe, recipeSlotsView, poseStack, mouseX, mouseY);
 
         Font font = Minecraft.getInstance().font;
-        float offset = ((float) font.width(PSComponents.requisite(recipe))) / 2.0F;
-        font.draw(stack, PSComponents.requisite(recipe, ChatFormatting.DARK_GRAY), 72 - offset, 82, 0);
+        int offset = font.width(PSComponents.requisite(recipe)) / 2;
+
+        font.draw(poseStack, PSComponents.requisite(recipe, ChatFormatting.DARK_GRAY), 72 - offset, 82, 0);
     }
 
 }

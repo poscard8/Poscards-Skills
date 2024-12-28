@@ -1,142 +1,122 @@
 {
   "values": [
     {
-      "type": "poscardsskills:break_block",
-      "tag": "minecraft:logs_that_burn",
-      "xp": 10
-    },
-    {
-      "type": "poscardsskills:break_block",
-      "tag": "minecraft:crimson_stems",
-      "xp": 30
-    },
-    {
-      "type": "poscardsskills:break_block",
-      "tag": "minecraft:warped_stems",
-      "xp": 30
-    },
-    {
-      "type": "poscardsskills:break_block",
+      "type": "poscardsskills:block",
       "block": "minecraft:carrots",
       "properties": "[age=7]",
       "xp": 15
     },
     {
-      "type": "poscardsskills:break_block",
+      "type": "poscardsskills:block",
       "block": "minecraft:potatoes",
       "properties": "[age=7]",
       "xp": 15
     },
     {
-      "type": "poscardsskills:break_block",
+      "type": "poscardsskills:block",
       "block": "minecraft:wheat",
       "properties": "[age=7]",
       "xp": 18
     },
     {
-      "type": "poscardsskills:break_block",
+      "type": "poscardsskills:block",
       "block": "minecraft:beetroots",
       "properties": "[age=3]",
       "xp": 15
     },
     {
-      "type": "poscardsskills:break_block",
-      "block": "minecraft:bamboo",
+      "type": "poscardsskills:block",
+      "block": "minecraft:sugar_cane",
       "xp": 15
     },
     {
-      "type": "poscardsskills:break_block",
-      "block": "minecraft:sugar_cane",
-      "xp": 30
-    },
-    {
-      "type": "poscardsskills:break_block",
+      "type": "poscardsskills:block",
       "block": "minecraft:kelp_plant",
       "xp": 7
     },
     {
-      "type": "poscardsskills:break_block",
+      "type": "poscardsskills:block",
       "block": "minecraft:melon",
-      "xp": 35
+      "xp": 25
     },
     {
-      "type": "poscardsskills:break_block",
+      "type": "poscardsskills:block",
       "block": "minecraft:pumpkin",
-      "xp": 35
+      "xp": 25
     },
     {
-      "type": "poscardsskills:break_block",
-      "block": "minecraft:hay_bale",
-      "xp": 18
+      "type": "poscardsskills:block",
+      "block": "minecraft:hay_block",
+      "xp": 11
     },
     {
-      "type": "poscardsskills:break_block",
+      "type": "poscardsskills:block",
       "block": "minecraft:cocoa",
       "properties": "[age=2]",
-      "xp": 18
+      "xp": 14
     },
     {
-      "type": "poscardsskills:break_block",
+      "type": "poscardsskills:block",
       "block": "minecraft:cactus",
-      "xp": 7
+      "xp": 10
     },
     {
-      "type": "poscardsskills:kill_entity",
+      "type": "poscardsskills:entity",
       "entity": "minecraft:sheep",
-      "xp": 40
-    },
-    {
-      "type": "poscardsskills:kill_entity",
-      "entity": "minecraft:chicken",
-      "xp": 40
-    },
-    {
-      "type": "poscardsskills:kill_entity",
-      "entity": "minecraft:pig",
       "xp": 60
     },
     {
-      "type": "poscardsskills:kill_entity",
+      "type": "poscardsskills:entity",
+      "entity": "minecraft:chicken",
+      "xp": 60
+    },
+    {
+      "type": "poscardsskills:entity",
+      "entity": "minecraft:pig",
+      "xp": 90
+    },
+    {
+      "type": "poscardsskills:entity",
       "entity": "minecraft:cow",
-      "xp": 80
+      "xp": 120
     },
     {
-      "type": "poscardsskills:kill_entity",
+      "type": "poscardsskills:entity",
       "entity": "minecraft:rabbit",
-      "xp": 100
+      "xp": 90
     },
     {
-      "type": "poscardsskills:kill_entity",
+      "type": "poscardsskills:entity",
       "entity": "minecraft:squid",
-      "xp": 100
+      "xp": 90
     },
     {
-      "type": "poscardsskills:unlock_advancement",
+      "type": "poscardsskills:advancement",
       "advancement": "minecraft:husbandry/plant_seed",
       "xp": 300
     },
     {
-      "type": "poscardsskills:unlock_advancement",
+      "type": "poscardsskills:advancement",
       "advancement": "minecraft:husbandry/obtain_netherite_hoe",
       "xp": 5000
     },
     {
-      "type": "poscardsskills:unlock_advancement",
+      "type": "poscardsskills:advancement",
       "advancement": "minecraft:husbandry/bred_all_animals",
       "xp": 5000
     },
     {
-      "type": "poscardsskills:unlock_advancement",
+      "type": "poscardsskills:advancement",
       "advancement": "minecraft:husbandry/safely_harvest_honey",
       "xp": 750
     },
     {
-      "type": "poscardsskills:unlock_advancement",
+      "type": "poscardsskills:advancement",
       "advancement": "minecraft:husbandry/silk_touch_nest",
       "xp": 750
     },
     {
-      "type": "poscardsskills:unlock_advancement",
+      "type": "poscardsskills:advancement",
       "advancement": "minecraft:husbandry/tactical_fishing",
       "xp": 750
     }

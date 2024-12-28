@@ -1,309 +1,309 @@
 {
   "values": [
     {
-      "type": "poscardsskills:break_block",
+      "type": "poscardsskills:block",
       "block": "minecraft:bone_block",
       "xp": 50
     },
     {
-      "type": "poscardsskills:visit_structure",
+      "type": "poscardsskills:structure",
       "tag": "minecraft:village",
-      "xp": 600
+      "xp": 700
     },
     {
-      "type": "poscardsskills:visit_structure",
+      "type": "poscardsskills:structure",
       "tag": "minecraft:ruined_portal",
       "xp": 500
     },
     {
-      "type": "poscardsskills:visit_structure",
+      "type": "poscardsskills:structure",
       "tag": "minecraft:mineshaft",
       "xp": 1500
     },
     {
-      "type": "poscardsskills:visit_structure",
+      "type": "poscardsskills:structure",
       "tag": "minecraft:shipwreck",
       "xp": 1300
     },
     {
-      "type": "poscardsskills:visit_structure",
+      "type": "poscardsskills:structure",
       "tag": "minecraft:ocean_ruin",
       "xp": 300
     },
     {
-      "type": "poscardsskills:visit_structure",
+      "type": "poscardsskills:structure",
       "structure": "minecraft:ocean_monument",
-      "xp": 2800
+      "xp": 2700
     },
     {
-      "type": "poscardsskills:visit_structure",
+      "type": "poscardsskills:structure",
       "structure": "minecraft:igloo",
       "xp": 1000
     },
     {
-      "type": "poscardsskills:visit_structure",
+      "type": "poscardsskills:structure",
       "structure": "minecraft:desert_pyramid",
-      "xp": 2250
+      "xp": 2000
     },
     {
-      "type": "poscardsskills:visit_structure",
+      "type": "poscardsskills:structure",
       "structure": "minecraft:jungle_temple",
       "xp": 1000
     },
     {
-      "type": "poscardsskills:visit_structure",
+      "type": "poscardsskills:structure",
       "structure": "minecraft:swamp_hut",
       "xp": 1000
     },
     {
-      "type": "poscardsskills:visit_structure",
+      "type": "poscardsskills:structure",
       "structure": "minecraft:pillager_outpost",
-      "xp": 3000
+      "xp": 2000
     },
     {
-      "type": "poscardsskills:visit_structure",
+      "type": "poscardsskills:structure",
       "structure": "minecraft:stronghold",
-      "xp": 5000
+      "xp": 4500
     },
     {
-      "type": "poscardsskills:visit_structure",
+      "type": "poscardsskills:structure",
       "structure": "minecraft:woodland_mansion",
-      "xp": 5000
+      "xp": 4500
     },
     {
-      "type": "poscardsskills:visit_structure",
+      "type": "poscardsskills:structure",
       "structure": "minecraft:ancient_city",
-      "xp": 8000
+      "xp": 7500
     },
     {
-      "type": "poscardsskills:visit_structure",
+      "type": "poscardsskills:structure",
       "structure": "minecraft:fortress",
-      "xp": 2300
+      "xp": 2500
     },
     {
-      "type": "poscardsskills:visit_structure",
+      "type": "poscardsskills:structure",
       "structure": "minecraft:bastion_remnant",
       "xp": 3500
     },
     {
-      "type": "poscardsskills:visit_structure",
+      "type": "poscardsskills:structure",
       "structure": "minecraft:end_city",
-      "xp": 3500
+      "xp": 2500
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/desert_pyramid",
       "xp": 300
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/village/village_armorer",
       "xp": 75
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/village/village_butcher",
       "xp": 75
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/village/village_cartographer",
       "xp": 75
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/village/village_fisher",
       "xp": 75
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/village/village_fletcher",
       "xp": 75
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/village/village_mason",
       "xp": 75
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/village/village_shepherd",
       "xp": 75
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/village/village_tannery",
       "xp": 75
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/village/village_temple",
       "xp": 75
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/village/village_toolsmith",
       "xp": 250
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/village/village_weaponsmith",
       "xp": 250
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/village/village_plains_house",
       "xp": 75
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/village/village_desert_house",
       "xp": 75
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/village/village_taiga_house",
       "xp": 75
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/village/village_snowy_house",
       "xp": 75
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/village/village_savanna_house",
       "xp": 75
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/desert_pyramid",
       "xp": 250
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/pillager_outpost",
       "xp": 250
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/shipwreck_map",
       "xp": 150
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/shipwreck_supply",
       "xp": 150
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/buried_treasure",
-      "xp": 1000
+      "xp": 900
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/abandoned_mineshaft",
       "xp": 150
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/jungle_temple",
       "xp": 250
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/jungle_temple_dispenser",
       "xp": 250
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/simple_dungeon",
       "xp": 250
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/igloo_chest",
       "xp": 150
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/stronghold_corridor",
-      "xp": 500
+      "xp": 200
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/stronghold_crossing",
-      "xp": 500
+      "xp": 200
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/stronghold_library",
-      "xp": 500
+      "xp": 400
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/woodland_mansion",
       "xp": 250
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/ancient_city",
       "xp": 300
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/ancient_city_ice_box",
       "xp": 300
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/nether_bridge",
       "xp": 250
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/bastion_bridge",
       "xp": 250
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/bastion_hoglin_stable",
       "xp": 250
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/bastion_other",
       "xp": 250
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/bastion_bridge",
       "xp": 250
     },
     {
-      "type": "poscardsskills:open_chest",
+      "type": "poscardsskills:chest",
       "lootTable": "minecraft:chests/end_city_treasure",
       "xp": 250
     },
     {
-      "type": "poscardsskills:unlock_advancement",
+      "type": "poscardsskills:advancement",
       "advancement": "minecraft:story/enter_the_nether",
-      "xp": 6666
+      "xp": 2000
     },
     {
-      "type": "poscardsskills:unlock_advancement",
+      "type": "poscardsskills:advancement",
       "advancement": "minecraft:story/enter_the_end",
-      "xp": 10000
+      "xp": 5000
     },
     {
-      "type": "poscardsskills:unlock_advancement",
+      "type": "poscardsskills:advancement",
       "advancement": "minecraft:adventure/adventuring_time",
-      "xp": 13000
+      "xp": 15000
     },
     {
-      "type": "poscardsskills:unlock_advancement",
+      "type": "poscardsskills:advancement",
       "advancement": "minecraft:nether/explore_nether",
-      "xp": 3000
+      "xp": 4000
     }
   ]
 }

@@ -1,6 +1,6 @@
 package github.poscard8.poscardsskills.ui.menu;
 
-import github.poscard8.poscardsskills.module.BaseModule;
+import github.poscard8.poscardsskills.registry.PSMenuTypes;
 import github.poscard8.poscardsskills.util.component.PSComponents;
 import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.entity.player.Inventory;
@@ -9,22 +9,28 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
+/**
+ * Simple menu with inventory + hotbar slots (36 in total).
+ */
+@SuppressWarnings("unused")
+@ParametersAreNonnullByDefault
 public class PoscardsSkillsMenu extends AbstractContainerMenu {
 
     public static final SimpleMenuProvider PROVIDER = new SimpleMenuProvider(PoscardsSkillsMenu::new, PSComponents.uiTitle());
 
-    private PoscardsSkillsMenu(int id, Inventory inventory, Player player) { this(BaseModule.MenuTypes.MAIN.get(), id, inventory, 0); }
+    protected PoscardsSkillsMenu(int id, Inventory inventory, Player player) { this(PSMenuTypes.MAIN.get(), id, inventory, 0); }
 
-    @SuppressWarnings("unused")
-    public PoscardsSkillsMenu(int id, Inventory inventory) { this(BaseModule.MenuTypes.MAIN.get(), id, inventory, 0); }
+    public PoscardsSkillsMenu(int id, Inventory inventory) { this(PSMenuTypes.MAIN.get(), id, inventory, 0); }
 
-    @SuppressWarnings("unused")
     public PoscardsSkillsMenu(MenuType<?> menuType, int id, Inventory inventory, int offset) {
 
         super(menuType, id);
 
-        for(int x = 0; x < 9; ++x) addSlot(new Slot(inventory, x, 8 + x * 18, 142 + offset));  // hotbarSlots
+        for(int x = 0; x < 9; ++x) addSlot(new Slot(inventory, x, 8 + x * 18, 142 + offset));
 
         for(int y = 1; y < 4; ++y) {
 
@@ -33,6 +39,7 @@ public class PoscardsSkillsMenu extends AbstractContainerMenu {
     }
 
     @Override
+    @NotNull
     public ItemStack quickMoveStack(Player player, int index) {
 
         ItemStack result = ItemStack.EMPTY;

@@ -3,18 +3,19 @@ package github.poscard8.poscardsskills;
 import github.poscard8.poscardsskills.advancement.PSCriteriaTriggers;
 import github.poscard8.poscardsskills.config.PoscardsSkillsClientConfig;
 import github.poscard8.poscardsskills.config.PoscardsSkillsCommonConfig;
+import github.poscard8.poscardsskills.experiencesource.ExperienceSource;
 import github.poscard8.poscardsskills.experiencesource.ExperienceSourceHandler;
 import github.poscard8.poscardsskills.experiencesource.types.*;
-import github.poscard8.poscardsskills.module.BaseModule;
-import github.poscard8.poscardsskills.module.PSModules;
+import github.poscard8.poscardsskills.extension.ExtensionHandler;
+import github.poscard8.poscardsskills.registry.*;
 import github.poscard8.poscardsskills.skill.SkillHandler;
+import github.poscard8.poscardsskills.util.component.AttributeStyle;
 import github.poscard8.poscardsskills.util.component.ComponentHandler;
-import github.poscard8.poscardsskills.util.item.PSCreativeModeTab;
+import github.poscard8.poscardsskills.util.tab.PSCreativeModeTab;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.storage.LevelResource;
 import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -25,7 +26,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @SuppressWarnings("unused")
 @Mod(PoscardsSkills.ID)
-public class PoscardsSkills {
+public final class PoscardsSkills {
 
     public static final String ID = "poscardsskills";
     public static final String GROUP_ID = "poscardsmods";
@@ -33,13 +34,14 @@ public class PoscardsSkills {
 
     public static final LevelResource DIRECTORY = new LevelResource(GROUP_ID);
 
-    public static final KeyMapping KEY_SKILL_MENU = new KeyMapping("key.poscardsskills.skill_menu", 82, "key.categories.poscardsskills");
+    public static final KeyMapping KEY_POSCARDS_SKILLS_MENU = new KeyMapping("key.poscardsskills.menu", 82, "key.categories.poscardsskills");
 
-    public static final CreativeModeTab CREATIVE_TAB = new PSCreativeModeTab();
+    public static final PSCreativeModeTab CREATIVE_MODE_TAB = new PSCreativeModeTab();
 
-    private static final SkillHandler SKILL_HANDLER = new SkillHandler();
-    private static final ExperienceSourceHandler XP_SOURCE_HANDLER = new ExperienceSourceHandler();
-    private static final ComponentHandler COMPONENT_HANDLER = new ComponentHandler();
+    static final SkillHandler SKILL_HANDLER = new SkillHandler();
+    static final ExperienceSourceHandler XP_SOURCE_HANDLER = new ExperienceSourceHandler();
+    static final ExtensionHandler EXTENSION_HANDLER = new ExtensionHandler();
+    static final ComponentHandler COMPONENT_HANDLER = new ComponentHandler();
 
     public static ResourceLocation asResource(String path) { return new ResourceLocation(ID, path); }
 
@@ -47,8 +49,11 @@ public class PoscardsSkills {
 
     public static ExperienceSourceHandler getXPSourceHandler() { return XP_SOURCE_HANDLER; }
 
+    public static ExtensionHandler getExtensionHandler() { return EXTENSION_HANDLER; }
+
     public static ComponentHandler getComponentHandler() { return COMPONENT_HANDLER; }
 
+    @SuppressWarnings("removal")
     public PoscardsSkills() {
 
         ModLoadingContext ctx = ModLoadingContext.get();
@@ -56,60 +61,59 @@ public class PoscardsSkills {
         ctx.registerConfig(ModConfig.Type.COMMON, PoscardsSkillsCommonConfig.SPEC, "poscardsskills-common.toml");
 
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-        PSModules.onSetup(bus);
 
-        PSCriteriaTriggers.registerAll();
+        PSAttributes.register(bus);
+        PSBlocks.register(bus);
+        PSCommandArgumentTypes.register(bus);
+        PSConfiguredFeatures.register(bus);
+        PSEnchantments.register(bus);
+        PSFeatures.register(bus);
+        PSItems.register(bus);
+        PSMenuTypes.register(bus);
+        PSParticleTypes.register(bus);
+        PSPlacedFeatures.register(bus);
+        PSSoundEvents.register(bus);
 
-        setDefaultSkillPositions();
+        PSCriteriaTriggers.register();
+
         registerXPSourceTypes();
         setAttributeStyles();
     }
 
-    private void setDefaultSkillPositions() {
-
-        getSkillHandler()
-                .setDefaultPosition(5, asResource("mining"))
-                .setDefaultPosition(6, asResource("farming"))
-                .setDefaultPosition(7, asResource("combat"))
-                .setDefaultPosition(8, asResource("magic"))
-                .setDefaultPosition(9, asResource("exploring"));
-    }
-
-    private void registerXPSourceTypes() {
+    void registerXPSourceTypes() {
 
         getXPSourceHandler()
-                .registerType(asResource("break_block"), BreakBlockExperienceSource::fromJsonObject, BreakBlockExperienceSource.class)
-                .registerType(asResource("brew_potion"), BrewPotionExperienceSource::fromJsonObject, BrewPotionExperienceSource.class)
-                .registerType(asResource("consume_item"), ConsumeItemExperienceSource::fromJsonObject, ConsumeItemExperienceSource.class)
-                .registerType(asResource("craft_item"), CraftItemExperienceSource::fromJsonObject, CraftItemExperienceSource.class)
-                .registerType(asResource("enchant_item"), EnchantItemExperienceSource::fromJsonObject, EnchantItemExperienceSource.class)
-                .registerType(asResource("fish"), FishExperienceSource::fromJsonObject, FishExperienceSource.class)
-                .registerType(asResource("kill_entity"), KillEntityExperienceSource::fromJsonObject, KillEntityExperienceSource.class)
-                .registerType(asResource("open_chest"), OpenChestExperienceSource::fromJsonObject, OpenChestExperienceSource.class)
-                .registerType(asResource("smelt_item"), SmeltItemExperienceSource::fromJsonObject, SmeltItemExperienceSource.class)
-                .registerType(asResource("unlock_advancement"), UnlockAdvancementExperienceSource::fromJsonObject, UnlockAdvancementExperienceSource.class)
-                .registerType(asResource("use_anvil"), UseAnvilExperienceSource::fromJsonObject, UseAnvilExperienceSource.class)
-                .registerType(asResource("visit_structure"), VisitStructureExperienceSource::fromJsonObject, VisitStructureExperienceSource.class);
+                .registerType(ExperienceSource.BLOCK_KEY, BlockExperienceSource::fromJsonObject)
+                .registerType(ExperienceSource.CONSUME_KEY, ConsumeExperienceSource::fromJsonObject)
+                .registerType(ExperienceSource.CRAFT_KEY, CraftExperienceSource::fromJsonObject)
+                .registerType(ExperienceSource.ENCHANTING_TABLE_KEY, EnchantingTableExperienceSource::fromJsonObject)
+                .registerType(ExperienceSource.FISH_KEY, FishExperienceSource::fromJsonObject)
+                .registerType(ExperienceSource.ENTITY_KEY, EntityExperienceSource::fromJsonObject)
+                .registerType(ExperienceSource.CHEST_KEY, ChestExperienceSource::fromJsonObject)
+                .registerType(ExperienceSource.SMELT_KEY, SmeltExperienceSource::fromJsonObject)
+                .registerType(ExperienceSource.ADVANCEMENT_KEY, AdvancementExperienceSource::fromJsonObject)
+                .registerType(ExperienceSource.ANVIL_ENCHANT_KEY, AnvilEnchantExperienceSource::fromJsonObject)
+                .registerType(ExperienceSource.STRUCTURE_KEY, StructureExperienceSource::fromJsonObject);
     }
 
-    private void setAttributeStyles() {
+    void setAttributeStyles() {
 
         getComponentHandler()
-                .setAttributeStyle(() -> Attributes.MAX_HEALTH, ChatFormatting.RED, "❤")
-                .setAttributeStyle(() -> Attributes.ATTACK_DAMAGE, ChatFormatting.DARK_RED, "⚔")
-                .setAttributeStyle(() -> Attributes.MOVEMENT_SPEED, ChatFormatting.WHITE, "⏭")
-                .setAttributeStyle(() -> Attributes.JUMP_STRENGTH, ChatFormatting.GREEN, "↑")
-                .setAttributeStyle(() -> Attributes.ATTACK_SPEED, ChatFormatting.YELLOW, "⟳")
-                .setAttributeStyle(() -> Attributes.ATTACK_KNOCKBACK, ChatFormatting.AQUA, "⇶")
-                .setAttributeStyle(() -> Attributes.ARMOR, ChatFormatting.GRAY, "◇")
-                .setAttributeStyle(() -> Attributes.ARMOR_TOUGHNESS, ChatFormatting.DARK_GRAY, "◆")
-                .setAttributeStyle(() -> Attributes.KNOCKBACK_RESISTANCE, ChatFormatting.DARK_BLUE, "❖")
-                .setAttributeStyle(() -> Attributes.LUCK, ChatFormatting.LIGHT_PURPLE, "☘")
-                .setAttributeStyle(ForgeMod.SWIM_SPEED, ChatFormatting.DARK_AQUA, "⏭")
-                .setAttributeStyle(ForgeMod.REACH_DISTANCE, ChatFormatting.BLUE, "⛏")
-                .setAttributeStyle(ForgeMod.ATTACK_RANGE, ChatFormatting.GOLD, "⚔")
-                .setAttributeStyle(BaseModule.Attributes.CHEST_LUCK, ChatFormatting.DARK_GREEN, "☘")
-                .setAttributeStyle(BaseModule.Attributes.WISDOM, ChatFormatting.DARK_AQUA, "☯");
+                .setAttributeStyle(Attributes.MAX_HEALTH, new AttributeStyle(ChatFormatting.RED, "❤"))
+                .setAttributeStyle(Attributes.ATTACK_DAMAGE, new AttributeStyle(ChatFormatting.DARK_RED, "⚔"))
+                .setAttributeStyle(Attributes.MOVEMENT_SPEED, new AttributeStyle(ChatFormatting.WHITE, "⏭"))
+                .setAttributeStyle(Attributes.JUMP_STRENGTH, new AttributeStyle(ChatFormatting.GREEN, "↑"))
+                .setAttributeStyle(Attributes.ATTACK_SPEED, new AttributeStyle(ChatFormatting.YELLOW, "⟳"))
+                .setAttributeStyle(Attributes.ATTACK_KNOCKBACK,  new AttributeStyle(ChatFormatting.AQUA, "⇶"))
+                .setAttributeStyle(Attributes.ARMOR, new AttributeStyle(ChatFormatting.GRAY, "◇"))
+                .setAttributeStyle(Attributes.ARMOR_TOUGHNESS, new AttributeStyle(ChatFormatting.DARK_GRAY, "◆"))
+                .setAttributeStyle(Attributes.KNOCKBACK_RESISTANCE, new AttributeStyle(ChatFormatting.DARK_BLUE, "❖"))
+                .setAttributeStyle(Attributes.LUCK, new AttributeStyle(ChatFormatting.LIGHT_PURPLE, "☘"))
+                .setAttributeStyle(ForgeMod.SWIM_SPEED, new AttributeStyle(ChatFormatting.DARK_AQUA, "✷"))
+                .setAttributeStyle(PSAttributes.CRIT_DAMAGE, new AttributeStyle(ChatFormatting.DARK_BLUE, "※", true))
+                .setAttributeStyle(PSAttributes.CHEST_LUCK, new AttributeStyle(ChatFormatting.DARK_GREEN, "☘"))
+                .setAttributeStyle(PSAttributes.WISDOM, new AttributeStyle(ChatFormatting.DARK_AQUA, "☯"))
+                .setAttributeStyle(PSAttributes.LEGACY, new AttributeStyle(ChatFormatting.LIGHT_PURPLE, "✸"));
     }
 
 }

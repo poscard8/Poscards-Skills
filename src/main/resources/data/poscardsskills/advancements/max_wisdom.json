@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "minecraft:experience_bottle"
+      "item": "poscardsskills:divine_shard"
     },
     "title": {
       "translate": "advancement.poscardsskills.max_wisdom"
@@ -14,9 +14,9 @@
   "parent": "poscardsskills:obtain_brilliant_shard",
   "criteria": {
     "requirement": {
-      "trigger": "poscardsskills:carry_brilliant_shard",
+      "trigger": "poscardsskills:carry_magic_shard",
       "conditions": {
-        "count": 50
+        "count": 32
       }
     }
   }

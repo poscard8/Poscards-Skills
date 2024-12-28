@@ -7,25 +7,25 @@ import net.minecraft.advancements.CriterionTrigger;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class PSCriteriaTriggers {
+/**
+ * Utility class for advancement criteria triggers.
+ */
+public class PSCriteriaTriggers {
 
-    private PSCriteriaTriggers() {}
+    public static final List<CriterionTrigger<?>> ALL = new ArrayList<>();
 
-
-    private static final List<CriterionTrigger<?>> VALUES = new ArrayList<>();
-
-    public static final CarryBrilliantShardTrigger CARRY_BRILLIANT_SHARD = register(new CarryBrilliantShardTrigger());
+    public static final AscensionTrigger ASCENSION = register(new AscensionTrigger());
+    public static final CarryMagicShardTrigger CARRY_BRILLIANT_SHARD = register(new CarryMagicShardTrigger());
     public static final GainXPTrigger GAIN_XP = register(new GainXPTrigger());
     public static final LevelUpTrigger LEVEL_UP = register(new LevelUpTrigger());
-    public static final RareDropTrigger RARE_DROP = register(new RareDropTrigger());
+    public static final SecretTrigger SECRET = register(new SecretTrigger());
     public static final SkillCraftingTrigger SKILL_CRAFTING = register(new SkillCraftingTrigger());
-    public static final UseKeyTrigger USE_KEY = register(new UseKeyTrigger());
 
-    public static void registerAll() { VALUES.forEach(CriteriaTriggers::register); }
+    public static void register() { ALL.forEach(CriteriaTriggers::register); }
 
-    private static <T extends CriterionTrigger<?>> T register(T trigger) {
+    static <T extends CriterionTrigger<?>> T register(T trigger) {
 
-        VALUES.add(trigger);
+        ALL.add(trigger);
         return trigger;
     }
 

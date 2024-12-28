@@ -10,7 +10,7 @@
       "translate": "advancement.poscardsskills.obtain_brilliant_shard.desc"
     }
   },
-  "parent": "poscardsskills:rare_drop",
+  "parent": "poscardsskills:beginning",
   "criteria": {
     "requirement": {
       "trigger": "minecraft:inventory_changed",

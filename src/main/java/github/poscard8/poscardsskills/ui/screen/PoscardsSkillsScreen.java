@@ -3,39 +3,47 @@ package github.poscard8.poscardsskills.ui.screen;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import github.poscard8.poscardsskills.PoscardsSkills;
+import github.poscard8.poscardsskills.secret.Secrets;
 import github.poscard8.poscardsskills.skill.Skill;
 import github.poscard8.poscardsskills.skill.SkillData;
-import github.poscard8.poscardsskills.skill.SkillHandler;
 import github.poscard8.poscardsskills.skill.SkillInstance;
 import github.poscard8.poscardsskills.ui.menu.PoscardsSkillsMenu;
 import github.poscard8.poscardsskills.ui.menu.SkillCraftingMenu;
+import github.poscard8.poscardsskills.ui.widget.ButtonWithTooltip;
 import github.poscard8.poscardsskills.ui.widget.SkillMenuButton;
 import github.poscard8.poscardsskills.util.PSUtils;
 import github.poscard8.poscardsskills.util.component.PSComponents;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.ImageButton;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 
+/**
+ * Main screen of the mod.
+ */
 @OnlyIn(Dist.CLIENT)
-public class PoscardsSkillsScreen extends AbstractContainerScreen<PoscardsSkillsMenu> {
+@ParametersAreNonnullByDefault
+public final class PoscardsSkillsScreen extends AbstractContainerScreen<PoscardsSkillsMenu> {
 
     public static final ResourceLocation TEXTURE_LOCATION = PoscardsSkills.asResource("textures/gui/poscardsskills.png");
 
     public ItemStack playerHead = null;
-    public Player player = null;
+    public LocalPlayer localPlayer = null;
+    public ServerPlayer player = null;
 
     public PoscardsSkillsScreen(PoscardsSkillsMenu menu, Inventory inventory, Component title) {
 
@@ -49,22 +57,25 @@ public class PoscardsSkillsScreen extends AbstractContainerScreen<PoscardsSkills
         super.init();
 
         assert minecraft != null;
-        player = minecraft.player;
+        localPlayer = minecraft.player;
+        player = PSUtils.getServerPlayer();
         playerHead = new ItemStack(Items.PLAYER_HEAD);
 
-        playerHead.getOrCreateTag().putString("SkullOwner", player.getName().getString());
+        playerHead.getOrCreateTag().putString("SkullOwner", localPlayer.getName().getString());
 
         if (player != null) {
 
+            SkillData skillData = skillData();
+            assert skillData != null;
+
             for (Skill skill : PoscardsSkills.getSkillHandler().getValues()) {
 
-                SkillInstance instance = SkillData.of(player).getSkill(skill);
-
-                SkillHandler.SkillPosition position = skill.position();
-                addRenderableWidget(new SkillMenuButton(instance, leftPos + 43 + position.column * 18, topPos + 15 + position.row * 18, this));
+                SkillInstance instance = skillData.getSkill(skill);
+                addRenderableWidget(new SkillMenuButton(this, instance, leftPos + 7 + skill.column * 18, topPos + 15 + skill.row * 18));
             }
         }
         addRenderableWidget(profileButton());
+        addRenderableWidget(journeyButton());
         addRenderableWidget(skillCraftingMenuButton());
     }
 
@@ -84,31 +95,50 @@ public class PoscardsSkillsScreen extends AbstractContainerScreen<PoscardsSkills
         RenderSystem.setShaderTexture(0, TEXTURE_LOCATION);
 
         blit(poseStack, leftPos, topPos - 2, 0, 0, imageWidth, 168);
+        blit(poseStack, leftPos - 30, topPos + 8, 0, 168, 30, 68);
     }
 
-    protected ImageButton profileButton() {
+    @Override
+    protected void renderTooltip(PoseStack poseStack, int mouseX, int mouseY) {
 
-        return new ImageButton(leftPos + 7, topPos + 24, 18, 18, 176, 0, 18, TEXTURE_LOCATION, 256, 256, button -> {},
-                (button, poseStack, mouseX, mouseY) -> renderTooltip(poseStack, PSComponents.statComponents(skillData()), Optional.empty(), mouseX, mouseY),
-                Component.empty()) {
+        RenderSystem.depthFunc(519);
+        super.renderTooltip(poseStack, mouseX, mouseY);
+        children().forEach(guiEventListener -> {
+
+            if (guiEventListener instanceof ButtonWithTooltip button) button.renderTooltip(poseStack, mouseX, mouseY);
+        });
+        RenderSystem.disableDepthTest();
+    }
+
+    ImageButton profileButton() {
+
+        return new ButtonWithTooltip(this, leftPos - 23, topPos + 15, 18, 18, 176, 36, 18, TEXTURE_LOCATION, 256, 256,
+                button -> {
+
+                    ServerPlayer player = PSUtils.getServerPlayer();
+                    if (player != null) Secrets.PROFILE_BUTTON.unlock(player);
+                },
+                () -> PSComponents.statComponents(skillData())) {
 
             @Override
-            public void render(PoseStack poseStack2, int mouseX2, int mouseY2, float delta) {
+            public void render(PoseStack poseStack, int mouseX, int mouseY, float delta) {
 
-                super.render(poseStack2, mouseX2, mouseY2, delta);
-                Minecraft.getInstance().getItemRenderer().renderAndDecorateFakeItem(playerHead, x + 1, y + 1);
+                super.render(poseStack, mouseX, mouseY, delta);
+                Minecraft.getInstance().getItemRenderer().renderAndDecorateItem(playerHead, x + 1, y + 1);
             }
         };
     }
 
+    ImageButton journeyButton() {
 
+        return new ButtonWithTooltip(this, leftPos - 23, topPos + 33, 18, 18, 176, 72, 18, TEXTURE_LOCATION, 256, 256, button -> {}, () -> PSComponents.journeyComponents(skillData()));
+    }
 
-    protected ImageButton skillCraftingMenuButton() {
+    ImageButton skillCraftingMenuButton() {
 
-        return new ImageButton(leftPos + 7, topPos + 42, 18, 18, 176, 36, 18, TEXTURE_LOCATION, 256, 256,
+        return new ButtonWithTooltip(this, leftPos - 23, topPos + 51, 18, 18, 176, 108, 18, TEXTURE_LOCATION, 256, 256,
                 button -> Objects.requireNonNull(PSUtils.getServerPlayer()).openMenu(SkillCraftingMenu.PROVIDER),
-                (button, poseStack, mouseX, mouseY) -> renderTooltip(poseStack, PSComponents.skillCrafting(), mouseX, mouseY),
-                Component.empty());
+                () -> List.of(PSComponents.skillCrafting()));
     }
 
 
@@ -117,7 +147,7 @@ public class PoscardsSkillsScreen extends AbstractContainerScreen<PoscardsSkills
 
         assert minecraft != null;
 
-        if (PoscardsSkills.KEY_SKILL_MENU.matches(key, scan)) {
+        if (PoscardsSkills.KEY_POSCARDS_SKILLS_MENU.matches(key, scan)) {
 
             minecraft.setScreen(null);
             minecraft.mouseHandler.grabMouse();

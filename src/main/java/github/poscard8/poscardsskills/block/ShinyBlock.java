@@ -9,6 +9,13 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import org.jetbrains.annotations.Nullable;
 
+import javax.annotation.ParametersAreNonnullByDefault;
+
+/**
+ * Animated texture block with 2 different states. {@code phase} can be
+ * {@code 0} or {@code 1} and follows a checkerboard pattern.
+ */
+@ParametersAreNonnullByDefault
 public class ShinyBlock extends Block {
 
     public static final IntegerProperty PHASE = IntegerProperty.create("phase", 0, 1);
@@ -26,8 +33,8 @@ public class ShinyBlock extends Block {
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext ctx) {
 
-        int x = ctx.getClickedPos().getX() % 2;
-        int z = ctx.getClickedPos().getZ() % 2;
+        int x = Math.abs(ctx.getClickedPos().getX()) % 2;
+        int z = Math.abs(ctx.getClickedPos().getZ()) % 2;
         return super.getStateForPlacement(ctx) != null ? this.defaultBlockState().setValue(PHASE, (x + z) % 2) : null;
     }
 

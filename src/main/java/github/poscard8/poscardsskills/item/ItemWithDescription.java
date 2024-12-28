@@ -11,23 +11,28 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.registries.ForgeRegistries;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
 import java.util.List;
 
+/**
+ * Utility item class. Item descriptions are displayed only if
+ * the player is holding shift.
+ */
 public abstract class ItemWithDescription extends Item {
 
     public ItemWithDescription(Properties property) { super(property); }
 
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
+    public void appendHoverText(@NotNull ItemStack stack, @Nullable Level level, List<Component> components, @NotNull TooltipFlag flag) {
 
         components.add(PSComponents.holdShift());
 
         if(Screen.hasShiftDown()) {
 
-            components.add(Component.empty());
+            components.add(PSComponents.space());
             components.addAll(getDescriptionComponents());
         }
         super.appendHoverText(stack, level, components, flag);
@@ -38,7 +43,7 @@ public abstract class ItemWithDescription extends Item {
         ResourceLocation key = ForgeRegistries.ITEMS.getKey(this);
         if (key == null) return List.of();
 
-        Component description = Component.translatable(String.format("tooltip.%s.%s_desc", key.getNamespace(), key.getPath()))
+        Component description = Component.translatable(String.format("tooltip.%s.%s_desc_1", key.getNamespace(), key.getPath()))
                 .withStyle(PoscardsSkills.getComponentHandler().getColorPalette().colorOf(ColorPalette.Key.DESCRIPTION));
         return PSComponents.split(description);
     }

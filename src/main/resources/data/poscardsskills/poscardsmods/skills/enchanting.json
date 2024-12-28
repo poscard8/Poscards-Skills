@@ -1,0 +1,82 @@
+{
+  "icon": "minecraft:enchanting_table",
+  "background": "minecraft:block/lapis_block",
+  "row": 2,
+  "column": 4,
+  "max_level": 30,
+  "attribute": "minecraft:generic.max_health",
+  "amount": 0.025,
+  "rewards": [
+    {
+      "from": 2,
+      "to": 9,
+      "xp": 60
+    },
+    {
+      "from": 15,
+      "to": 24,
+      "xp": 100
+    },
+    {
+      "at": [3, 5, 7],
+      "item_stack":
+      {
+        "item": "minecraft:lapis_lazuli",
+        "count": 16
+      }
+    },
+    {
+      "at": [9, 18, 27],
+      "item_stack":
+      {
+        "item": "minecraft:enchanted_book",
+        "count": 1,
+        "nbt": {
+          "StoredEnchantments": [
+            {
+              "id": "minecraft:mending",
+              "lvl": 1
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "recipes": [
+    {
+      "at": 25,
+      "input1": {
+        "item": "poscardsskills:brilliant_shard",
+        "count": 1
+      },
+      "output": {
+        "item": "poscardsskills:brilliant_catalyst",
+        "count": 1
+      }
+    },
+    {
+      "at": 25,
+      "group": "extra_progression",
+      "input1": {
+        "item": "poscardsskills:blessed_shard",
+        "count": 2
+      },
+      "output": {
+        "item": "poscardsskills:blessed_catalyst",
+        "count": 1
+      }
+    },
+    {
+      "at": 25,
+      "group": "extra_progression",
+      "input1": {
+        "item": "poscardsskills:divine_shard",
+        "count": 3
+      },
+      "output": {
+        "item": "poscardsskills:divine_catalyst",
+        "count": 1
+      }
+    }
+  ]
+}
