@@ -1,0 +1,12 @@
+{
+  "type": "peritia:chest",
+  "skill": "exploring",
+  "xp": 750,
+  "inputs": [
+    "minecraft:chests/buried_treasure"
+  ],
+  "hints": [
+    "hint.poscardsskills.buried_treasure_chests"
+  ],
+  "index": 59
+}

@@ -1,0 +1,38 @@
+{
+  "parent": "poscardsskills:combat_and_magic",
+  "display": {
+    "title": {
+      "translate": "advancement.poscardsskills.mining_and_smithing"
+    },
+    "description": {
+      "translate": "advancement.poscardsskills.mining_and_smithing.desc"
+    },
+    "icon": {
+      "item": "poscardsskills:volatile_pickaxe"
+    },
+    "frame": "challenge"
+  },
+  "criteria": {
+    "primary": {
+      "trigger": "peritia:skill",
+      "conditions": {
+        "requisite": "poscardsskills:mining,60"
+      }
+    },
+    "secondary": {
+      "trigger": "peritia:skill",
+      "conditions": {
+        "requisite": "poscardsskills:smithing,30"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "primary"
+    ],
+    [
+      "secondary"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

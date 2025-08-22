@@ -1,13 +1,13 @@
 {
   "values": [
+    "poscardsskills:jasper",
+    "poscardsskills:jasper_stairs",
+    "poscardsskills:jasper_slab",
+    "poscardsskills:jasper_wall",
     "poscardsskills:jasper_bricks",
     "poscardsskills:jasper_brick_stairs",
     "poscardsskills:jasper_brick_slab",
     "poscardsskills:jasper_brick_wall",
-    "poscardsskills:chiseled_jasper",
-    "poscardsskills:jasper_pillar",
-    "poscardsskills:layered_jasper",
-    "poscardsskills:shiny_jasper",
-    "poscardsskills:rough_jasper"
+    "poscardsskills:chiseled_jasper_bricks"
   ]
 }

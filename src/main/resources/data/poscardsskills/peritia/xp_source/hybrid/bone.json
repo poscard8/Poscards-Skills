@@ -1,0 +1,9 @@
+{
+  "type": "peritia:block",
+  "skill": "mining,exploring",
+  "xp": 25,
+  "inputs": [
+    "minecraft:bone_block"
+  ],
+  "index": 101
+}

@@ -1,0 +1,11 @@
+{
+  "type": "peritia:entity",
+  "skill": "combat",
+  "xp": 360,
+  "inputs": [
+    "minecraft:shulker"
+  ],
+  "allowFarming": true,
+  "assistRange": 16,
+  "index": 29
+}

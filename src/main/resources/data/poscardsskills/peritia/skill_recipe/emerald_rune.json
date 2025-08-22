@@ -1,0 +1,22 @@
+{
+  "requires": [
+    "poscardsskills:social,20"
+  ],
+  "input": {
+    "ingredient": {
+      "item": "poscardsskills:amethyst_rune"
+    },
+    "count": 1
+  },
+  "input2": {
+    "ingredient": {
+      "item": "minecraft:emerald"
+    },
+    "count": 6
+  },
+  "result": {
+    "item": "poscardsskills:emerald_rune",
+    "count": 1
+  },
+  "index": 504
+}

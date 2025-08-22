@@ -1,0 +1,25 @@
+{
+  "type": "peritia:block",
+  "skill": "mining",
+  "xp": 120,
+  "inputs": [
+    "#quark:corundum",
+    "quark:red_corundum_cluster",
+    "quark:orange_corundum_cluster",
+    "quark:yellow_corundum_cluster",
+    "quark:green_corundum_cluster",
+    "quark:blue_corundum_cluster",
+    "quark:indigo_corundum_cluster",
+    "quark:violet_corundum_cluster",
+    "quark:white_corundum_cluster",
+    "quark:black_corundum_cluster"
+  ],
+  "index": 103,
+  "requireCorrectTool": true,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "quark"
+    }
+  ]
+}

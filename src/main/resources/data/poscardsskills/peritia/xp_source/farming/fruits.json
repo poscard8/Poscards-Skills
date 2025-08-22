@@ -1,0 +1,10 @@
+{
+  "type": "peritia:block",
+  "skill": "farming",
+  "xp": 60,
+  "inputs": [
+    "minecraft:melon",
+    "minecraft:pumpkin"
+  ],
+  "index": 7
+}

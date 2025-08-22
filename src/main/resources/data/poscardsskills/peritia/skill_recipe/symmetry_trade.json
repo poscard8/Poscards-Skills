@@ -1,0 +1,31 @@
+{
+  "requires": [
+    "poscardsskills:combat,60",
+    "poscardsskills:exploring,60",
+    "poscardsskills:mining,60",
+    "poscardsskills:farming,40",
+    "poscardsskills:woodcutting,40",
+    "poscardsskills:smithing,30",
+    "poscardsskills:fishing,20"
+  ],
+  "input": {
+    "ingredient": {
+      "item": "poscardsskills:brilliant_gemstone"
+    },
+    "count": 16
+  },
+  "result": {
+    "item": "minecraft:enchanted_book",
+    "count": 1,
+    "nbt": {
+      "StoredEnchantments": [
+        {
+          "id": "poscardsskills:symmetry",
+          "lvl": 1
+        }
+      ]
+    }
+  },
+  "trade": true,
+  "index": 501
+}

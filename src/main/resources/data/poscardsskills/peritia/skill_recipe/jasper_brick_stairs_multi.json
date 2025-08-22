@@ -1,0 +1,17 @@
+{
+  "requires": [
+    "poscardsskills:mining,15"
+  ],
+  "input": {
+    "ingredient": {
+      "item": "poscardsskills:jasper_bricks"
+    },
+    "count": 3
+  },
+  "result": {
+    "item": "poscardsskills:jasper_brick_stairs",
+    "count": 4
+  },
+  "index": -1103,
+  "hasText": false
+}

@@ -1,20 +1,23 @@
 {
+  "parent": "poscardsskills:root",
   "display": {
-    "icon": {
-      "item": "poscardsskills:brilliant_repair_stone"
-    },
     "title": {
       "translate": "advancement.poscardsskills.skill_crafting"
     },
     "description": {
       "translate": "advancement.poscardsskills.skill_crafting.desc"
+    },
+    "icon": {
+      "item": "minecraft:crafting_table"
     }
   },
-  "parent": "poscardsskills:obtain_rough_jade",
   "criteria": {
     "requirement": {
-      "trigger": "poscardsskills:skill_crafting",
-      "conditions": {}
+      "trigger": "peritia:skill_recipe",
+      "conditions": {
+        "recipe": "any"
+      }
     }
-  }
+  },
+  "sends_telemetry_event": true
 }

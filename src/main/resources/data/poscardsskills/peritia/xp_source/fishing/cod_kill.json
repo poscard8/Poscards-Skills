@@ -1,0 +1,11 @@
+{
+  "type": "peritia:entity",
+  "skill": "fishing",
+  "xp": 75,
+  "inputs": [
+    "minecraft:cod"
+  ],
+  "allowFarming": true,
+  "visibility": "show",
+  "index": 51
+}

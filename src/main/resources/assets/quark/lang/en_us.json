@@ -1,0 +1,16 @@
+{
+
+  "__comment__": "Quark has a Jasper block set. To avoid confusion, I am renaming my Jasper block set to 'Red Jasper' ONLY WHEN QUARK IS LOADED.",
+
+  "block.poscardsskills.jasper_bricks": "Red Jasper Bricks",
+  "block.poscardsskills.jasper_brick_stairs": "Red Jasper Brick Stairs",
+  "block.poscardsskills.jasper_brick_slab": "Red Jasper Brick Slab",
+  "block.poscardsskills.jasper_brick_wall": "Red Jasper Brick Wall",
+  "block.poscardsskills.chiseled_jasper": "Chiseled Red Jasper",
+  "block.poscardsskills.jasper_pillar": "Red Jasper Pillar",
+  "block.poscardsskills.layered_jasper": "Layered Red Jasper",
+  "block.poscardsskills.shiny_jasper": "Shiny Red Jasper",
+  "block.poscardsskills.rough_jasper": "Rough Red Jasper",
+
+  "block.poscardsskills.jasper_brick_vertical_slab": "Red Jasper Brick Vertical Slab"
+}

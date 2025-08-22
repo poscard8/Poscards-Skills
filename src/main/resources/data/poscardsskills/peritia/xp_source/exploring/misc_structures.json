@@ -1,0 +1,14 @@
+{
+  "type": "peritia:structure",
+  "skill": "exploring",
+  "xp": 1250,
+  "inputs": [
+    "minecraft:igloo",
+    "minecraft:swamp_hut"
+  ],
+  "hints": [
+    "hint.poscardsskills.igloos",
+    "hint.poscardsskills.swamp_huts"
+  ],
+  "index": 11
+}

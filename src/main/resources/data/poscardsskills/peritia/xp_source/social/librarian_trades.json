@@ -1,0 +1,13 @@
+{
+  "type": "peritia:trade",
+  "skill": "social",
+  "xp": 250,
+  "professions": [
+    "librarian"
+  ],
+  "items": [
+    "minecraft:enchanted_book",
+    "minecraft:name_tag"
+  ],
+  "index": 7
+}

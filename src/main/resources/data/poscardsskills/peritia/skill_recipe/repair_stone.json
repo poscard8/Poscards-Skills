@@ -1,0 +1,22 @@
+{
+  "requires": [
+    "poscardsskills:smithing,10"
+  ],
+  "input": {
+    "ingredient": {
+      "item": "poscardsskills:luminous_gemstone"
+    },
+    "count": 1
+  },
+  "input2": {
+    "ingredient": {
+      "tag": "poscardsskills:mineral"
+    },
+    "count": 4
+  },
+  "result": {
+    "item": "poscardsskills:repair_stone",
+    "count": 2
+  },
+  "index": 400
+}

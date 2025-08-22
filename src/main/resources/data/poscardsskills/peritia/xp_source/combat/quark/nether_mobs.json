@@ -1,0 +1,16 @@
+{
+  "type": "peritia:entity",
+  "skill": "combat",
+  "xp": 120,
+  "inputs": [
+    "quark:wraith",
+    "quark:foxhound"
+  ],
+  "index": 22,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "quark"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "type": "peritia:advancement",
+  "skill": "exploring",
+  "xp": 10000,
+  "inputs": [
+    "create:long_travel"
+  ],
+  "visibility": "show",
+  "index": 106,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ]
+}

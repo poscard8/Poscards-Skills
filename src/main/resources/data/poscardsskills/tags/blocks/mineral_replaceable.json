@@ -1,0 +1,22 @@
+{
+  "values": [
+    "#minecraft:base_stone_overworld",
+    "#forge:stone",
+    "minecraft:dripstone_block",
+    "minecraft:calcite",
+    "minecraft:clay",
+    "minecraft:dirt",
+    "minecraft:rooted_dirt",
+    "minecraft:gravel",
+    "minecraft:cobblestone",
+    "minecraft:cobbled_deepslate",
+    {
+      "id": "quark:shale",
+      "required": false
+    },
+    {
+      "id": "quark:limestone",
+      "required": false
+    }
+  ]
+}

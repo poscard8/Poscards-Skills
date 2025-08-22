@@ -1,0 +1,10 @@
+{
+  "type": "peritia:block",
+  "skill": "mining",
+  "xp": 400,
+  "inputs": [
+    "minecraft:raw_gold_block"
+  ],
+  "index": 33,
+  "requireCorrectTool": true
+}

@@ -1,0 +1,12 @@
+{
+  "type": "peritia:structure",
+  "skill": "exploring",
+  "xp": 2000,
+  "inputs": [
+    "minecraft:pillager_outpost"
+  ],
+  "hints": [
+    "hint.poscardsskills.pillager_outposts"
+  ],
+  "index": 15
+}

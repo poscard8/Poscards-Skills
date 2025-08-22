@@ -1,0 +1,15 @@
+{
+  "type": "peritia:entity",
+  "skill": "combat",
+  "xp": 75,
+  "inputs": [
+    "minecraft:skeleton",
+    "minecraft:stray",
+    "minecraft:bogged",
+    "minecraft:creeper"
+  ],
+  "gearFunction": "evaluate",
+  "assistRange": 12,
+  "visibility": "show",
+  "index": 3
+}

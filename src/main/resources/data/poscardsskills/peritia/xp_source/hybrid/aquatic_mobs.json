@@ -1,0 +1,11 @@
+{
+  "type": "peritia:entity",
+  "skill": "combat,fishing",
+  "xp": 125,
+  "inputs": [
+    "minecraft:drowned",
+    "minecraft:guardian"
+  ],
+  "assistRange": 12,
+  "index": 81
+}

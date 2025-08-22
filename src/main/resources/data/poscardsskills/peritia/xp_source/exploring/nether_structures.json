@@ -1,0 +1,14 @@
+{
+  "type": "peritia:structure",
+  "skill": "exploring",
+  "xp": 2500,
+  "inputs": [
+    "minecraft:fortress",
+    "minecraft:bastion_remnant"
+  ],
+  "hints": [
+    "hint.poscardsskills.fortresses",
+    "hint.poscardsskills.bastion_remnants"
+  ],
+  "index": 19
+}

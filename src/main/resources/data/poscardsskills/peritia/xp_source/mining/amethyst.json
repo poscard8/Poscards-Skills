@@ -1,0 +1,10 @@
+{
+  "type": "peritia:block",
+  "skill": "mining",
+  "xp": 90,
+  "inputs": [
+    "minecraft:amethyst_cluster"
+  ],
+  "index": 37,
+  "requireCorrectTool": true
+}

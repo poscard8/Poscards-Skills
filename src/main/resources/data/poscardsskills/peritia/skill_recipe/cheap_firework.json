@@ -1,0 +1,27 @@
+{
+  "requires": [
+    "poscardsskills:exploring,54"
+  ],
+  "input": {
+    "ingredient": {
+      "item": "minecraft:paper"
+    },
+    "count": 1
+  },
+  "input2": {
+    "ingredient": {
+      "item": "minecraft:gunpowder"
+    },
+    "count": 1
+  },
+  "result": {
+    "item": "minecraft:firework_rocket",
+    "count": 4,
+    "nbt": {
+      "Fireworks": {
+        "Flight": 1
+      }
+    }
+  },
+  "index": 301
+}

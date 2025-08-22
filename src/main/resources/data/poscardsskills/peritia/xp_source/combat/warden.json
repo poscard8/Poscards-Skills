@@ -1,0 +1,10 @@
+{
+  "type": "peritia:entity",
+  "skill": "poscardsskills:combat",
+  "xp": 2500,
+  "inputs": [
+    "minecraft:warden"
+  ],
+  "allowFarming": true,
+  "index": 51
+}

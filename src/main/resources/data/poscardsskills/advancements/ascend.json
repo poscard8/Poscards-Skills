@@ -1,22 +1,23 @@
 {
+  "parent": "poscardsskills:root",
   "display": {
-    "icon": {
-      "item": "poscardsskills:brilliant_catalyst"
-    },
     "title": {
       "translate": "advancement.poscardsskills.ascend"
     },
     "description": {
       "translate": "advancement.poscardsskills.ascend.desc"
+    },
+    "icon": {
+      "item": "poscardsskills:luminous_gemstone"
     }
   },
-  "parent": "poscardsskills:beginning",
   "criteria": {
     "requirement": {
-      "trigger": "poscardsskills:ascension",
+      "trigger": "peritia:ascension",
       "conditions": {
         "count": 1
       }
     }
-  }
+  },
+  "sends_telemetry_event": true
 }

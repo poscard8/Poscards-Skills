@@ -14,32 +14,32 @@ import java.util.List;
 /**
  * Feature placement register.
  */
-public class PSPlacedFeatures {
-
+public class PSPlacedFeatures
+{
     public static final ResourceKey<PlacedFeature>
 
             ORE_JADE = register("ore_jade"),
             ORE_JASPER = register("ore_jasper"),
             ORE_MARBLE = register("ore_marble");
 
-    public static void register(BootstapContext<PlacedFeature> ctx) {
-
+    public static void register(BootstapContext<PlacedFeature> ctx)
+    {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatureGetter = ctx.lookup(Registries.CONFIGURED_FEATURE);
 
-        ctx.register(ORE_JADE, new PlacedFeature(configuredFeatureGetter.getOrThrow(PSConfiguredFeatures.ORE_JADE), psOrePlacement()));
-        ctx.register(ORE_JASPER, new PlacedFeature(configuredFeatureGetter.getOrThrow(PSConfiguredFeatures.ORE_JASPER), psOrePlacement()));
-        ctx.register(ORE_MARBLE, new PlacedFeature(configuredFeatureGetter.getOrThrow(PSConfiguredFeatures.ORE_MARBLE), psOrePlacement()));
+        ctx.register(ORE_JADE, new PlacedFeature(configuredFeatureGetter.getOrThrow(PSConfiguredFeatures.ORE_JADE), placement()));
+        ctx.register(ORE_JASPER, new PlacedFeature(configuredFeatureGetter.getOrThrow(PSConfiguredFeatures.ORE_JASPER), placement()));
+        ctx.register(ORE_MARBLE, new PlacedFeature(configuredFeatureGetter.getOrThrow(PSConfiguredFeatures.ORE_MARBLE), placement()));
 
     }
 
-    static List<PlacementModifier> psOrePlacement() {
-
-        PlacementModifier count = RarityFilter.onAverageOnceEvery(3);
+    static List<PlacementModifier> placement()
+    {
+        PlacementModifier rarity = RarityFilter.onAverageOnceEvery(2);
         PlacementModifier spread = InSquarePlacement.spread();
-        PlacementModifier height = HeightRangePlacement.uniform(VerticalAnchor.absolute(8), VerticalAnchor.absolute(56));
+        PlacementModifier height = HeightRangePlacement.uniform(VerticalAnchor.absolute(-24), VerticalAnchor.absolute(56));
         PlacementModifier biome = BiomeFilter.biome();
 
-        return List.of(count, spread, height, biome);
+        return List.of(rarity, spread, height, biome);
     }
 
     static ResourceKey<PlacedFeature> register(String name) { return ResourceKey.create(Registries.PLACED_FEATURE, PoscardsSkills.asResource(name)); }

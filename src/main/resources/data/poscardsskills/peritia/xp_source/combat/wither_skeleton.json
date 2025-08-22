@@ -1,0 +1,10 @@
+{
+  "type": "peritia:entity",
+  "skill": "combat",
+  "xp": 300,
+  "inputs": [
+    "minecraft:wither_skeleton"
+  ],
+  "gearFunction": "onlyEnchanted",
+  "index": 27
+}

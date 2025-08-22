@@ -1,0 +1,12 @@
+{
+  "type": "peritia:potion",
+  "skill": "magic",
+  "xp": 300,
+  "inputs": [
+    "minecraft:gunpowder",
+    "minecraft:redstone",
+    "minecraft:glowstone_dust"
+  ],
+  "visibility": "show",
+  "index": 3
+}

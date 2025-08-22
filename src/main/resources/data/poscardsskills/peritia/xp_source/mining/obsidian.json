@@ -1,0 +1,11 @@
+{
+  "type": "peritia:block",
+  "skill": "mining",
+  "xp": 30,
+  "inputs": [
+    "minecraft:obsidian",
+    "minecraft:crying_obsidian"
+  ],
+  "index": 7,
+  "requireCorrectTool": true
+}

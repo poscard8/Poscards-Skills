@@ -1,0 +1,14 @@
+{
+  "type": "peritia:entity",
+  "skill": "combat",
+  "xp": 60,
+  "inputs": [
+    "minecraft:zombie",
+    "minecraft:zombie_villager",
+    "minecraft:husk",
+    "minecraft:spider"
+  ],
+  "gearFunction": "evaluate",
+  "visibility": "show",
+  "index": 1
+}

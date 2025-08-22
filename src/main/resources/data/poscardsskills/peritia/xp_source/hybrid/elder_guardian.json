@@ -1,0 +1,10 @@
+{
+  "type": "peritia:entity",
+  "skill": "combat,fishing",
+  "xp": 1000,
+  "inputs": [
+    "minecraft:elder_guardian"
+  ],
+  "assistRange": 12,
+  "index": 83
+}

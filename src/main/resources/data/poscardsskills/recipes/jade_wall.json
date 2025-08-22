@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "poscardsskills:jade"
+    }
+  },
+  "result": {
+    "item": "poscardsskills:jade_wall",
+    "count": 6
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "peritia:entity",
+  "skill": "combat",
+  "xp": 2500,
+  "inputs": [
+    "minecraft:warden",
+    "minecraft:wither"
+  ],
+  "allowFarming": true,
+  "assistRange": 16,
+  "index": 51
+}

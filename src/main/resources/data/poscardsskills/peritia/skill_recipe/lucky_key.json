@@ -1,0 +1,22 @@
+{
+  "requires": [
+    "poscardsskills:exploring,30"
+  ],
+  "input": {
+    "ingredient": {
+      "item": "poscardsskills:luminous_gemstone"
+    },
+    "count": 1
+  },
+  "input2": {
+    "ingredient": {
+      "item": "minecraft:gold_ingot"
+    },
+    "count": 2
+  },
+  "result": {
+    "item": "poscardsskills:lucky_key",
+    "count": 2
+  },
+  "index": 401
+}

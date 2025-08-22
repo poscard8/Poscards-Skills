@@ -1,0 +1,10 @@
+{
+  "type": "peritia:advancement",
+  "skill": "farming",
+  "xp": 500,
+  "inputs": [
+    "minecraft:husbandry/plant_seed"
+  ],
+  "visibility": "show",
+  "index": 201
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "poscardsskills:jasper"
+  },
+  "result": "poscardsskills:jasper_wall",
+  "count": 1
+}

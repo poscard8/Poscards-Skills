@@ -1,0 +1,15 @@
+{
+  "type": "peritia:entity",
+  "skill": "combat",
+  "xp": 800,
+  "inputs": [
+    "quark:forgotten"
+  ],
+  "index": 14,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "quark"
+    }
+  ]
+}

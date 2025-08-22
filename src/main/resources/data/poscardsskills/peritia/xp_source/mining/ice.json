@@ -1,0 +1,13 @@
+{
+  "type": "peritia:block",
+  "skill": "mining",
+  "xp": 2,
+  "inputs": [
+    "minecraft:ice",
+    "minecraft:packed_ice",
+    "quark:permafrost"
+  ],
+  "allowFarming": true,
+  "requireCorrectTool": true,
+  "index": 9
+}

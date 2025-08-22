@@ -11,14 +11,7 @@ public class PSSoundEvents {
 
     public static final DeferredRegister<SoundEvent> ALL = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, PoscardsSkills.ID);
 
-    public static final RegistryObject<SoundEvent>
-
-            XP_GAIN = registerSound("xp_gain"),
-            LEVEL_UP = registerSound("level_up"),
-            UNLOCK_SECRET = registerSound("unlock_secret"),
-            RUNE_APPLY = registerSound("rune_apply"),
-            REPAIR_STONE_APPLY = registerSound("repair_stone_apply"),
-            CATALYST_USE = registerSound("catalyst_use");
+    public static final RegistryObject<SoundEvent> REPAIR_STONE_APPLY = registerSound("repair_stone_apply");
 
     static RegistryObject<SoundEvent> registerSound(String name) { return ALL.register(name, () -> SoundEvent.createVariableRangeEvent(PoscardsSkills.asResource(name))); }
 

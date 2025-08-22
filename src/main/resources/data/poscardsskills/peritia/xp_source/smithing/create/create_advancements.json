@@ -1,0 +1,19 @@
+{
+  "type": "peritia:advancement",
+  "skill": "smithing",
+  "xp": 1000,
+  "inputs": [
+    "create:brass",
+    "create:mechanical_press",
+    "create:compacting",
+    "create:sturdy_sheet",
+    "create:burner"
+  ],
+  "index": 202,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ]
+}

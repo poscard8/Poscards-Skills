@@ -1,0 +1,79 @@
+{
+  "description": [
+    "skill.poscardsskills.smithing.desc"
+  ],
+  "priority": "low",
+  "position": "-1,-1",
+  "minLevel": 0,
+  "maxLevel": 30,
+  "weight": 0.8,
+  "textures": {
+    "icon": "minecraft:iron_helmet",
+    "menu": {
+      "texture": "poscardsskills:gui/smithing"
+    },
+    "overlay": {
+      "texture": "poscardsskills:gui/smithing_overlay",
+      "size": "96,46",
+      "offset": "71,-13"
+    },
+    "alwaysRenderOverlay": false
+  },
+  "levelLayout": "star",
+  "levelXpFunction": {
+    "polynomial": [
+      0.15,
+      0,
+      75,
+      0
+    ]
+  },
+  "rewards": [
+    {
+      "at": {
+        "period": 3,
+        "startFrom": 9
+      },
+      "item": "poscardsskills:luminous_gemstone"
+    },
+    {
+      "at": 10,
+      "item": "poscardsskills:repair_stone"
+    },
+    {
+      "at": 20,
+      "item": "minecraft:enchanted_book",
+      "nbt": {
+        "StoredEnchantments": [
+          {
+            "id": "minecraft:depth_strider",
+            "lvl": 3
+          }
+        ]
+      }
+    },
+    {
+      "at": 10,
+      "xp": 10
+    }
+  ],
+  "attributes": [
+    {
+      "at": [
+        5,
+        15,
+        20,
+        25,
+        30
+      ],
+      "attribute": "peritia:player.crit_damage",
+      "value": 1.0
+    }
+  ],
+  "conditions": [
+    {
+      "type": "peritia:config",
+      "config": "poscardsskills:hasSmithingSkill"
+    }
+  ]
+}

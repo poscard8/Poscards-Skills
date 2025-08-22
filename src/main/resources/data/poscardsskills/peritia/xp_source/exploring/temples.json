@@ -1,0 +1,15 @@
+{
+  "type": "peritia:structure",
+  "skill": "exploring",
+  "xp": 2500,
+  "inputs": [
+    "minecraft:desert_pyramid",
+    "minecraft:jungle_temple"
+  ],
+  "hints": [
+    "hint.poscardsskills.desert_pyramids",
+    "hint.poscardsskills.jungle_temples"
+  ],
+  "visibility": "show",
+  "index": 13
+}

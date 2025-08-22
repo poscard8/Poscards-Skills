@@ -1,0 +1,68 @@
+{
+  "description": [
+    "skill.poscardsskills.exploring.desc"
+  ],
+  "priority": "low",
+  "position": "2,0",
+  "minLevel": 0,
+  "maxLevel": 60,
+  "weight": 1.2,
+  "textures": {
+    "icon": "minecraft:filled_map",
+    "menu": {
+      "texture": "poscardsskills:gui/exploring"
+    },
+    "milestone": {
+      "texture": "poscardsskills:gui/exploring_milestone"
+    }
+  },
+  "levelXpFunction": {
+    "polynomial": [
+      0.015,
+      0,
+      40,
+      0
+    ]
+  },
+  "rewards": [
+    {
+      "at": {
+        "period": 3,
+        "startFrom": 12
+      },
+      "item": "poscardsskills:luminous_gemstone"
+    },
+    {
+      "at": {
+        "period": 4,
+        "startFrom": 16
+      },
+      "item": "minecraft:emerald",
+      "count": 4
+    },
+    {
+      "at": 10,
+      "xp": 10
+    }
+  ],
+  "attributes": [
+    {
+      "at": "1->",
+      "attribute": "peritia:player.chest_luck",
+      "value": 1.0
+    }
+  ],
+  "levelRestrictions": [
+    {
+      "at": 31,
+      "item": "minecraft:heart_of_the_sea",
+      "count": 1
+    }
+  ],
+  "conditions": [
+    {
+      "type": "peritia:config",
+      "config": "poscardsskills:hasExploringSkill"
+    }
+  ]
+}

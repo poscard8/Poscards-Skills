@@ -1,0 +1,10 @@
+{
+  "type": "peritia:block",
+  "skill": "woodcutting",
+  "xp": 25,
+  "inputs": [
+    "#minecraft:jungle_logs"
+  ],
+  "visibility": "show",
+  "index": 7
+}

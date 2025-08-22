@@ -1,0 +1,15 @@
+{
+  "type": "peritia:entity",
+  "skill": "farming",
+  "xp": 200,
+  "inputs": [
+    "minecraft:chicken",
+    "minecraft:rabbit",
+    "minecraft:pig",
+    "minecraft:cow",
+    "minecraft:sheep"
+  ],
+  "allowFarming": true,
+  "visibility": "show",
+  "index": 107
+}

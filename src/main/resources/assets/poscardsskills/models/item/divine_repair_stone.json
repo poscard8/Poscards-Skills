@@ -1,6 +1,0 @@
-{
-  "parent": "poscardsskills:item/brilliant_repair_stone",
-  "textures": {
-    "layer0": "poscardsskills:item/divine_repair_stone"
-  }
-}

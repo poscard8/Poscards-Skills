@@ -1,0 +1,10 @@
+{
+  "type": "peritia:entity",
+  "skill": "combat",
+  "xp": 600,
+  "inputs": [
+    "minecraft:ghast"
+  ],
+  "assistRange": 32,
+  "index": 23
+}

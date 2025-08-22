@@ -1,0 +1,11 @@
+{
+  "type": "peritia:entity",
+  "skill": "combat",
+  "xp": 40,
+  "inputs": [
+    "minecraft:slime",
+    "minecraft:silverfish",
+    "minecraft:endermite"
+  ],
+  "index": 5
+}

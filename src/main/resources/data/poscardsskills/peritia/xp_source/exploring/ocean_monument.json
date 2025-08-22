@@ -1,0 +1,12 @@
+{
+  "type": "peritia:structure",
+  "skill": "exploring",
+  "xp": 2500,
+  "inputs": [
+    "minecraft:ocean_monument"
+  ],
+  "hints": [
+    "hint.poscardsskills.ocean_monuments"
+  ],
+  "index": 9
+}

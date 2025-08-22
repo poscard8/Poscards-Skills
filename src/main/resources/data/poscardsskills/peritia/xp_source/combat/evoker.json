@@ -1,0 +1,10 @@
+{
+  "type": "peritia:entity",
+  "skill": "combat",
+  "xp": 600,
+  "inputs": [
+    "minecraft:evoker"
+  ],
+  "assistRange": 20,
+  "index": 13
+}

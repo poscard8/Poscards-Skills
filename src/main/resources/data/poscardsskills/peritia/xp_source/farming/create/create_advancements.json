@@ -1,0 +1,16 @@
+{
+  "type": "peritia:advancement",
+  "skill": "farming",
+  "xp": 2000,
+  "inputs": [
+    "create:foods",
+    "create:chocolate_bucket"
+  ],
+  "index": 204,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "type": "peritia:chest",
+  "skill": "exploring",
+  "xp": 300,
+  "inputs": [
+    {
+      "contains": "chests/ancient_city"
+    }
+  ],
+  "hints": [
+    "hint.poscardsskills.ancient_city_chests"
+  ],
+  "index": 57
+}

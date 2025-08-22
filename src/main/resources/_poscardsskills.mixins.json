@@ -1,0 +1,10 @@
+{
+  "_comment": "unused for now",
+  "required": true,
+  "package": "github.poscard8.poscardsskills.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "minVersion": "0.8",
+  "refmap": "poscardsskills.mixins.refmap.json",
+  "mixins": [
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "type": "peritia:block",
+  "skill": "mining",
+  "xp": 75,
+  "inputs": [
+    "#minecraft:redstone_ores"
+  ],
+  "index": 39,
+  "requireCorrectTool": true
+}

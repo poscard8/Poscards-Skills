@@ -1,0 +1,27 @@
+{
+  "type": "peritia:block",
+  "skill": "mining",
+  "xp": 8,
+  "inputs": [
+    "poscardsskills:jade",
+    "poscardsskills:jasper",
+    "poscardsskills:marble",
+    "minecraft:dripstone_block",
+    "minecraft:calcite",
+    "minecraft:smooth_basalt",
+    "minecraft:amethyst_block",
+    "quark:myalite",
+    "quark:dusky_myalite",
+    "quark:myalite_crystal",
+    "create:asurine",
+    "create:crimsite",
+    "create:veridium",
+    "create:limestone",
+    "create:ochrum",
+    "create:scoria",
+    "create:scorchia"
+  ],
+  "requireCorrectTool": true,
+  "visibility": "show",
+  "index": 5
+}

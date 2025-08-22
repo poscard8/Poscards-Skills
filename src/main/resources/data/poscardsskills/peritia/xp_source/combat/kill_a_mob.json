@@ -1,0 +1,9 @@
+{
+  "type": "peritia:advancement",
+  "skill": "combat",
+  "xp": 250,
+  "inputs": [
+    "minecraft:adventure/kill_a_mob"
+  ],
+  "index": 101
+}

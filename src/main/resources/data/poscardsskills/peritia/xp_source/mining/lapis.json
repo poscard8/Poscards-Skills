@@ -1,0 +1,10 @@
+{
+  "type": "peritia:block",
+  "skill": "mining",
+  "xp": 90,
+  "inputs": [
+    "#minecraft:lapis_ores"
+  ],
+  "index": 35,
+  "requireCorrectTool": true
+}

@@ -1,0 +1,22 @@
+{
+  "requires": [
+    "poscardsskills:woodcutting,36"
+  ],
+  "input": {
+    "ingredient": {
+      "item": "poscardsskills:brilliant_gemstone"
+    },
+    "count": 8
+  },
+  "input2": {
+    "ingredient": {
+      "item": "minecraft:copper_ingot"
+    },
+    "count": 16
+  },
+  "result": {
+    "item": "poscardsskills:volatile_axe",
+    "count": 1
+  },
+  "index": 602
+}

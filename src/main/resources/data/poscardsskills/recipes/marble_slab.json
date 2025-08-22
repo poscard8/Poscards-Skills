@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "poscardsskills:marble"
+    }
+  },
+  "result": {
+    "item": "poscardsskills:marble_slab",
+    "count": 6
+  }
+}

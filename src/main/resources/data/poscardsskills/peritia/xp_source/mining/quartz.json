@@ -1,0 +1,10 @@
+{
+  "type": "peritia:block",
+  "skill": "mining",
+  "xp": 25,
+  "inputs": [
+    "minecraft:nether_quartz_ore"
+  ],
+  "index": 41,
+  "requireCorrectTool": true
+}

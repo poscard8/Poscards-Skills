@@ -1,40 +1,10 @@
 {
-  "xp_gain": {
-    "sounds": [
-      "poscardsskills:xp_gain"
-    ]
-  },
-  "level_up": {
-    "sounds": [
-      "random/levelup"
-    ]
-  },
-  "unlock_secret": {
-    "sounds": [
-      "poscardsskills:unlock_secret"
-    ]
-  },
-  "rune_apply": {
-    "subtitle": "subtitle.poscardsskills.rune_apply",
-    "sounds": [
-      "poscardsskills:rune_apply_1",
-      "poscardsskills:rune_apply_2",
-      "poscardsskills:rune_apply_3"
-    ]
-  },
   "repair_stone_apply": {
     "subtitle": "subtitle.poscardsskills.repair_stone_apply",
     "sounds": [
       "block/grindstone/grindstone1",
       "block/grindstone/grindstone2",
       "block/grindstone/grindstone3"
-    ]
-  },
-  "catalyst_use": {
-    "subtitle": "subtitle.poscardsskills.catalyst_use",
-    "sounds": [
-      "poscardsskills:catalyst_use_1",
-      "poscardsskills:catalyst_use_2"
     ]
   }
 }

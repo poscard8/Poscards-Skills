@@ -1,0 +1,10 @@
+{
+  "type": "peritia:advancement",
+  "skill": "exploring",
+  "xp": 2500,
+  "inputs": [
+    "minecraft:nether/explore_nether"
+  ],
+  "visibility": "show",
+  "index": 103
+}

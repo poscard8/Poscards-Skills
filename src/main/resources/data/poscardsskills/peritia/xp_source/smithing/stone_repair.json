@@ -1,0 +1,17 @@
+{
+  "type": "peritia:anvil",
+  "skill": "smithing",
+  "xp": 50,
+  "left": [
+    "minecraft:stone_sword",
+    "minecraft:stone_pickaxe",
+    "minecraft:stone_axe",
+    "minecraft:stone_shovel",
+    "minecraft:stone_hoe"
+  ],
+  "right": [
+    "#minecraft:stone_tool_materials"
+  ],
+  "visibility": "show",
+  "index": 103
+}

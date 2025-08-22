@@ -1,0 +1,22 @@
+{
+  "requires": [
+    "poscardsskills:woodcutting,40"
+  ],
+  "input": {
+    "ingredient": {
+      "item": "poscardsskills:netherite_rune"
+    },
+    "count": 1
+  },
+  "input2": {
+    "ingredient": {
+      "item": "poscardsskills:emerald_rune"
+    },
+    "count": 1
+  },
+  "result": {
+    "item": "poscardsskills:composite_rune",
+    "count": 1
+  },
+  "index": 505
+}

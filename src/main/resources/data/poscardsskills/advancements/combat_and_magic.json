@@ -1,0 +1,38 @@
+{
+  "parent": "poscardsskills:woodcutting_and_fishing",
+  "display": {
+    "title": {
+      "translate": "advancement.poscardsskills.combat_and_magic"
+    },
+    "description": {
+      "translate": "advancement.poscardsskills.combat_and_magic.desc"
+    },
+    "icon": {
+      "item": "poscardsskills:volatile_sword"
+    },
+    "frame": "goal"
+  },
+  "criteria": {
+    "primary": {
+      "trigger": "peritia:skill",
+      "conditions": {
+        "requisite": "poscardsskills:combat,40"
+      }
+    },
+    "secondary": {
+      "trigger": "peritia:skill",
+      "conditions": {
+        "requisite": "poscardsskills:magic,20"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "primary"
+    ],
+    [
+      "secondary"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

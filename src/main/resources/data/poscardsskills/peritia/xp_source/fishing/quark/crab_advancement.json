@@ -1,0 +1,15 @@
+{
+  "type": "peritia:advancement",
+  "skill": "fishing",
+  "xp": 500,
+  "inputs": [
+    "quark:crab_in_a_bucket"
+  ],
+  "index": 102,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "quark"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "type": "peritia:advancement",
+  "skill": "mining,farming",
+  "xp": 500,
+  "inputs": [
+    "quark:mine_toretoise"
+  ],
+  "index": 201,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "quark"
+    }
+  ]
+}

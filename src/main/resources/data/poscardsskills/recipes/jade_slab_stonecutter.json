@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "poscardsskills:jade"
+  },
+  "result": "poscardsskills:jade_slab",
+  "count": 2
+}

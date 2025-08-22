@@ -1,0 +1,11 @@
+{
+  "type": "peritia:advancement",
+  "skill": "farming",
+  "xp": 3000,
+  "inputs": [
+    "minecraft:husbandry/balanced_diet",
+    "minecraft:husbandry/bred_all_animals",
+    "minecraft:husbandry/obtain_netherite_hoe"
+  ],
+  "index": 205
+}

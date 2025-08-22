@@ -1,0 +1,19 @@
+{
+  "type": "peritia:trade",
+  "skill": "social",
+  "xp": 50,
+  "professions": [
+    "butcher",
+    "cartographer",
+    "cleric",
+    "farmer",
+    "fisherman",
+    "fletcher",
+    "leatherworker",
+    "mason",
+    "shepherd"
+  ],
+  "items": "all",
+  "visibility": "show",
+  "index": 1
+}

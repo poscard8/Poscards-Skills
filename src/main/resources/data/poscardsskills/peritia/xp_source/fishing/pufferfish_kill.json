@@ -1,0 +1,13 @@
+{
+  "type": "peritia:entity",
+  "skill": "fishing",
+  "xp": 150,
+  "inputs": [
+    "minecraft:pufferfish",
+    "minecraft:tropical_fish",
+    "minecraft:squid",
+    "minecraft:glow_squid"
+  ],
+  "allowFarming": true,
+  "index": 55
+}

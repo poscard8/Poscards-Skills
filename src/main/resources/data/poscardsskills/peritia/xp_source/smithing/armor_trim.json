@@ -1,0 +1,18 @@
+{
+  "type": "peritia:recipe",
+  "skill": "smithing",
+  "xp": 1000,
+  "keys": [
+    {
+      "contains": "_smithing_trim"
+    }
+  ],
+  "ingredients": [
+    "#minecraft:trim_templates"
+  ],
+  "hints": [
+    "hint.poscardsskills.trimmed_armor"
+  ],
+  "visibility": "show",
+  "index": 63
+}

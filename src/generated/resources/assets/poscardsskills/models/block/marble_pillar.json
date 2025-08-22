@@ -1,6 +1,7 @@
 {
   "parent": "poscardsskills:block/pillar_block",
   "textures": {
+    "bottom": "poscardsskills:block/marble_pillar_bottom",
     "default": "poscardsskills:block/marble_pillar",
     "ends": "poscardsskills:block/marble_pillar_ends",
     "top": "poscardsskills:block/marble_pillar_top"

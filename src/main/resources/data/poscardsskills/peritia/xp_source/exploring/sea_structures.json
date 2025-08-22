@@ -1,0 +1,14 @@
+{
+  "type": "peritia:structure",
+  "skill": "exploring",
+  "xp": 750,
+  "inputs": [
+    "#minecraft:ocean_ruin",
+    "#minecraft:shipwreck"
+  ],
+  "hints": [
+    "hint.poscardsskills.ocean_ruins",
+    "hint.poscardsskills.shipwrecks"
+  ],
+  "index": 7
+}

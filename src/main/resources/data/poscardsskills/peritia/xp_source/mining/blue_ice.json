@@ -1,0 +1,10 @@
+{
+  "type": "peritia:block",
+  "skill": "mining",
+  "xp": 8,
+  "inputs": [
+    "minecraft:blue_ice"
+  ],
+  "requireCorrectTool": true,
+  "index": 11
+}

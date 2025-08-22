@@ -1,0 +1,9 @@
+{
+  "type": "peritia:block",
+  "skill": "woodcutting,farming",
+  "xp": 20,
+  "inputs": [
+    "minecraft:bamboo"
+  ],
+  "index": 101
+}

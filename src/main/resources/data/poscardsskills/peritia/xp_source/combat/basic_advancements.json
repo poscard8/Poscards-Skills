@@ -1,0 +1,14 @@
+{
+  "type": "peritia:advancement",
+  "skill": "combat",
+  "xp": 1000,
+  "inputs": [
+    "minecraft:adventure/shoot_arrow",
+    "minecraft:adventure/sniper_duel",
+    "minecraft:adventure/ol_betsy",
+    "minecraft:adventure/arbalistic",
+    "minecraft:adventure/throw_trident"
+  ],
+  "visibility": "show",
+  "index": 105
+}

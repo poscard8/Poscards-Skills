@@ -1,0 +1,12 @@
+{
+  "type": "peritia:advancement",
+  "skill": "smithing",
+  "xp": 3000,
+  "inputs": [
+    "minecraft:adventure/trim_with_any_armor_pattern",
+    "minecraft:adventure/trim_with_all_exclusive_armor_patterns",
+    "minecraft:nether/netherite_armor"
+  ],
+  "visibility": "show",
+  "index": 203
+}

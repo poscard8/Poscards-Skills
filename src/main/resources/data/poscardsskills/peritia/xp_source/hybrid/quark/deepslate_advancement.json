@@ -1,0 +1,15 @@
+{
+  "type": "peritia:advancement",
+  "skill": "mining,magic",
+  "xp": 3000,
+  "inputs": [
+    "quark:instamine_deepslate"
+  ],
+  "index": 203,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "quark"
+    }
+  ]
+}

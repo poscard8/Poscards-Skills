@@ -1,0 +1,10 @@
+{
+  "type": "peritia:advancement",
+  "skill": "combat,social",
+  "xp": 3000,
+  "inputs": [
+    "minecraft:adventure/hero_of_the_village"
+  ],
+  "visibility": "show",
+  "index": 109
+}

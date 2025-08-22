@@ -1,7 +1,6 @@
 {
   "values": [
-    "poscardsskills:elegant_rune",
-    "poscardsskills:ethereal_rune",
-    "poscardsskills:classical_rune"
+    "#poscardsskills:non_empty_runes",
+    "#poscardsskills:empty_runes"
   ]
 }

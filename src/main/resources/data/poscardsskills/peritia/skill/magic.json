@@ -1,0 +1,76 @@
+{
+  "description": [
+    "skill.poscardsskills.magic.desc"
+  ],
+  "priority": "low",
+  "position": "1,1",
+  "minLevel": 0,
+  "maxLevel": 30,
+  "weight": 0.8,
+  "textures": {
+    "icon": "minecraft:blaze_powder"
+  },
+  "levelLayout": "star",
+  "levelXpFunction": {
+    "polynomial": [
+      0.15,
+      0,
+      75,
+      0
+    ]
+  },
+  "rewards": [
+    {
+      "at": {
+        "period": 3,
+        "startFrom": 9
+      },
+      "item": "poscardsskills:luminous_gemstone"
+    },
+    {
+      "at": 13,
+      "item": "minecraft:enchanted_book",
+      "nbt": {
+        "StoredEnchantments": [
+          {
+            "id": "minecraft:luck_of_the_sea",
+            "lvl": 3
+          }
+        ]
+      }
+    },
+    {
+      "at": 22,
+      "item": "minecraft:enchanted_book",
+      "nbt": {
+        "StoredEnchantments": [
+          {
+            "id": "minecraft:mending",
+            "lvl": 1
+          }
+        ]
+      }
+    },
+    {
+      "at": 10,
+      "xp": 10
+    },
+    {
+      "at": 20,
+      "xp": 40
+    }
+  ],
+  "attributes": [
+    {
+      "at": 25,
+      "attribute": "minecraft:generic.max_health",
+      "value": 1.0
+    }
+  ],
+  "conditions": [
+    {
+      "type": "peritia:config",
+      "config": "poscardsskills:hasMagicSkill"
+    }
+  ]
+}

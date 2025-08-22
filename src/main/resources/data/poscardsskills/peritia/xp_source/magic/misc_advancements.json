@@ -1,0 +1,12 @@
+{
+  "type": "peritia:advancement",
+  "skill": "magic",
+  "xp": 5000,
+  "inputs": [
+    "minecraft:story/cure_zombie_villager",
+    "minecraft:nether/all_potions",
+    "minecraft:nether/create_beacon",
+    "minecraft:nether/create_full_beacon"
+  ],
+  "index": 103
+}

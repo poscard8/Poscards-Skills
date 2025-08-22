@@ -1,0 +1,37 @@
+{
+  "parent": "poscardsskills:level_20",
+  "display": {
+    "title": {
+      "translate": "advancement.poscardsskills.woodcutting_and_fishing"
+    },
+    "description": {
+      "translate": "advancement.poscardsskills.woodcutting_and_fishing.desc"
+    },
+    "icon": {
+      "item": "poscardsskills:volatile_axe"
+    }
+  },
+  "criteria": {
+    "primary": {
+      "trigger": "peritia:skill",
+      "conditions": {
+        "requisite": "poscardsskills:woodcutting,20"
+      }
+    },
+    "secondary": {
+      "trigger": "peritia:skill",
+      "conditions": {
+        "requisite": "poscardsskills:fishing,10"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "primary"
+    ],
+    [
+      "secondary"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

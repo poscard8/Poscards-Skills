@@ -1,0 +1,10 @@
+{
+  "type": "peritia:block",
+  "skill": "mining",
+  "xp": 50,
+  "inputs": [
+    "#minecraft:iron_ores"
+  ],
+  "index": 27,
+  "requireCorrectTool": true
+}

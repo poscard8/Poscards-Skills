@@ -1,0 +1,21 @@
+{
+  "type": "peritia:block",
+  "skill": "mining",
+  "xp": 1,
+  "inputs": [
+    "#minecraft:base_stone_overworld",
+    "minecraft:cobblestone",
+    "minecraft:mossy_cobblestone",
+    "minecraft:cobbled_deepslate",
+    "minecraft:netherrack",
+    "minecraft:magma_block",
+    "minecraft:soul_soil",
+    "minecraft:basalt",
+    "minecraft:blackstone",
+    "minecraft:end_stone"
+  ],
+  "allowFarming": true,
+  "requireCorrectTool": true,
+  "visibility": "show",
+  "index": 1
+}

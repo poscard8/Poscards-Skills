@@ -1,0 +1,12 @@
+{
+  "type": "peritia:advancement",
+  "skill": "fishing",
+  "xp": 250,
+  "inputs": [
+    "minecraft:husbandry/fishy_business",
+    "minecraft:husbandry/tactical_fishing",
+    "minecraft:husbandry/tadpole_in_a_bucket"
+  ],
+  "visibility": "show",
+  "index": 101
+}

@@ -1,0 +1,9 @@
+{
+  "type": "peritia:block",
+  "skill": "woodcutting",
+  "xp": 25,
+  "inputs": [
+    "#minecraft:dark_oak_logs"
+  ],
+  "index": 11
+}

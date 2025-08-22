@@ -1,0 +1,14 @@
+{
+  "type": "peritia:block",
+  "skill": "mining",
+  "xp": 1,
+  "inputs": [
+    "#minecraft:sand",
+    "minecraft:soul_sand",
+    "minecraft:gravel",
+    "minecraft:clay"
+  ],
+  "allowFarming": true,
+  "visibility": "show",
+  "index": 3
+}

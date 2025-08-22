@@ -1,0 +1,14 @@
+{
+  "type": "peritia:advancement",
+  "skill": "farming",
+  "xp": 1500,
+  "inputs": [
+    "minecraft:husbandry/breed_an_animal",
+    "minecraft:husbandry/safely_harvest_honey",
+    "minecraft:husbandry/silk_touch_nest",
+    "minecraft:husbandry/feed_snifflet",
+    "minecraft:husbandry/plant_any_sniffer_seed"
+  ],
+  "visibility": "show",
+  "index": 203
+}

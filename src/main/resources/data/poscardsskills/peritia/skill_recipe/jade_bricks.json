@@ -1,0 +1,16 @@
+{
+  "requires": [
+    "poscardsskills:farming,10"
+  ],
+  "input": {
+    "ingredient": {
+      "item": "poscardsskills:jade"
+    },
+    "count": 1
+  },
+  "result": {
+    "item": "poscardsskills:jade_bricks",
+    "count": 1
+  },
+  "index": -1205
+}

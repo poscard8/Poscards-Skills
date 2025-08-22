@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "poscardsskills:marble"
+  },
+  "result": "poscardsskills:marble_stairs",
+  "count": 1
+}

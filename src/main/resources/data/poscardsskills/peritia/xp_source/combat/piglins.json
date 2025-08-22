@@ -1,0 +1,12 @@
+{
+  "type": "peritia:entity",
+  "skill": "combat",
+  "xp": 120,
+  "inputs": [
+    "minecraft:piglin",
+    "minecraft:zombified_piglin"
+  ],
+  "gearFunction": "onlyEnchanted",
+  "visibility": "show",
+  "index": 15
+}

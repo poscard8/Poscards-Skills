@@ -1,0 +1,6 @@
+{
+  "parent": "poscardsskills:item/key",
+  "textures": {
+    "layer0": "poscardsskills:item/lucky_key"
+  }
+}

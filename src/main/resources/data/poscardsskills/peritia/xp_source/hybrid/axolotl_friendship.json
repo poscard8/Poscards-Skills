@@ -1,0 +1,10 @@
+{
+  "type": "peritia:advancement",
+  "skill": "fishing,social",
+  "xp": 2000,
+  "inputs": [
+    "minecraft:husbandry/kill_axolotl_target"
+  ],
+  "visibility": "show",
+  "index": 105
+}

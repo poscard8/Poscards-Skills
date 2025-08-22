@@ -3,22 +3,22 @@
   "config": {
     "inner": {
       "state": {
-        "Name": "poscardsskills:rough_jade"
+        "Name": "poscardsskills:jade"
       },
       "target": {
         "predicate_type": "minecraft:tag_match",
-        "tag": "minecraft:base_stone_overworld"
+        "tag": "poscardsskills:mineral_replaceable"
       }
     },
     "outer": {
       "state": {
-        "Name": "minecraft:cobbled_deepslate"
+        "Name": "minecraft:smooth_basalt"
       },
       "target": {
         "predicate_type": "minecraft:tag_match",
-        "tag": "minecraft:base_stone_overworld"
+        "tag": "poscardsskills:mineral_replaceable"
       }
     },
-    "size": 96
+    "size": 72
   }
 }

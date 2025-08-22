@@ -2,18 +2,21 @@ package github.poscard8.poscardsskills.worldgen.feature;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import github.poscard8.poscardsskills.util.PSTags;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
+import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 
 /**
  * Definition for {@link DoubleOreFeature}.
  * <p>{@link #inner}: Inner block state. Rough Jade/Jasper/Marble in the mod.</p>
  * <p>{@link #outer}: Outer block state. Cobbled Deepslate in the mod.</p>
  */
-public class DoubleOreConfiguration implements FeatureConfiguration {
-
+public class DoubleOreConfiguration implements FeatureConfiguration
+{
     @SuppressWarnings("ALL")
     public static final Codec<DoubleOreConfiguration> CODEC = RecordCodecBuilder.create(instance -> {
 
@@ -26,6 +29,8 @@ public class DoubleOreConfiguration implements FeatureConfiguration {
     public final OreConfiguration.TargetBlockState inner;
     public final OreConfiguration.TargetBlockState outer;
     public final int size;
+
+    public DoubleOreConfiguration(BlockState inner) { this(new TagMatchTest(PSTags.Blocks.MINERAL_REPLACEABLE), inner, Blocks.SMOOTH_BASALT.defaultBlockState(), 72); }
 
     public DoubleOreConfiguration(RuleTest ruleTest, BlockState inner, BlockState outer, int size) { this(OreConfiguration.target(ruleTest, inner), OreConfiguration.target(ruleTest, outer), size); }
 

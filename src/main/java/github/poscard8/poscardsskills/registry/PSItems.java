@@ -1,12 +1,11 @@
 package github.poscard8.poscardsskills.registry;
 
+import github.poscard8.peritia.util.text.ColorGradients;
 import github.poscard8.poscardsskills.PoscardsSkills;
-import github.poscard8.poscardsskills.config.PoscardsSkillsCommonConfig;
-import github.poscard8.poscardsskills.item.CatalystItem;
-import github.poscard8.poscardsskills.item.MagicShardItem;
-import github.poscard8.poscardsskills.item.RepairStoneItem;
-import github.poscard8.poscardsskills.item.RuneItem;
-import github.poscard8.poscardsskills.util.item.PSRarities;
+import github.poscard8.poscardsskills.config.PoscardsSkillsServerConfig;
+import github.poscard8.poscardsskills.item.*;
+import github.poscard8.poscardsskills.util.PSTags;
+import net.minecraft.world.item.BannerPatternItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.SmithingTemplateItem;
@@ -15,31 +14,34 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-public class PSItems {
-
+@SuppressWarnings("unused")
+public class PSItems
+{
     public static final DeferredRegister<Item> ALL = DeferredRegister.create(ForgeRegistries.ITEMS, PoscardsSkills.ID);
 
     public static final RegistryObject<Item>
 
-            ELEGANT_RUNE = ALL.register("elegant_rune", () -> new RuneItem(new Item.Properties(), PSRarities.ELEGANT)),
-            ETHEREAL_RUNE = ALL.register("ethereal_rune", () -> new RuneItem(new Item.Properties(), PSRarities.ETHEREAL)),
-            CLASSICAL_RUNE = ALL.register("classical_rune", () -> new RuneItem(new Item.Properties(), PSRarities.CLASSICAL)),
-            ELEGANT_ARMOR_TRIM_SMITHING_TEMPLATE = ALL.register("elegant_armor_trim_smithing_template", () -> SmithingTemplateItem.createArmorTrimTemplate(PoscardsSkills.asResource("elegant"))),
-            ETHEREAL_ARMOR_TRIM_SMITHING_TEMPLATE = ALL.register("ethereal_armor_trim_smithing_template", () -> SmithingTemplateItem.createArmorTrimTemplate(PoscardsSkills.asResource("ethereal"))),
             CLASSICAL_ARMOR_TRIM_SMITHING_TEMPLATE = ALL.register("classical_armor_trim_smithing_template", () -> SmithingTemplateItem.createArmorTrimTemplate(PoscardsSkills.asResource("classical"))),
-
-            BRILLIANT_SHARD = ALL.register("brilliant_shard", () -> new MagicShardItem(new Item.Properties().stacksTo(32).rarity(Rarity.UNCOMMON), PoscardsSkillsCommonConfig.BRILLIANT_SHARD_WISDOM)),
-            BLESSED_SHARD = ALL.register("blessed_shard", () -> new MagicShardItem(new Item.Properties().stacksTo(32).rarity(Rarity.RARE), PoscardsSkillsCommonConfig.BLESSED_SHARD_WISDOM)),
-            DIVINE_SHARD = ALL.register("divine_shard", () -> new MagicShardItem(new Item.Properties().stacksTo(32).rarity(Rarity.EPIC), PoscardsSkillsCommonConfig.DIVINE_SHARD_WISDOM)),
-            BRILLIANT_REPAIR_STONE = ALL.register("brilliant_repair_stone", () -> new RepairStoneItem(new Item.Properties().rarity(Rarity.UNCOMMON), PoscardsSkillsCommonConfig.BRILLIANT_REPAIR_STONE_DURABILITY)),
-            BLESSED_REPAIR_STONE = ALL.register("blessed_repair_stone", () -> new RepairStoneItem(new Item.Properties().rarity(Rarity.RARE), PoscardsSkillsCommonConfig.BLESSED_REPAIR_STONE_DURABILITY)),
-            DIVINE_REPAIR_STONE = ALL.register("divine_repair_stone", () -> new RepairStoneItem(new Item.Properties().rarity(Rarity.EPIC), PoscardsSkillsCommonConfig.DIVINE_REPAIR_STONE_DURABILITY)),
-            BRILLIANT_CATALYST = ALL.register("brilliant_catalyst", () -> new CatalystItem(new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON), PoscardsSkills.asResource("gameplay/brilliant_catalyst"), PoscardsSkills.asResource("gameplay/brilliant_catalyst_no_extra_progression"), PSParticleTypes.BRILLIANT)),
-            BLESSED_CATALYST = ALL.register("blessed_catalyst", () -> new CatalystItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE), PoscardsSkills.asResource("gameplay/blessed_catalyst"), PSParticleTypes.BLESSED)),
-            DIVINE_CATALYST = ALL.register("divine_catalyst", () -> new CatalystItem(new Item.Properties().stacksTo(1).rarity(Rarity.EPIC), PoscardsSkills.asResource("gameplay/divine_catalyst"), PSParticleTypes.DIVINE)),
-
-            SECRET = ALL.register("secret", () -> new Item(new Item.Properties()));
-
+            LUMINOUS_GEMSTONE = ALL.register("luminous_gemstone", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON))),
+            BRILLIANT_GEMSTONE = ALL.register("brilliant_gemstone", () -> new Item(new Item.Properties().rarity(Rarity.RARE))),
+            LUCKY_KEY = ALL.register("lucky_key", () -> new KeyItem(new Item.Properties(), PoscardsSkillsServerConfig.LUCKY_KEY_LUCK_VALUE, PoscardsSkillsServerConfig.LUCKY_KEY_WISDOM_VALUE)),
+            MIGHTY_KEY = ALL.register("mighty_key", () -> new KeyItem(new Item.Properties().rarity(Rarity.UNCOMMON), PoscardsSkillsServerConfig.MIGHTY_KEY_LUCK_VALUE, PoscardsSkillsServerConfig.MIGHTY_KEY_WISDOM_VALUE)),
+            REPAIR_STONE = ALL.register("repair_stone", () -> new RepairStoneItem(new Item.Properties(), PoscardsSkillsServerConfig.REPAIR_STONE_RESTORE_VALUE)),
+            GOLDEN_RUNE = ALL.register("golden_rune", () -> new RuneItem(new Item.Properties(), ColorGradients.GOLD)),
+            DIAMOND_RUNE = ALL.register("diamond_rune", () -> new RuneItem(new Item.Properties(), ColorGradients.DIAMOND)),
+            NETHERITE_RUNE = ALL.register("netherite_rune", () -> new RuneItem(new Item.Properties().fireResistant(), ColorGradients.NETHERITE)),
+            AMETHYST_RUNE = ALL.register("amethyst_rune", () -> new RuneItem(new Item.Properties(), ColorGradients.AMETHYST)),
+            EMERALD_RUNE = ALL.register("emerald_rune", () -> new RuneItem(new Item.Properties(), ColorGradients.EMERALD)),
+            COMPOSITE_RUNE = ALL.register("composite_rune", () -> new RuneItem(new Item.Properties().fireResistant(), ColorGradients.COMPOSITE)),
+            GLASS_RUNE = ALL.register("glass_rune", () -> new EmptyRuneItem(new Item.Properties())),
+            VOLATILE_SHOVEL = ALL.register("volatile_shovel", () -> new VolatileItem.Shovel(new Item.Properties().rarity(Rarity.RARE))),
+            VOLATILE_PICKAXE = ALL.register("volatile_pickaxe", () -> new VolatileItem.Pickaxe(new Item.Properties().rarity(Rarity.RARE))),
+            VOLATILE_AXE = ALL.register("volatile_axe", () -> new VolatileItem.Axe(new Item.Properties().rarity(Rarity.RARE))),
+            VOLATILE_HOE = ALL.register("volatile_hoe", () -> new VolatileItem.Hoe(new Item.Properties().rarity(Rarity.RARE))),
+            VOLATILE_SWORD = ALL.register("volatile_sword", () -> new VolatileItem.Sword(new Item.Properties().rarity(Rarity.RARE))),
+            ROMAN_NUMERALS_BANNER_PATTERN = ALL.register("roman_numerals_banner_pattern", () -> new BannerPatternItem(PSTags.BannerPatterns.ROMAN_NUMERALS, new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(1))),
+            NUMBERS_BANNER_PATTERN = ALL.register("numbers_banner_pattern", () -> new BannerPatternItem(PSTags.BannerPatterns.NUMBERS, new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(1))),
+            ICONS_BANNER_PATTERN = ALL.register("icons_banner_pattern", () -> new BannerPatternItem(PSTags.BannerPatterns.ICONS, new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(1)));
 
     public static void register(IEventBus bus) { ALL.register(bus); }
 

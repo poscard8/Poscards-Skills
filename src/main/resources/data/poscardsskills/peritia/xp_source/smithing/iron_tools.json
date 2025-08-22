@@ -1,0 +1,25 @@
+{
+  "type": "peritia:recipe",
+  "skill": "smithing",
+  "xp": 100,
+  "keys": [
+    "minecraft:iron_sword",
+    "minecraft:iron_pickaxe",
+    "minecraft:iron_axe",
+    "minecraft:iron_shovel",
+    "minecraft:iron_hoe",
+    "minecraft:golden_sword",
+    "minecraft:golden_pickaxe",
+    "minecraft:golden_axe",
+    "minecraft:golden_shovel",
+    "minecraft:golden_hoe",
+    "minecraft:shield",
+    "minecraft:shears",
+    "minecraft:flint_and_steel"
+  ],
+  "hints": [
+    "hint.poscardsskills.iron_tools"
+  ],
+  "visibility": "show",
+  "index": 51
+}

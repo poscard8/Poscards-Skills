@@ -1,0 +1,13 @@
+{
+  "type": "peritia:structure",
+  "skill": "exploring",
+  "xp": 1250,
+  "inputs": [
+    "#minecraft:mineshaft"
+  ],
+  "hints": [
+    "hint.poscardsskills.mineshafts"
+  ],
+  "visibility": "show",
+  "index": 5
+}

@@ -1,0 +1,18 @@
+{
+  "type": "peritia:advancement",
+  "skill": "mining",
+  "xp": 1000,
+  "inputs": [
+    "create:pulley_maxed",
+    "create:cart_pickup",
+    "create:self_deploying",
+    "create:rose_quartz"
+  ],
+  "index": 203,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 package github.poscard8.poscardsskills.datagen;
 
 import github.poscard8.poscardsskills.PoscardsSkills;
-import github.poscard8.poscardsskills.util.wrapper.BlockType;
-import github.poscard8.poscardsskills.util.wrapper.BlockWrapper;
+import github.poscard8.poscardsskills.util.block.BlockType;
+import github.poscard8.poscardsskills.util.block.BlockWrapper;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;

@@ -1,0 +1,8 @@
+{
+  "type": "peritia:grindstone",
+  "skill": "smithing",
+  "xp": 100,
+  "inputs": "all",
+  "visibility": "show",
+  "index": 113
+}

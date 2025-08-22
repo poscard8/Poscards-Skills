@@ -1,0 +1,9 @@
+{
+  "type": "peritia:block",
+  "skill": "woodcutting",
+  "xp": 40,
+  "inputs": [
+    "#minecraft:cherry_logs"
+  ],
+  "index": 15
+}

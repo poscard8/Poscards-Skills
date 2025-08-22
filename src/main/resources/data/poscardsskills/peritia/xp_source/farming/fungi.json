@@ -1,0 +1,13 @@
+{
+  "type": "peritia:block",
+  "skill": "farming",
+  "xp": 10,
+  "inputs": [
+    "minecraft:brown_mushroom",
+    "minecraft:red_mushroom",
+    "minecraft:crimson_fungus",
+    "minecraft:warped_fungus"
+  ],
+  "visibility": "show",
+  "index": 105
+}

@@ -1,0 +1,15 @@
+{
+  "type": "peritia:recipe",
+  "skill": "smithing",
+  "xp": 800,
+  "keys": [
+    "minecraft:netherite_helmet_smithing",
+    "minecraft:netherite_chestplate_smithing",
+    "minecraft:netherite_leggings_smithing",
+    "minecraft:netherite_boots_smithing"
+  ],
+  "hints": [
+    "hint.poscardsskills.netherite_armor"
+  ],
+  "index": 61
+}

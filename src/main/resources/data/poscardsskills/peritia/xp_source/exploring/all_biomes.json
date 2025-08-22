@@ -1,0 +1,9 @@
+{
+  "type": "peritia:advancement",
+  "skill": "exploring",
+  "xp": 15000,
+  "inputs": [
+    "minecraft:adventure/adventuring_time"
+  ],
+  "index": 105
+}

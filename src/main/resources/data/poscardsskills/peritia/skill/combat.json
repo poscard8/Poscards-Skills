@@ -1,0 +1,160 @@
+{
+  "description": [
+    "skill.poscardsskills.combat.desc"
+  ],
+  "priority": "low",
+  "position": "0,0",
+  "minLevel": 0,
+  "maxLevel": 60,
+  "weight": 1.3,
+  "textures": {
+    "icon": "minecraft:diamond_sword",
+    "menu": {
+      "texture": "poscardsskills:gui/combat",
+      "size": "288,212",
+      "offset": "-56,0",
+      "imageSize": "512,256"
+    }
+  },
+  "levelXpFunction": {
+    "polynomial": [
+      0.015,
+      0,
+      40,
+      0
+    ]
+  },
+  "rewards": [
+    {
+      "at": {
+        "period": 3,
+        "startFrom": 12
+      },
+      "item": "poscardsskills:luminous_gemstone"
+    },
+    {
+      "at": 22,
+      "item": "minecraft:enchanted_book",
+      "nbt": {
+        "StoredEnchantments": [
+          {
+            "id": "minecraft:mending",
+            "lvl": 1
+          }
+        ]
+      }
+    },
+    {
+      "at": [14, 18, 22, 26, 30],
+      "item": "minecraft:potion",
+      "nbt": {
+        "CustomPotionEffects": [
+          {
+            "Id": 16,
+            "Amplifier": 0,
+            "Duration": 9600,
+            "Ambient": 0,
+            "ShowParticles": 1,
+            "ShowIcon": 1
+          }
+        ],
+        "display": {
+          "Name": "{\"text\":\"Potion of Night Vision\",\"italic\":false}"
+        }
+      }
+    },
+    {
+      "at": {
+        "period": 2,
+        "startFrom": 2
+      },
+      "item": "minecraft:golden_carrot"
+    },
+    {
+      "at": 10,
+      "xp": 10
+    }
+  ],
+  "attributes": [
+    {
+      "at": 20,
+      "attribute": "peritia:player.extra_crit_chance",
+      "value": 1.5
+    },
+    {
+      "at": {
+        "period": 20,
+        "startFrom": 40
+      },
+      "attribute": "peritia:player.extra_crit_chance",
+      "value": 2
+    },
+    {
+      "at": "10->59",
+      "attribute": "peritia:player.crit_damage",
+      "value": 0.5
+    }
+  ],
+  "itemLocks": [
+    {
+      "lock": "minecraft:diamond_sword,20",
+      "conditions": [
+        {
+          "type": "peritia:config",
+          "config": "poscardsskills:lockDiamondGear"
+        }
+      ]
+    },
+    {
+      "lock": "minecraft:netherite_sword,30",
+      "conditions": [
+        {
+          "type": "peritia:config",
+          "config": "poscardsskills:lockNetheriteGear"
+        }
+      ]
+    },
+    {
+      "lock": "poscardsskills:volatile_sword,20",
+      "conditions": [
+        {
+          "type": "peritia:config",
+          "config": "poscardsskills:lockVolatileGear"
+        }
+      ]
+    }
+  ],
+  "levelRestrictions": [
+    {
+      "at": 16,
+      "item": "minecraft:spider_eye",
+      "count": 2
+    },
+    {
+      "at": 26,
+      "item": "minecraft:magma_cream",
+      "count": 2
+    },
+    {
+      "at": 36,
+      "item": "minecraft:blaze_rod",
+      "count": 4
+    },
+    {
+      "at": 46,
+      "item": "minecraft:wither_skeleton_skull",
+      "count": 1
+    },
+    {
+      "at": 51,
+      "item": "minecraft:shulker_shell",
+      "count": 1
+    }
+  ],
+  "conditions": [
+    {
+      "type": "peritia:config",
+      "config": "poscardsskills:hasCombatSkill"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "type": "peritia:social",
+  "skill": "social",
+  "xp": 100,
+  "period": 120,
+  "cumulative": true,
+  "index": -1000
+}

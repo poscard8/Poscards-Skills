@@ -1,0 +1,9 @@
+{
+  "type": "peritia:entity",
+  "skill": "combat",
+  "xp": 75,
+  "inputs": [
+    "minecraft:magma_cube"
+  ],
+  "index": 21
+}

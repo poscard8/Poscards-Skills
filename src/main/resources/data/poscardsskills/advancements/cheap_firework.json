@@ -1,0 +1,42 @@
+{
+  "parent": "poscardsskills:cheap_netherite_upgrade",
+  "display": {
+    "title": {
+      "translate": "advancement.poscardsskills.cheap_firework"
+    },
+    "description": {
+      "translate": "advancement.poscardsskills.cheap_firework.desc"
+    },
+    "icon": {
+      "item": "minecraft:firework_rocket"
+    }
+  },
+  "criteria": {
+    "recipe_1": {
+      "trigger": "peritia:skill_recipe",
+      "conditions": {
+        "recipe": "poscardsskills:cheap_firework"
+      }
+    },
+    "recipe_2": {
+      "trigger": "peritia:skill_recipe",
+      "conditions": {
+        "recipe": "poscardsskills:cheap_firework_2"
+      }
+    },
+    "recipe_3": {
+      "trigger": "peritia:skill_recipe",
+      "conditions": {
+        "recipe": "poscardsskills:cheap_firework_3"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "recipe_1",
+      "recipe_2",
+      "recipe_3"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

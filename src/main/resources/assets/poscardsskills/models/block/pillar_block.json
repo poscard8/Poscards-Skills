@@ -8,7 +8,7 @@
       "from": [ 0, 0, 0 ],
       "to": [ 16, 16, 16 ],
       "faces": {
-        "down":  { "texture": "#top", "cullface": "down" },
+        "down":  { "texture": "#bottom", "cullface": "down" },
         "up":    { "texture": "#top", "cullface": "up" },
         "north": { "texture": "#default", "cullface": "north" },
         "south": { "texture": "#default", "cullface": "south" },

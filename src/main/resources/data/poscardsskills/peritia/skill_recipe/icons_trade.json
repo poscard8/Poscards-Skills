@@ -1,0 +1,17 @@
+{
+  "requires": [
+    "any,24"
+  ],
+  "input": {
+    "ingredient": {
+      "item": "poscardsskills:brilliant_gemstone"
+    },
+    "count": 1
+  },
+  "result": {
+    "item": "poscardsskills:icons_banner_pattern",
+    "count": 1
+  },
+  "trade": true,
+  "index": 402
+}

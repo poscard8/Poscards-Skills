@@ -1,0 +1,10 @@
+{
+  "type": "peritia:advancement",
+  "skill": "social",
+  "xp": 500,
+  "inputs": [
+    "minecraft:husbandry/tame_an_animal"
+  ],
+  "visibility": "show",
+  "index": 101
+}

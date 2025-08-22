@@ -1,0 +1,10 @@
+{
+  "type": "peritia:block",
+  "skill": "mining",
+  "xp": 1000,
+  "inputs": [
+    "minecraft:ancient_debris"
+  ],
+  "index": 47,
+  "requireCorrectTool": true
+}

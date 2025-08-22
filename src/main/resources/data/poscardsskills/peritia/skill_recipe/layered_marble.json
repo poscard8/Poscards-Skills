@@ -1,0 +1,16 @@
+{
+  "requires": [
+    "poscardsskills:combat,40"
+  ],
+  "input": {
+    "ingredient": {
+      "item": "poscardsskills:marble_bricks"
+    },
+    "count": 1
+  },
+  "result": {
+    "item": "poscardsskills:layered_marble",
+    "count": 1
+  },
+  "index": -1001
+}

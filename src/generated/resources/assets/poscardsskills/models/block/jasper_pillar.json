@@ -1,8 +1,0 @@
-{
-  "parent": "poscardsskills:block/pillar_block",
-  "textures": {
-    "default": "poscardsskills:block/jasper_pillar",
-    "ends": "poscardsskills:block/jasper_pillar_ends",
-    "top": "poscardsskills:block/jasper_pillar_top"
-  }
-}

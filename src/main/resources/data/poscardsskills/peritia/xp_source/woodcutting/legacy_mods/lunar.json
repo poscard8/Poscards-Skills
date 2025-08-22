@@ -1,0 +1,16 @@
+{
+  "type": "peritia:block",
+  "skill": "woodcutting",
+  "xp": 90,
+  "inputs": [
+    "#wood_enjoyer:lunar_logs"
+  ],
+  "requireCorrectTool": true,
+  "index": 29,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "wood_enjoyer"
+    }
+  ]
+}

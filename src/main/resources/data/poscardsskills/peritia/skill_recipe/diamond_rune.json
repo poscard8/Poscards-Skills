@@ -1,0 +1,22 @@
+{
+  "requires": [
+    "poscardsskills:mining,30"
+  ],
+  "input": {
+    "ingredient": {
+      "item": "poscardsskills:golden_rune"
+    },
+    "count": 1
+  },
+  "input2": {
+    "ingredient": {
+      "item": "minecraft:diamond"
+    },
+    "count": 3
+  },
+  "result": {
+    "item": "poscardsskills:diamond_rune",
+    "count": 1
+  },
+  "index": 501
+}

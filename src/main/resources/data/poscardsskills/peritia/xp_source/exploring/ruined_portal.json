@@ -1,0 +1,12 @@
+{
+  "type": "peritia:structure",
+  "skill": "exploring",
+  "xp": 400,
+  "inputs": [
+    "#minecraft:ruined_portal"
+  ],
+  "hints": [
+    "hint.poscardsskills.ruined_portals"
+  ],
+  "index": 3
+}

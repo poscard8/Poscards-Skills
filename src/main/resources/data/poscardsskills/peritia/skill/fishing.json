@@ -1,0 +1,62 @@
+{
+  "priority": "low",
+  "position": "-1,1",
+  "minLevel": 0,
+  "maxLevel": 20,
+  "weight": 0.7,
+  "textures": {
+    "icon": "minecraft:fishing_rod"
+  },
+  "levelLayout": "star",
+  "levelXpFunction": {
+    "polynomial": [
+      200,
+      0
+    ],
+    "round": false
+  },
+  "rewards": [
+    {
+      "at": {
+        "period": 3,
+        "offset": 2,
+        "startFrom": 5
+      },
+      "item": "poscardsskills:luminous_gemstone"
+    },
+    {
+      "at": "5->",
+      "item": "minecraft:bone_meal",
+      "count": 4
+    },
+    {
+      "at": 10,
+      "xp": 10
+    }
+  ],
+  "attributes": [
+    {
+      "at": 20,
+      "attribute": "minecraft:generic.max_health",
+      "value": 1.0
+    }
+  ],
+  "levelRestrictions": [
+    {
+      "at": 11,
+      "item": "minecraft:pufferfish",
+      "count": 1
+    },
+    {
+      "at": 16,
+      "item": "minecraft:tropical_fish",
+      "count": 2
+    }
+  ],
+  "conditions": [
+    {
+      "type": "peritia:config",
+      "config": "poscardsskills:hasFishingSkill"
+    }
+  ]
+}

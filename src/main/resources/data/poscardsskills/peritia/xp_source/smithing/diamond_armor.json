@@ -1,0 +1,15 @@
+{
+  "type": "peritia:recipe",
+  "skill": "smithing",
+  "xp": 500,
+  "keys": [
+    "minecraft:diamond_helmet",
+    "minecraft:diamond_chestplate",
+    "minecraft:diamond_leggings",
+    "minecraft:diamond_boots"
+  ],
+  "hints": [
+    "hint.poscardsskills.diamond_armor"
+  ],
+  "index": 57
+}

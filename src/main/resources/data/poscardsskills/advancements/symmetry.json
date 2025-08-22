@@ -1,0 +1,31 @@
+{
+  "parent": "poscardsskills:cheap_firework",
+  "display": {
+    "title": {
+      "translate": "advancement.poscardsskills.symmetry"
+    },
+    "description": {
+      "translate": "advancement.poscardsskills.symmetry.desc"
+    },
+    "icon": {
+      "item": "minecraft:experience_bottle"
+    },
+    "frame": "challenge",
+    "hidden": true
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:enchanted_item",
+      "conditions": {
+        "item": {
+          "enchantments": [
+            {
+              "enchantment": "poscardsskills:symmetry"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "sends_telemetry_event": true
+}

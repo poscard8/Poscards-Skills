@@ -3,10 +3,6 @@
     {
       "type": "paletted_permutations",
       "textures": [
-        "poscardsskills:trims/models/armor/elegant",
-        "poscardsskills:trims/models/armor/elegant_leggings",
-        "poscardsskills:trims/models/armor/ethereal",
-        "poscardsskills:trims/models/armor/ethereal_leggings",
         "poscardsskills:trims/models/armor/classical",
         "poscardsskills:trims/models/armor/classical_leggings"
       ],

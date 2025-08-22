@@ -1,0 +1,78 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "poscardsskills:block/jade"
+      },
+      {
+        "model": "poscardsskills:block/jade",
+        "x": 90
+      },
+      {
+        "model": "poscardsskills:block/jade",
+        "x": 180
+      },
+      {
+        "model": "poscardsskills:block/jade",
+        "x": 270
+      },
+      {
+        "model": "poscardsskills:block/jade",
+        "y": 90
+      },
+      {
+        "model": "poscardsskills:block/jade",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "poscardsskills:block/jade",
+        "x": 180,
+        "y": 90
+      },
+      {
+        "model": "poscardsskills:block/jade",
+        "x": 270,
+        "y": 90
+      },
+      {
+        "model": "poscardsskills:block/jade",
+        "y": 180
+      },
+      {
+        "model": "poscardsskills:block/jade",
+        "x": 90,
+        "y": 180
+      },
+      {
+        "model": "poscardsskills:block/jade",
+        "x": 180,
+        "y": 180
+      },
+      {
+        "model": "poscardsskills:block/jade",
+        "x": 270,
+        "y": 180
+      },
+      {
+        "model": "poscardsskills:block/jade",
+        "y": 270
+      },
+      {
+        "model": "poscardsskills:block/jade",
+        "x": 90,
+        "y": 270
+      },
+      {
+        "model": "poscardsskills:block/jade",
+        "x": 180,
+        "y": 270
+      },
+      {
+        "model": "poscardsskills:block/jade",
+        "x": 270,
+        "y": 270
+      }
+    ]
+  }
+}

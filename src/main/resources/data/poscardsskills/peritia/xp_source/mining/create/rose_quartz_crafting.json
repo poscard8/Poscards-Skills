@@ -1,0 +1,19 @@
+{
+  "type": "peritia:recipe",
+  "skill": "mining",
+  "xp": 30,
+  "keys": [
+    "create:crafting/materials/rose_quartz"
+  ],
+  "hints": [
+    "item.create.rose_quartz"
+  ],
+  "visibility": "show",
+  "index": 152,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ]
+}

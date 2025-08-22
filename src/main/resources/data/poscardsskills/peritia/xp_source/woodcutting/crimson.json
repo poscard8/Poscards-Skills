@@ -1,0 +1,9 @@
+{
+  "type": "peritia:block",
+  "skill": "woodcutting",
+  "xp": 70,
+  "inputs": [
+    "#minecraft:crimson_stems"
+  ],
+  "index": 51
+}

@@ -1,0 +1,63 @@
+{
+  "priority": "low",
+  "position": "1,-1",
+  "minLevel": 0,
+  "maxLevel": 20,
+  "weight": 0.4,
+  "textures": {
+    "icon": "minecraft:emerald",
+    "menu": {
+      "texture": "poscardsskills:gui/social"
+    },
+    "overlay": {
+      "texture": "poscardsskills:gui/social_overlay",
+      "size": "212,26",
+      "offset": "-18,57"
+    }
+  },
+  "levelLayout": "star",
+  "levelXpFunction": {
+    "polynomial": [
+      200,
+      0
+    ],
+    "round": false
+  },
+  "rewards": [
+    {
+      "at": {
+        "period": 3,
+        "offset": 2,
+        "startFrom": 5
+      },
+      "item": "poscardsskills:luminous_gemstone"
+    },
+    {
+      "at": "7->10",
+      "item": "minecraft:bookshelf",
+      "count": 2
+    },
+    {
+      "at": 15,
+      "item": "poscardsskills:repair_stone",
+      "count": 2
+    },
+    {
+      "at": 10,
+      "xp": 10
+    }
+  ],
+  "attributes": [
+    {
+      "at": 20,
+      "attribute": "minecraft:generic.max_health",
+      "value": 1.0
+    }
+  ],
+  "conditions": [
+    {
+      "type": "peritia:config",
+      "config": "poscardsskills:hasSocialSkill"
+    }
+  ]
+}

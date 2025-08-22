@@ -1,85 +1,87 @@
 package github.poscard8.poscardsskills.item;
 
-import github.poscard8.poscardsskills.PoscardsSkills;
 import github.poscard8.poscardsskills.registry.PSSoundEvents;
-import github.poscard8.poscardsskills.util.PSUtils;
-import github.poscard8.poscardsskills.util.component.ColorPalette;
-import github.poscard8.poscardsskills.util.component.PSComponents;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Collection;
 import java.util.List;
 import java.util.function.Supplier;
 
-/**
- * On offhand, repairs items with durability.
- */
-public class RepairStoneItem extends ItemWithDescription {
+@ParametersAreNonnullByDefault
+public class RepairStoneItem extends ItemWithDescription
+{
+    protected final Supplier<Integer> valueGetter;
 
-    protected final Supplier<Integer> durabilityGetter;
-
-    public RepairStoneItem(Properties property, Supplier<Integer> durabilityGetter) {
-
+    public RepairStoneItem(Properties property, Supplier<Integer> valueGetter)
+    {
         super(property);
-        this.durabilityGetter = durabilityGetter;
+        this.valueGetter = valueGetter;
     }
 
-    @Override
-    protected Collection<Component> getDescriptionComponents() {
+    public int getRepairValue() { return valueGetter.get(); }
 
-        ResourceLocation key = ForgeRegistries.ITEMS.getKey(this);
-        String name = getDescription().getString();
-        if (key == null) return List.of();
+    public boolean canRepair(ItemStack stack) { return stack.isDamageableItem() && stack.isDamaged(); }
 
-        MutableComponent description0 = Component.translatable(String.format("tooltip.%s.repair_stone_desc_1", key.getNamespace()), getRepairedDurability())
-                .withStyle(PoscardsSkills.getComponentHandler().getColorPalette().colorOf(ColorPalette.Key.DESCRIPTION));
-        Component description1 = Component.translatable(String.format("tooltip.%s.repair_stone_desc_2", key.getNamespace()), name)
-                .withStyle(PoscardsSkills.getComponentHandler().getColorPalette().colorOf(ColorPalette.Key.DESCRIPTION));
+    public boolean canUse(Player player)
+    {
+        Inventory inventory = player.getInventory();
 
-        Component newDescription = description0.append(description1);
-        return PSComponents.split(newDescription);
+        for (int i = 0; i < 9; i++)
+        {
+            if (canRepair(inventory.getItem(i))) return true;
+        }
+        return false;
     }
 
     @Override
     @NotNull
-    @ParametersAreNonnullByDefault
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+    public InteractionResultHolder<ItemStack> use(Level level, Player player0, InteractionHand hand)
+    {
+        ItemStack stack = player0.getItemInHand(hand);
 
-        if (hand == InteractionHand.MAIN_HAND || player.getMainHandItem().isEmpty()) return super.use(level, player, hand);
-
-        ItemStack offHandItem = player.getOffhandItem();
-        ItemStack mainHandItem = player.getMainHandItem();
-
-        if (!mainHandItem.isDamageableItem()) return InteractionResultHolder.pass(offHandItem);
-
-        if (offHandItem.is(this)) {
-
-            offHandItem.shrink(1);
-
-            ItemStack applied = mainHandItem.copy();
-            applied.setDamageValue(applied.getDamageValue() - getRepairedDurability());
-
-            if (player.isLocalPlayer()) PSUtils.addParticlesAroundPlayer(player, getDefaultInstance());
-            player.playSound(PSSoundEvents.REPAIR_STONE_APPLY.get());
-            player.getCooldowns().addCooldown(this, 20);
-            player.setItemInHand(InteractionHand.MAIN_HAND, applied);
-
-            return InteractionResultHolder.consume(offHandItem);
-
-        } else return super.use(level, player, hand);
+        if (player0 instanceof ServerPlayer player && canUse(player)) return useServerSide(player, stack);
+        return super.use(level, player0, hand);
     }
 
-    public int getRepairedDurability() { return durabilityGetter.get(); }
+    public InteractionResultHolder<ItemStack> useServerSide(ServerPlayer player, ItemStack stack)
+    {
+        Inventory inventory = player.getInventory();
 
+        for (int i = 0; i < 9; i++)
+        {
+            ItemStack tool = inventory.getItem(i);
+
+            if (canRepair(tool))
+            {
+                int damage = Math.max(0, tool.getDamageValue() - getRepairValue());
+                tool.setDamageValue(damage);
+            }
+        }
+        boolean shrink = !(player.isCreative() || player.isSpectator());
+        if (shrink) stack.shrink(1);
+
+        player.level().playSound(null, player.getOnPos(), PSSoundEvents.REPAIR_STONE_APPLY.get(), SoundSource.PLAYERS);
+        player.inventoryMenu.broadcastChanges();
+        return InteractionResultHolder.consume(stack);
+    }
+
+    @Override
+    public Collection<Component> getDescriptionTexts(ItemStack stack, @Nullable Level level, TooltipFlag flag)
+    {
+        return List.of(Component.translatable("item.poscardsskills.repair_stone.desc").withStyle(ChatFormatting.GRAY));
+    }
 
 }

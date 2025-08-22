@@ -1,0 +1,23 @@
+{
+  "parent": "poscardsskills:skill_crafting",
+  "display": {
+    "title": {
+      "translate": "advancement.poscardsskills.cheap_netherite_upgrade"
+    },
+    "description": {
+      "translate": "advancement.poscardsskills.cheap_netherite_upgrade.desc"
+    },
+    "icon": {
+      "item": "minecraft:netherite_upgrade_smithing_template"
+    }
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "peritia:skill_recipe",
+      "conditions": {
+        "recipe": "poscardsskills:cheap_netherite_upgrade"
+      }
+    }
+  },
+  "sends_telemetry_event": true
+}

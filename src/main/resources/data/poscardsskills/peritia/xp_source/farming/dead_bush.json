@@ -1,0 +1,9 @@
+{
+  "type": "peritia:block",
+  "skill": "farming",
+  "xp": 1,
+  "inputs": [
+    "minecraft:dead_bush"
+  ],
+  "index": 103
+}

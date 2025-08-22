@@ -1,0 +1,13 @@
+{
+  "type": "peritia:fish",
+  "skill": "fishing",
+  "xp": 750,
+  "inputs": [
+    "minecraft:bow",
+    "minecraft:fishing_rod",
+    "minecraft:enchanted_book",
+    "minecraft:name_tag",
+    "minecraft:saddle"
+  ],
+  "index": 13
+}

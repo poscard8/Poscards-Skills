@@ -1,0 +1,22 @@
+{
+  "requires": [
+    "poscardsskills:farming,32"
+  ],
+  "input": {
+    "ingredient": {
+      "item": "poscardsskills:brilliant_gemstone"
+    },
+    "count": 4
+  },
+  "input2": {
+    "ingredient": {
+      "item": "minecraft:copper_ingot"
+    },
+    "count": 16
+  },
+  "result": {
+    "item": "poscardsskills:volatile_hoe",
+    "count": 1
+  },
+  "index": 603
+}

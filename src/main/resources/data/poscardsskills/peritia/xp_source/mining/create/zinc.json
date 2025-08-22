@@ -1,0 +1,17 @@
+{
+  "type": "peritia:block",
+  "skill": "mining",
+  "xp": 50,
+  "inputs": [
+    "create:zinc_ore",
+    "create:deepslate_zinc_ore"
+  ],
+  "index": 28,
+  "requireCorrectTool": true,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ]
+}

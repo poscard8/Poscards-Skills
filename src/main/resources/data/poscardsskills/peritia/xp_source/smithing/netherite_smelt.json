@@ -1,0 +1,14 @@
+{
+  "type": "peritia:recipe",
+  "skill": "smithing",
+  "xp": 400,
+  "category": "smelt",
+  "keys": [
+    "minecraft:netherite_scrap",
+    "minecraft:netherite_scrap_from_blasting"
+  ],
+  "hints": [
+    "item.minecraft.netherite_scrap"
+  ],
+  "index": 7
+}

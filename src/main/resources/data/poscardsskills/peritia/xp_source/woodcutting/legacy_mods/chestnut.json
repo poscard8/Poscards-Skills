@@ -1,0 +1,16 @@
+{
+  "type": "peritia:block",
+  "skill": "woodcutting",
+  "xp": 45,
+  "inputs": [
+    "#wood_enjoyer:chestnut_logs"
+  ],
+  "requireCorrectTool": true,
+  "index": 28,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "wood_enjoyer"
+    }
+  ]
+}

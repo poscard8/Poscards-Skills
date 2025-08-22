@@ -1,0 +1,15 @@
+{
+  "type": "peritia:trade",
+  "skill": "social",
+  "xp": 50,
+  "professions": [
+    "librarian",
+    "armorer",
+    "toolsmith",
+    "weaponsmith"
+  ],
+  "items": [
+    "minecraft:emerald"
+  ],
+  "index": 3
+}

@@ -1,0 +1,22 @@
+{
+  "requires": [
+    "poscardsskills:exploring,60"
+  ],
+  "input": {
+    "ingredient": {
+      "item": "poscardsskills:brilliant_gemstone"
+    },
+    "count": 1
+  },
+  "input2": {
+    "ingredient": {
+      "item": "minecraft:gold_ingot"
+    },
+    "count": 1
+  },
+  "result": {
+    "item": "poscardsskills:mighty_key",
+    "count": 1
+  },
+  "index": 402
+}

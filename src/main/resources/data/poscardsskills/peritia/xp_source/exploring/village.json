@@ -1,0 +1,13 @@
+{
+  "type": "peritia:structure",
+  "skill": "exploring",
+  "xp": 600,
+  "inputs": [
+    "#minecraft:village"
+  ],
+  "hints": [
+    "hint.poscardsskills.villages"
+  ],
+  "visibility": "show",
+  "index": 1
+}

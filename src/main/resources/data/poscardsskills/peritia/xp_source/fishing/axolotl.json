@@ -1,0 +1,9 @@
+{
+  "type": "peritia:advancement",
+  "skill": "fishing",
+  "xp": 1000,
+  "inputs": [
+    "minecraft:husbandry/axolotl_in_a_bucket"
+  ],
+  "index": 103
+}

@@ -1,0 +1,7 @@
+{
+  "type": "peritia:enchantment",
+  "skill": "magic",
+  "xp": 100,
+  "visibility": "show",
+  "index": -100
+}

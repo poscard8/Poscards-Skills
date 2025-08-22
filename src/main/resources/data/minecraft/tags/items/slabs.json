@@ -1,8 +1,11 @@
 {
   "replace": false,
   "values": [
+    "poscardsskills:jade_slab",
     "poscardsskills:jade_brick_slab",
+    "poscardsskills:jasper_slab",
     "poscardsskills:jasper_brick_slab",
+    "poscardsskills:marble_slab",
     "poscardsskills:marble_brick_slab"
   ]
 }

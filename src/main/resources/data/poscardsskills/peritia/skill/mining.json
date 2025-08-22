@@ -1,0 +1,165 @@
+{
+  "description": [
+    "skill.poscardsskills.mining.desc"
+  ],
+  "priority": "low",
+  "position": "-2,0",
+  "minLevel": 0,
+  "maxLevel": 60,
+  "weight": 1.2,
+  "textures": {
+    "icon": "minecraft:stone_pickaxe",
+    "menu": {
+      "texture": "poscardsskills:gui/mining"
+    },
+    "overlay": {
+      "texture": "poscardsskills:gui/mining_overlay",
+      "size": "189,167",
+      "offset": "-8,-8"
+    }
+  },
+  "levelXpFunction": {
+    "polynomial": [
+      0.015,
+      0,
+      40,
+      0
+    ]
+  },
+  "rewards": [
+    {
+      "at": {
+        "period": 3,
+        "startFrom": 12
+      },
+      "item": "poscardsskills:luminous_gemstone"
+    },
+    {
+      "at": [13, 16],
+      "item": "minecraft:blast_furnace"
+    },
+    {
+      "at": [19, 22, 25],
+      "item": "minecraft:blast_furnace",
+      "count": 2
+    },
+    {
+      "at": [6, 8],
+      "item": "minecraft:torch",
+      "count": 12
+    },
+    {
+      "at": 10,
+      "xp": 10
+    }
+  ],
+  "attributes": [
+    {
+      "at": {
+        "period": 20,
+        "startFrom": 20
+      },
+      "attribute": "peritia:player.block_break_speed",
+      "value": 0.03
+    }
+  ],
+  "itemLocks": [
+    {
+      "lock": "minecraft:diamond_shovel,20",
+      "conditions": [
+        {
+          "type": "peritia:config",
+          "config": "poscardsskills:lockDiamondGear"
+        }
+      ]
+    },
+    {
+      "lock": "minecraft:diamond_pickaxe,20",
+      "conditions": [
+        {
+          "type": "peritia:config",
+          "config": "poscardsskills:lockDiamondGear"
+        }
+      ]
+    },
+    {
+      "lock": "minecraft:netherite_shovel,30",
+      "conditions": [
+        {
+          "type": "peritia:config",
+          "config": "poscardsskills:lockNetheriteGear"
+        }
+      ]
+    },
+    {
+      "lock": "minecraft:netherite_pickaxe,30",
+      "conditions": [
+        {
+          "type": "peritia:config",
+          "config": "poscardsskills:lockNetheriteGear"
+        }
+      ]
+    },
+    {
+      "lock": "poscardsskills:volatile_shovel,20",
+      "conditions": [
+        {
+          "type": "peritia:config",
+          "config": "poscardsskills:lockVolatileGear"
+        }
+      ]
+    },
+    {
+      "lock": "poscardsskills:volatile_pickaxe,20",
+      "conditions": [
+        {
+          "type": "peritia:config",
+          "config": "poscardsskills:lockVolatileGear"
+        }
+      ]
+    }
+  ],
+  "levelRestrictions": [
+    {
+      "at": 21,
+      "item": "minecraft:iron_pickaxe",
+      "count": 1
+    },
+    {
+      "at": 26,
+      "item": "minecraft:redstone",
+      "count": 20
+    },
+    {
+      "at": 31,
+      "item": "minecraft:quartz",
+      "count": 20
+    },
+    {
+      "at": 36,
+      "item": "minecraft:obsidian",
+      "count": 4
+    },
+    {
+      "at": 41,
+      "item": "minecraft:coal_ore",
+      "count": 2
+    },
+    {
+      "at": 51,
+      "item": "minecraft:end_stone",
+      "count": 8
+    },
+    {
+      "at": 56,
+      "item": "minecraft:deepslate_gold_ore",
+      "count": 1
+    }
+  ],
+  "conditions": [
+    {
+      "type": "peritia:config",
+      "config": "poscardsskills:hasMiningSkill"
+    }
+  ]
+}

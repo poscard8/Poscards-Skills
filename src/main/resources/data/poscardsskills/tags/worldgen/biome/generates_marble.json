@@ -1,9 +1,11 @@
 {
   "values": [
-    "#minecraft:is_taiga",
-    "minecraft:windswept_forest",
-    "minecraft:plains",
-    "minecraft:sunflower_plains",
-    "minecraft:meadow"
+    "#minecraft:is_forest",
+    "#forge:is_plains",
+    "#forge:is_swamp",
+    "#forge:is_cave",
+    "minecraft:beach",
+    "minecraft:warm_ocean",
+    "minecraft:lukewarm_ocean"
   ]
 }

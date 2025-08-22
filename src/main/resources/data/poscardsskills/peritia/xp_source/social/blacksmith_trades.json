@@ -1,0 +1,23 @@
+{
+  "type": "peritia:trade",
+  "skill": "social",
+  "xp": 750,
+  "professions": [
+    "armorer",
+    "toolsmith",
+    "weaponsmith"
+  ],
+  "items": [
+    "minecraft:diamond_sword",
+    "minecraft:diamond_pickaxe",
+    "minecraft:diamond_axe",
+    "minecraft:diamond_shovel",
+    "minecraft:diamond_hoe",
+    "minecraft:diamond_helmet",
+    "minecraft:diamond_chestplate",
+    "minecraft:diamond_leggings",
+    "minecraft:diamond_boots"
+  ],
+  "visibility": "show",
+  "index": 5
+}

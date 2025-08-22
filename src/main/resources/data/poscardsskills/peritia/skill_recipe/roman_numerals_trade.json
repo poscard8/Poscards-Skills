@@ -1,0 +1,17 @@
+{
+  "requires": [
+    "poscardsskills:combat,34"
+  ],
+  "input": {
+    "ingredient": {
+      "item": "poscardsskills:luminous_gemstone"
+    },
+    "count": 4
+  },
+  "result": {
+    "item": "poscardsskills:roman_numerals_banner_pattern",
+    "count": 1
+  },
+  "trade": true,
+  "index": 400
+}

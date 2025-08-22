@@ -1,0 +1,10 @@
+{
+  "type": "peritia:fish",
+  "skill": "fishing",
+  "xp": 50,
+  "inputs": [
+    "minecraft:cod"
+  ],
+  "visibility": "show",
+  "index": 1
+}

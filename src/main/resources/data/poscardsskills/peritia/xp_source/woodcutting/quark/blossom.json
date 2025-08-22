@@ -1,0 +1,15 @@
+{
+  "type": "peritia:block",
+  "skill": "woodcutting",
+  "xp": 30,
+  "inputs": [
+    "#quark:blossom_logs"
+  ],
+  "index": 25,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "quark"
+    }
+  ]
+}

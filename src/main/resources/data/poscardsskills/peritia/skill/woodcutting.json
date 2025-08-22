@@ -1,0 +1,92 @@
+{
+  "description": [
+    "skill.poscardsskills.woodcutting.desc"
+  ],
+  "priority": "low",
+  "position": "1,0",
+  "minLevel": 0,
+  "maxLevel": 40,
+  "weight": 0.9,
+  "textures": {
+    "icon": "minecraft:wooden_axe"
+  },
+  "levelXpFunction": {
+    "polynomial": [
+      0.06,
+      0,
+      60,
+      0
+    ]
+  },
+  "rewards": [
+    {
+      "at": {
+        "period": 3,
+        "offset": 1,
+        "startFrom": 10
+      },
+      "item": "poscardsskills:luminous_gemstone"
+    },
+    {
+      "at": [18, 24, 30],
+      "item": "minecraft:enchanted_book",
+      "nbt": {
+        "StoredEnchantments": [
+          {
+            "id": "minecraft:sharpness",
+            "lvl": 4
+          }
+        ]
+      }
+    },
+    {
+      "at": 10,
+      "xp": 10
+    }
+  ],
+  "attributes": [
+    {
+      "at": {
+        "period": 20,
+        "startFrom": 20
+      },
+      "attribute": "peritia:player.block_break_speed",
+      "value": 0.03
+    }
+  ],
+  "itemLocks": [
+    {
+      "lock": "minecraft:diamond_axe,16",
+      "conditions": [
+        {
+          "type": "peritia:config",
+          "config": "poscardsskills:lockDiamondGear"
+        }
+      ]
+    },
+    {
+      "lock": "minecraft:netherite_axe,24",
+      "conditions": [
+        {
+          "type": "peritia:config",
+          "config": "poscardsskills:lockNetheriteGear"
+        }
+      ]
+    },
+    {
+      "lock": "poscardsskills:volatile_axe,16",
+      "conditions": [
+        {
+          "type": "peritia:config",
+          "config": "poscardsskills:lockVolatileGear"
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "type": "peritia:config",
+      "config": "poscardsskills:hasWoodcuttingSkill"
+    }
+  ]
+}

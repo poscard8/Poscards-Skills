@@ -1,0 +1,21 @@
+{
+  "display": {
+    "title": {
+      "translate": "advancement.poscardsskills.root"
+    },
+    "description": {
+      "translate": "advancement.poscardsskills.root.desc"
+    },
+    "icon": {
+      "item": "poscardsskills:brilliant_gemstone"
+    },
+    "background": "poscardsskills:textures/block/marble_bricks.png",
+    "show_toast": false,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

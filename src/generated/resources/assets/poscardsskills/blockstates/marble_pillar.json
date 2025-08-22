@@ -1,16 +1,29 @@
 {
   "variants": {
-    "axis=x": {
+    "facing=down": {
+      "model": "poscardsskills:block/marble_pillar",
+      "x": 180
+    },
+    "facing=east": {
       "model": "poscardsskills:block/marble_pillar",
       "x": 90,
       "y": 90
     },
-    "axis=y": {
-      "model": "poscardsskills:block/marble_pillar"
-    },
-    "axis=z": {
+    "facing=north": {
       "model": "poscardsskills:block/marble_pillar",
       "x": 90
+    },
+    "facing=south": {
+      "model": "poscardsskills:block/marble_pillar",
+      "x": 270
+    },
+    "facing=up": {
+      "model": "poscardsskills:block/marble_pillar"
+    },
+    "facing=west": {
+      "model": "poscardsskills:block/marble_pillar",
+      "x": 90,
+      "y": 270
     }
   }
 }

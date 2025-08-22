@@ -1,0 +1,17 @@
+{
+  "requires": [
+    "poscardsskills:social,14"
+  ],
+  "input": {
+    "ingredient": {
+      "item": "poscardsskills:luminous_gemstone"
+    },
+    "count": 4
+  },
+  "result": {
+    "item": "poscardsskills:numbers_banner_pattern",
+    "count": 1
+  },
+  "trade": true,
+  "index": 401
+}

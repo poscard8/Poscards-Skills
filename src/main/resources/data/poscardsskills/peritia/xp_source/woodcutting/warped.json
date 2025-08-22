@@ -1,0 +1,9 @@
+{
+  "type": "peritia:block",
+  "skill": "woodcutting",
+  "xp": 70,
+  "inputs": [
+    "#minecraft:warped_stems"
+  ],
+  "index": 53
+}

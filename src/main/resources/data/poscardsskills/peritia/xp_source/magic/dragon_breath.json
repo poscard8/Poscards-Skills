@@ -1,0 +1,9 @@
+{
+  "type": "peritia:potion",
+  "skill": "magic",
+  "xp": 500,
+  "inputs": [
+    "minecraft:dragon_breath"
+  ],
+  "index": 5
+}

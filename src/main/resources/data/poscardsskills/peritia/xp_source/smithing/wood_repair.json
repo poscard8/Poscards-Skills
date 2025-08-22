@@ -1,0 +1,17 @@
+{
+  "type": "peritia:anvil",
+  "skill": "smithing",
+  "xp": 25,
+  "left": [
+    "minecraft:wooden_sword",
+    "minecraft:wooden_pickaxe",
+    "minecraft:wooden_axe",
+    "minecraft:wooden_shovel",
+    "minecraft:wooden_hoe"
+  ],
+  "right": [
+    "#minecraft:planks"
+  ],
+  "visibility": "show",
+  "index": 101
+}

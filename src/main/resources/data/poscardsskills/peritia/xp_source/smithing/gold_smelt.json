@@ -1,0 +1,22 @@
+{
+  "type": "peritia:recipe",
+  "skill": "smithing",
+  "xp": 80,
+  "category": "smelt",
+  "keys": [
+    "minecraft:gold_ingot_from_smelting_gold_ore",
+    "minecraft:gold_ingot_from_smelting_deepslate_gold_ore",
+    "minecraft:gold_ingot_from_smelting_nether_gold_ore",
+    "minecraft:gold_ingot_from_smelting_raw_gold",
+    "minecraft:gold_ingot_from_blasting_gold_ore",
+    "minecraft:gold_ingot_from_blasting_deepslate_gold_ore",
+    "minecraft:gold_ingot_from_blasting_nether_gold_ore",
+    "minecraft:gold_ingot_from_blasting_raw_gold",
+    "create:smelting/gold_ingot_from_crushed",
+    "create:blasting/gold_ingot_from_crushed"
+  ],
+  "hints": [
+    "item.minecraft.gold_ingot"
+  ],
+  "index": 5
+}

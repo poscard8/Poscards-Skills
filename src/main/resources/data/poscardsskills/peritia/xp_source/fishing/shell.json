@@ -1,0 +1,9 @@
+{
+  "type": "peritia:fish",
+  "skill": "fishing",
+  "xp": 300,
+  "inputs": [
+    "minecraft:nautilus_shell"
+  ],
+  "index": 11
+}

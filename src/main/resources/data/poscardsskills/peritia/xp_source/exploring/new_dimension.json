@@ -1,0 +1,10 @@
+{
+  "type": "peritia:advancement",
+  "skill": "exploring",
+  "xp": 1500,
+  "inputs": [
+    "minecraft:story/enter_the_nether",
+    "minecraft:story/enter_the_end"
+  ],
+  "index": 102
+}

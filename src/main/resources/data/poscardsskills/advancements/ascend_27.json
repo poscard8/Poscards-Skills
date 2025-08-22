@@ -1,0 +1,24 @@
+{
+  "parent": "poscardsskills:ascend",
+  "display": {
+    "title": {
+      "translate": "advancement.poscardsskills.ascend_27"
+    },
+    "description": {
+      "translate": "advancement.poscardsskills.ascend_27.desc"
+    },
+    "icon": {
+      "item": "poscardsskills:brilliant_gemstone"
+    },
+    "frame": "goal"
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "peritia:ascension",
+      "conditions": {
+        "score": 27
+      }
+    }
+  },
+  "sends_telemetry_event": true
+}

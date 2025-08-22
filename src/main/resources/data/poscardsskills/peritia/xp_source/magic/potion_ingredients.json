@@ -1,0 +1,22 @@
+{
+  "type": "peritia:potion",
+  "skill": "magic",
+  "xp": 200,
+  "inputs": [
+    "minecraft:nether_wart",
+    "minecraft:sugar",
+    "minecraft:blaze_powder",
+    "minecraft:rabbit_foot",
+    "minecraft:spider_eye",
+    "minecraft:fermented_spider_eye",
+    "minecraft:ghast_tear",
+    "minecraft:glistering_melon_slice",
+    "minecraft:magma_cream",
+    "minecraft:pufferfish",
+    "minecraft:turtle_helmet",
+    "minecraft:phantom_membrane",
+    "minecraft:golden_carrot"
+  ],
+  "visibility": "show",
+  "index": 1
+}

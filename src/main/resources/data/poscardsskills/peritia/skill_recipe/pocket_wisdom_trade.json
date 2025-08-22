@@ -1,0 +1,25 @@
+{
+  "requires": [
+    "poscardsskills:magic,30"
+  ],
+  "input": {
+    "ingredient": {
+      "item": "poscardsskills:brilliant_gemstone"
+    },
+    "count": 8
+  },
+  "result": {
+    "item": "minecraft:enchanted_book",
+    "count": 1,
+    "nbt": {
+      "StoredEnchantments": [
+        {
+          "id": "poscardsskills:pocket_wisdom",
+          "lvl": 1
+        }
+      ]
+    }
+  },
+  "trade": true,
+  "index": 500
+}

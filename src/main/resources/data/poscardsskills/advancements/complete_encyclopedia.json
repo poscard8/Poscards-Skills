@@ -1,0 +1,24 @@
+{
+  "parent": "poscardsskills:root",
+  "display": {
+    "title": {
+      "translate": "advancement.poscardsskills.complete_encyclopedia"
+    },
+    "description": {
+      "translate": "advancement.poscardsskills.complete_encyclopedia.desc"
+    },
+    "icon": {
+      "item": "minecraft:writable_book"
+    },
+    "frame": "goal"
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "peritia:encyclopedia",
+      "conditions": {
+        "skill": "any"
+      }
+    }
+  },
+  "sends_telemetry_event": true
+}

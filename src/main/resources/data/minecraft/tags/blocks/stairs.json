@@ -1,8 +1,11 @@
 {
   "replace": false,
   "values": [
+    "poscardsskills:jade_stairs",
     "poscardsskills:jade_brick_stairs",
+    "poscardsskills:jasper_stairs",
     "poscardsskills:jasper_brick_stairs",
+    "poscardsskills:marble_stairs",
     "poscardsskills:marble_brick_stairs"
   ]
 }

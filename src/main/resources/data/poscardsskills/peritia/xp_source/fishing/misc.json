@@ -1,0 +1,17 @@
+{
+  "type": "peritia:fish",
+  "skill": "fishing",
+  "xp": 150,
+  "inputs": [
+    "minecraft:lily_pad",
+    "minecraft:bamboo",
+    "minecraft:ink_sac",
+    "minecraft:bone",
+    "minecraft:leather",
+    "minecraft:bowl",
+    "minecraft:stick",
+    "minecraft:tripwire_hook",
+    "minecraft:string"
+  ],
+  "index": 15
+}

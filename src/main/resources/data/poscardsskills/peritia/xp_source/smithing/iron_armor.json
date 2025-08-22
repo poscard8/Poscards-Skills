@@ -1,0 +1,19 @@
+{
+  "type": "peritia:recipe",
+  "skill": "smithing",
+  "xp": 200,
+  "keys": [
+    "minecraft:iron_helmet",
+    "minecraft:iron_chestplate",
+    "minecraft:iron_leggings",
+    "minecraft:iron_boots",
+    "minecraft:golden_helmet",
+    "minecraft:golden_chestplate",
+    "minecraft:golden_leggings",
+    "minecraft:golden_boots"
+  ],
+  "hints": [
+    "hint.poscardsskills.iron_armor"
+  ],
+  "index": 53
+}

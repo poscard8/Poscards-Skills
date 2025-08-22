@@ -1,0 +1,9 @@
+{
+  "type": "peritia:fish",
+  "skill": "fishing",
+  "xp": 120,
+  "inputs": [
+    "minecraft:pufferfish"
+  ],
+  "index": 5
+}

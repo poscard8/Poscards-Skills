@@ -1,0 +1,22 @@
+{
+  "requires": [
+    "poscardsskills:mining,48"
+  ],
+  "input": {
+    "ingredient": {
+      "item": "poscardsskills:brilliant_gemstone"
+    },
+    "count": 10
+  },
+  "input2": {
+    "ingredient": {
+      "item": "minecraft:copper_ingot"
+    },
+    "count": 16
+  },
+  "result": {
+    "item": "poscardsskills:volatile_pickaxe",
+    "count": 1
+  },
+  "index": 601
+}

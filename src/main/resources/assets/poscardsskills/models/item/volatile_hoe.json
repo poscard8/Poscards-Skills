@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "poscardsskills:item/volatile_hoe",
+    "layer1": "poscardsskills:item/volatile_hoe_effects"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "parent": "poscardsskills:level_5",
+  "display": {
+    "title": {
+      "translate": "advancement.poscardsskills.level_20"
+    },
+    "description": {
+      "translate": "advancement.poscardsskills.level_20.desc"
+    },
+    "icon": {
+      "item": "minecraft:ender_eye"
+    }
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "peritia:skill",
+      "conditions": {
+        "requisite": "any,20"
+      }
+    }
+  },
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,16 @@
+{
+  "type": "peritia:structure",
+  "skill": "exploring",
+  "xp": 5000,
+  "inputs": [
+    "minecraft:stronghold",
+    "minecraft:ancient_city",
+    "minecraft:woodland_mansion"
+  ],
+  "hints": [
+    "hint.poscardsskills.strongholds",
+    "hint.poscardsskills.ancient_cities",
+    "hint.poscardsskills.woodland_mansions"
+  ],
+  "index": 17
+}

@@ -1,13 +1,15 @@
 {
   "values": [
+    "poscardsskills:marble",
+    "poscardsskills:marble_stairs",
+    "poscardsskills:marble_slab",
+    "poscardsskills:marble_wall",
     "poscardsskills:marble_bricks",
     "poscardsskills:marble_brick_stairs",
     "poscardsskills:marble_brick_slab",
     "poscardsskills:marble_brick_wall",
-    "poscardsskills:chiseled_marble",
+    "poscardsskills:chiseled_marble_bricks",
     "poscardsskills:marble_pillar",
-    "poscardsskills:layered_marble",
-    "poscardsskills:shiny_marble",
-    "poscardsskills:rough_marble"
+    "poscardsskills:layered_marble"
   ]
 }

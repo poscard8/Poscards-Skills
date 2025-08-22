@@ -1,0 +1,16 @@
+{
+  "type": "peritia:recipe",
+  "skill": "smithing",
+  "xp": 600,
+  "keys": [
+    "minecraft:netherite_sword_smithing",
+    "minecraft:netherite_pickaxe_smithing",
+    "minecraft:netherite_axe_smithing",
+    "minecraft:netherite_shovel_smithing",
+    "minecraft:netherite_hoe_smithing"
+  ],
+  "hints": [
+    "hint.poscardsskills.netherite_tools"
+  ],
+  "index": 59
+}

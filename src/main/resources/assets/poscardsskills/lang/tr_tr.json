@@ -58,6 +58,16 @@
   "label.poscardsskills.average_skill_level": "Ortalama Yetenek Seviyesi: ",
   "label.poscardsskills.attribute_buffs": "Özellik Artışları: ",
   "label.poscardsskills.progress_to_level" : "%s. Seviyeye İlerleme: ",
+  "label.poscardsskills.enchant": "Büyü Yapıldığında: ",
+  "label.poscardsskills.debt": "Borç: ",
+  "label.poscardsskills.break": "Kırıldığında: ",
+  "label.poscardsskills.use": "Kullanımda: ",
+  "label.poscardsskills.kill": "Öldürüldüğünde: ",
+
+  "config.jade.plugin_poscardsskills.anvil_enchant_xp_sources" : "Örs (Büyücülük) Tecrübe Kaynakları",
+  "config.jade.plugin_poscardsskills.block_xp_sources" : "Blok Tecrübe Kaynakları",
+  "config.jade.plugin_poscardsskills.enchanting_table_xp_sources" : "Büyü Masası Tecrübe Kaynakları",
+  "config.jade.plugin_poscardsskills.entity_xp_sources" : "Entity Tecrübe Kaynakları",
 
   "splash.poscardsskills.1": "Sulu!",
   "splash.poscardsskills.2": "BU MESAJ GERÇEK AMERİKAN MİLLİYETÇİLERİ TARAFINDAN TEYİT EDİLDİ!!!\n§2DOĞRU§r",
@@ -72,11 +82,11 @@
   "splash.poscardsskills.11": "Çayır halkı ilerlemenle gurur duyuyor.",
   "splash.poscardsskills.12": "Yeterince kanıtımız var.",
   "splash.poscardsskills.13": "Yürüyüşe çık.",
-  "splash.poscardsskills.14": "2025'te de yetenek kasmazsın",
-  "splash.poscardsskills.15": "Poscard'ın Yetenekleri'ne Entity gelmeyecek. Yapılar? Belki.",
+  "splash.poscardsskills.14": "aydınlanma",
+  "splash.poscardsskills.15": "Tek kişilik proje!",
   "splash.poscardsskills.16": "Parlak! ◕‿◕",
   "splash.poscardsskills.17": ".- ... -.-. . -. -..",
-  "splash.poscardsskills.18": "O GELİYOR",
+  "splash.poscardsskills.18": "TAM ANLAMIYLA OYNANABİLİR!",
   "splash.poscardsskills.19": "Beni durdurma artık",
   "splash.poscardsskills.20": "Neden?",
   "splash.poscardsskills.21": "Arkadaşlarınla oyna!",
@@ -193,6 +203,8 @@
   "block.poscardsskills.shiny_jade": "Parlak Yeşim Taşı",
   "block.poscardsskills.rough_jade": "Kaba Yeşim Taşı",
 
+  "block.poscardsskills.jade_brick_vertical_slab": "Yeşim Taşı Tuğlası Dikey Basamak",
+
   "block.poscardsskills.jasper_bricks": "Jasper Taşı Tuğlası",
   "block.poscardsskills.jasper_brick_stairs": "Jasper Taşı Tuğlası Merdiven",
   "block.poscardsskills.jasper_brick_slab": "Jasper Taşı Tuğlası Basamak",
@@ -203,6 +215,8 @@
   "block.poscardsskills.shiny_jasper": "Parlak Jasper Taşı",
   "block.poscardsskills.rough_jasper": "Kaba Jasper Taşı",
 
+  "block.poscardsskills.jasper_brick_vertical_slab": "Jasper Taşı Tuğlası Dikey Basamak",
+
   "block.poscardsskills.marble_bricks": "Mermer Tuğla",
   "block.poscardsskills.marble_brick_stairs": "Mermer Tuğla Merdiven",
   "block.poscardsskills.marble_brick_slab": "Mermer Tuğla Basamak",
@@ -212,6 +226,8 @@
   "block.poscardsskills.layered_marble": "Katmanlı Mermer",
   "block.poscardsskills.shiny_marble": "Parlak Mermer",
   "block.poscardsskills.rough_marble": "Kaba Mermer",
+
+  "block.poscardsskills.marble_brick_vertical_slab": "Mermer Tuğla Dikey Basamak",
 
   "item.poscardsskills.elegant_rune": "Şık Rün",
   "item.poscardsskills.ethereal_rune": "Dünyadışı Rün",

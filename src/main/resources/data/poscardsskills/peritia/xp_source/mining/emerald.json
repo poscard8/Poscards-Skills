@@ -1,0 +1,10 @@
+{
+  "type": "peritia:block",
+  "skill": "mining",
+  "xp": 500,
+  "inputs": [
+    "#minecraft:emerald_ores"
+  ],
+  "index": 45,
+  "requireCorrectTool": true
+}

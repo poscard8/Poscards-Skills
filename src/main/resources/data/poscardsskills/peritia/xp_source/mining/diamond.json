@@ -1,0 +1,11 @@
+{
+  "type": "peritia:block",
+  "skill": "mining",
+  "xp": 400,
+  "inputs": [
+    "#minecraft:diamond_ores"
+  ],
+  "index": 43,
+  "visibility": "show",
+  "requireCorrectTool": true
+}

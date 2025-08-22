@@ -1,0 +1,10 @@
+{
+  "type": "peritia:block",
+  "skill": "random",
+  "xp": 666,
+  "inputs": [
+    "minecraft:spawner",
+    "quark:monster_box"
+  ],
+  "index": 32001
+}

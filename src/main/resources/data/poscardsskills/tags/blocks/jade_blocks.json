@@ -1,13 +1,13 @@
 {
   "values": [
+    "poscardsskills:jade",
+    "poscardsskills:jade_stairs",
+    "poscardsskills:jade_slab",
+    "poscardsskills:jade_wall",
     "poscardsskills:jade_bricks",
     "poscardsskills:jade_brick_stairs",
     "poscardsskills:jade_brick_slab",
     "poscardsskills:jade_brick_wall",
-    "poscardsskills:chiseled_jade",
-    "poscardsskills:jade_pillar",
-    "poscardsskills:layered_jade",
-    "poscardsskills:shiny_jade",
-    "poscardsskills:rough_jade"
+    "poscardsskills:chiseled_jade_bricks"
   ]
 }

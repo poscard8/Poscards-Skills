@@ -1,0 +1,15 @@
+{
+  "type": "peritia:advancement",
+  "skill": "farming,woodcutting",
+  "xp": 1000,
+  "inputs": [
+    "create:contraption_actors"
+  ],
+  "index": 202,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ]
+}

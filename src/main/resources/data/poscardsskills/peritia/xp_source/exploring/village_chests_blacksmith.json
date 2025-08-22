@@ -1,0 +1,14 @@
+{
+  "type": "peritia:chest",
+  "skill": "exploring",
+  "xp": 250,
+  "inputs": [
+    "minecraft:chests/village/village_armorer",
+    "minecraft:chests/village/village_toolsmith",
+    "minecraft:chests/village/village_weaponsmith"
+  ],
+  "hints": [
+    "hint.poscardsskills.village_chests_blacksmith"
+  ],
+  "index": 53
+}

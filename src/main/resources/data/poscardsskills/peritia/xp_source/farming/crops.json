@@ -1,0 +1,34 @@
+{
+  "type": "peritia:block",
+  "skill": "farming",
+  "xp": 30,
+  "inputs": [
+    {
+      "block": "minecraft:carrots",
+      "properties": [
+        "age=7"
+      ]
+    },
+    {
+      "block": "minecraft:potatoes",
+      "properties": [
+        "age=7"
+      ]
+    },
+    {
+      "block": "minecraft:beetroots",
+      "properties": [
+        "age=3"
+      ]
+    },
+    {
+      "block": "minecraft:wheat",
+      "properties": [
+        "age=7"
+      ]
+    }
+  ],
+  "allowFarming": true,
+  "visibility": "show",
+  "index": 1
+}

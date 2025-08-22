@@ -1,0 +1,11 @@
+{
+  "type": "peritia:block",
+  "skill": "farming",
+  "xp": 40,
+  "inputs": [
+    "minecraft:sugar_cane",
+    "minecraft:cactus",
+    "minecraft:chorus_flower"
+  ],
+  "index": 3
+}

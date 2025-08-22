@@ -1,0 +1,12 @@
+{
+  "type": "peritia:entity",
+  "skill": "combat",
+  "xp": 800,
+  "inputs": [
+    "minecraft:piglin_brute"
+  ],
+  "gearFunction": "onlyEnchanted",
+  "allowFarming": true,
+  "visibility": "show",
+  "index": 17
+}

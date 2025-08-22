@@ -1,0 +1,9 @@
+{
+  "type": "peritia:advancement",
+  "skill": "smithing",
+  "xp": 250,
+  "inputs": [
+    "minecraft:story/smelt_iron"
+  ],
+  "index": 201
+}

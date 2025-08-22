@@ -1,0 +1,9 @@
+{
+  "type": "peritia:block",
+  "skill": "farming",
+  "xp": 10,
+  "inputs": [
+    "minecraft:hay_block"
+  ],
+  "index": 11
+}

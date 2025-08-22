@@ -1,0 +1,15 @@
+{
+  "type": "peritia:advancement",
+  "skill": "mining",
+  "xp": 250,
+  "inputs": [
+    "create:andesite_alloy"
+  ],
+  "index": 202,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ]
+}

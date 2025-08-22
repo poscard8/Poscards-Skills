@@ -1,0 +1,115 @@
+{
+  "description": [
+    "skill.poscardsskills.farming.desc"
+  ],
+  "priority": "low",
+  "position": "-1,0",
+  "minLevel": 0,
+  "maxLevel": 40,
+  "textures": {
+    "icon": "minecraft:golden_hoe"
+  },
+  "levelXpFunction": {
+    "polynomial": [
+      0.06,
+      0,
+      60,
+      0
+    ]
+  },
+  "rewards": [
+    {
+      "at": {
+        "period": 3,
+        "offset": 1,
+        "startFrom": 10
+      },
+      "item": "poscardsskills:luminous_gemstone"
+    },
+    {
+      "at": 4,
+      "item": "minecraft:spruce_sapling",
+      "count": 5
+    },
+    {
+      "at": 12,
+      "item": "minecraft:dark_oak_sapling",
+      "count": 5
+    },
+    {
+      "at": 20,
+      "item": "minecraft:cherry_sapling",
+      "count": 5
+    },
+    {
+      "at": 15,
+      "item": "poscardsskills:golden_rune"
+    },
+    {
+      "at": {
+        "period": 5,
+        "startFrom": 30
+      },
+      "item": "minecraft:bone_block",
+      "count": 2
+    },
+    {
+      "at": 10,
+      "xp": 10
+    }
+  ],
+  "attributes": [
+    {
+      "at": 35,
+      "attribute": "minecraft:generic.max_health",
+      "value": 1.0
+    }
+  ],
+  "levelRestrictions": [
+    {
+      "at": 26,
+      "item": "minecraft:nether_wart",
+      "count": 3
+    },
+    {
+      "at": 36,
+      "item": "minecraft:chorus_fruit",
+      "count": 10
+    }
+  ],
+  "itemLocks": [
+    {
+      "lock": "minecraft:diamond_hoe,16",
+      "conditions": [
+        {
+          "type": "peritia:config",
+          "config": "poscardsskills:lockDiamondGear"
+        }
+      ]
+    },
+    {
+      "lock": "minecraft:netherite_hoe,24",
+      "conditions": [
+        {
+          "type": "peritia:config",
+          "config": "poscardsskills:lockNetheriteGear"
+        }
+      ]
+    },
+    {
+      "lock": "poscardsskills:volatile_hoe,16",
+      "conditions": [
+        {
+          "type": "peritia:config",
+          "config": "poscardsskills:lockVolatileGear"
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "type": "peritia:config",
+      "config": "poscardsskills:hasFarmingSkill"
+    }
+  ]
+}

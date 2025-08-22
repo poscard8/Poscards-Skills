@@ -1,0 +1,13 @@
+{
+  "type": "peritia:entity",
+  "skill": "combat",
+  "xp": 200,
+  "inputs": [
+    "minecraft:enderman",
+    "minecraft:witch",
+    "minecraft:cave_spider",
+    "minecraft:phantom"
+  ],
+  "assistRange": 8,
+  "index": 7
+}

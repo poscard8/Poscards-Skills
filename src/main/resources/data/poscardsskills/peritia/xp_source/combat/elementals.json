@@ -1,0 +1,11 @@
+{
+  "type": "peritia:entity",
+  "skill": "combat",
+  "xp": 240,
+  "inputs": [
+    "minecraft:blaze",
+    "minecraft:breeze"
+  ],
+  "assistRange": 16,
+  "index": 25
+}

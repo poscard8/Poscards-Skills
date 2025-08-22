@@ -1,0 +1,20 @@
+{
+  "type": "peritia:block",
+  "skill": "farming",
+  "xp": 20,
+  "inputs": [
+    {
+      "block": "minecraft:cocoa",
+      "properties": [
+        "age=2"
+      ]
+    },
+    {
+      "block": "minecraft:sweet_berry_bush",
+      "properties": [
+        "age=3"
+      ]
+    }
+  ],
+  "index": 9
+}

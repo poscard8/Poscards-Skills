@@ -1,0 +1,20 @@
+{
+  "type": "peritia:recipe",
+  "skill": "smithing",
+  "xp": 20,
+  "category": "smelt",
+  "keys": [
+    "minecraft:copper_ingot_from_smelting_copper_ore",
+    "minecraft:copper_ingot_from_smelting_deepslate_copper_ore",
+    "minecraft:copper_ingot_from_smelting_raw_copper",
+    "minecraft:copper_ingot_from_blasting_copper_ore",
+    "minecraft:copper_ingot_from_blasting_deepslate_copper_ore",
+    "minecraft:copper_ingot_from_blasting_raw_copper",
+    "create:smelting/copper_ingot_from_crushed",
+    "create:blasting/copper_ingot_from_crushed"
+  ],
+  "hints": [
+    "item.minecraft.copper_ingot"
+  ],
+  "index": 1
+}

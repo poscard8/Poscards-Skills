@@ -1,0 +1,9 @@
+{
+  "type": "peritia:block",
+  "skill": "woodcutting",
+  "xp": 30,
+  "inputs": [
+    "#minecraft:acacia_logs"
+  ],
+  "index": 9
+}

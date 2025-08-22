@@ -1,0 +1,11 @@
+{
+  "type": "peritia:entity",
+  "skill": "poscardsskills:combat",
+  "xp": 2500,
+  "inputs": [
+    "minecraft:wither"
+  ],
+  "allowFarming": true,
+  "assistRange": 16,
+  "index": 53
+}

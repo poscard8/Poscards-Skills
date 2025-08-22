@@ -1,0 +1,22 @@
+{
+  "requires": [
+    "poscardsskills:smithing,27"
+  ],
+  "input": {
+    "ingredient": {
+      "item": "minecraft:netherite_upgrade_smithing_template"
+    },
+    "count": 1
+  },
+  "input2": {
+    "ingredient": {
+      "item": "minecraft:diamond"
+    },
+    "count": 5
+  },
+  "result": {
+    "item": "minecraft:netherite_upgrade_smithing_template",
+    "count": 2
+  },
+  "index": 300
+}

@@ -1,6 +1,9 @@
 {
   "values": [
-    "#minecraft:is_forest",
-    "#minecraft:is_jungle"
+    "#minecraft:is_taiga",
+    "#forge:is_cold",
+    "#forge:is_cave",
+    "minecraft:windswept_forest",
+    "minecraft:meadow"
   ]
 }

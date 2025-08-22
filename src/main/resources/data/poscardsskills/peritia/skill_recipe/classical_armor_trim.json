@@ -1,0 +1,23 @@
+{
+  "requires": [
+    "poscardsskills:combat,50",
+    "poscardsskills:smithing,20"
+  ],
+  "input": {
+    "ingredient": {
+      "item": "poscardsskills:marble"
+    },
+    "count": 2
+  },
+  "input2": {
+    "ingredient": {
+      "item": "minecraft:diamond"
+    },
+    "count": 7
+  },
+  "result": {
+    "item": "poscardsskills:classical_armor_trim_smithing_template",
+    "count": 1
+  },
+  "index": -900
+}

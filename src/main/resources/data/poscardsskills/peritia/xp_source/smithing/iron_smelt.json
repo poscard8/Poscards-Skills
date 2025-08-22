@@ -1,0 +1,20 @@
+{
+  "type": "peritia:recipe",
+  "skill": "smithing",
+  "xp": 40,
+  "category": "smelt",
+  "keys": [
+    "minecraft:iron_ingot_from_smelting_iron_ore",
+    "minecraft:iron_ingot_from_smelting_deepslate_iron_ore",
+    "minecraft:iron_ingot_from_smelting_raw_iron",
+    "minecraft:iron_ingot_from_blasting_iron_ore",
+    "minecraft:iron_ingot_from_blasting_deepslate_iron_ore",
+    "minecraft:iron_ingot_from_blasting_raw_iron",
+    "create:smelting/iron_ingot_from_crushed",
+    "create:blasting/gold_ingot_from_crushed"
+  ],
+  "hints": [
+    "item.minecraft.iron_ingot"
+  ],
+  "index": 3
+}

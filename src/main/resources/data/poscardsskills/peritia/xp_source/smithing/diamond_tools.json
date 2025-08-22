@@ -1,0 +1,16 @@
+{
+  "type": "peritia:recipe",
+  "skill": "smithing",
+  "xp": 300,
+  "keys": [
+    "minecraft:diamond_sword",
+    "minecraft:diamond_pickaxe",
+    "minecraft:diamond_axe",
+    "minecraft:diamond_shovel",
+    "minecraft:diamond_hoe"
+  ],
+  "hints": [
+    "hint.poscardsskills.diamond_tools"
+  ],
+  "index": 55
+}

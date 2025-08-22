@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "poscardsskills:block/marble_slab"
+    },
+    "type=double": {
+      "model": "poscardsskills:block/marble"
+    },
+    "type=top": {
+      "model": "poscardsskills:block/marble_slab_top"
+    }
+  }
+}

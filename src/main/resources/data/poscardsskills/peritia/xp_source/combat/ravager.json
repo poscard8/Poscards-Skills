@@ -1,0 +1,9 @@
+{
+  "type": "peritia:entity",
+  "skill": "combat",
+  "xp": 400,
+  "inputs": [
+    "minecraft:ravager"
+  ],
+  "index": 11
+}

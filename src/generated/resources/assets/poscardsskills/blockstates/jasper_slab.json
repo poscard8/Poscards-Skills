@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "poscardsskills:block/jasper_slab"
+    },
+    "type=double": {
+      "model": "poscardsskills:block/jasper"
+    },
+    "type=top": {
+      "model": "poscardsskills:block/jasper_slab_top"
+    }
+  }
+}

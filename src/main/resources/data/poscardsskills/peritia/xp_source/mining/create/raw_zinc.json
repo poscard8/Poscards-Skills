@@ -1,0 +1,16 @@
+{
+  "type": "peritia:block",
+  "skill": "mining",
+  "xp": 200,
+  "inputs": [
+    "create:raw_zinc_block"
+  ],
+  "index": 30,
+  "requireCorrectTool": true,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ]
+}

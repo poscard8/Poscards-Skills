@@ -1,8 +1,6 @@
 {
   "replace": false,
   "values": [
-    "poscardsskills:elegant_armor_trim_smithing_template",
-    "poscardsskills:ethereal_armor_trim_smithing_template",
     "poscardsskills:classical_armor_trim_smithing_template"
   ]
 }

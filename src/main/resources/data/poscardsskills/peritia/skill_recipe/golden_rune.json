@@ -1,0 +1,22 @@
+{
+  "requires": [
+    "poscardsskills:farming,15"
+  ],
+  "input": {
+    "ingredient": {
+      "item": "poscardsskills:luminous_gemstone"
+    },
+    "count": 3
+  },
+  "input2": {
+    "ingredient": {
+      "item": "minecraft:gold_ingot"
+    },
+    "count": 8
+  },
+  "result": {
+    "item": "poscardsskills:golden_rune",
+    "count": 1
+  },
+  "index": 500
+}

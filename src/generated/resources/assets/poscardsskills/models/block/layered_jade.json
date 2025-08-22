@@ -1,9 +1,0 @@
-{
-  "parent": "poscardsskills:block/layered_block",
-  "textures": {
-    "default": "poscardsskills:block/layered_jade",
-    "inner": "poscardsskills:block/layered_jade_inner",
-    "middle": "poscardsskills:block/layered_jade_middle",
-    "side": "poscardsskills:block/layered_jade_side"
-  }
-}

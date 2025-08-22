@@ -1,0 +1,13 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "north": "#side",
+    "south": "#side",
+    "east": "#side",
+    "west": "#side",
+    "up": "poscardsskills:block/marble_pillar_top",
+    "down": "poscardsskills:block/marble_pillar_bottom",
+    "particle": "#side",
+    "side": "poscardsskills:block/chiseled_marble_bricks"
+  }
+}

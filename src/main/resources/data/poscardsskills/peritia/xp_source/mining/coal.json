@@ -1,0 +1,11 @@
+{
+  "type": "peritia:block",
+  "skill": "mining",
+  "xp": 20,
+  "inputs": [
+    "#minecraft:coal_ores"
+  ],
+  "index": 21,
+  "visibility": "show",
+  "requireCorrectTool": true
+}
